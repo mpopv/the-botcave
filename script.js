@@ -13,6 +13,31 @@ var adjArray = [ ];
 //   access_token_secret:  ''
 // });
 
+///////////////// Word Array Bank /////////////////////
+
+nounArray = [
+  'Hope',
+  'Empire',
+  'Return',
+  'Jedi',
+  'Menace',
+  'Attack',
+  'Clone',
+  'Revenge',
+  'Sith',
+  'Force'
+];
+
+verbArray = [
+  'Strikes Back',
+  'Awakens'
+]
+
+adjArray = [
+  'New',
+  'Phantom'
+]
+
 ///////////////// Roman Numeral Generator ////////////////////
 
 // Get a random number to be converted to a Roman numeral
