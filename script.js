@@ -1,9 +1,16 @@
 // var Twit = require('twit');
 var title = '';
 var subtitle = 'Attack of the Subtitle';
+var articleArray = [ ];
 var nounArray = [ ];
+var pluralArray = [ ];
+var actionArray =  [ ];
 var verbArray = [ ];
 var adjArray = [ ];
+var maybePluralArray = [ ];
+var thingArray = [ ];
+var styles = '';
+var selectedStyle = '';
 
 // insert your twitter app info here
 // var T = new Twit({
@@ -35,7 +42,36 @@ nounArray = [
   'Metal Bikini',
   'Hutt',
   'Federation',
-  'Republic'
+  'Republic',
+  'Retcon',
+  'Gungan',
+  'Acting Job',
+  'Planet',
+  'Nebula',
+  'Starship',
+  'Star Destroyer',
+  'Alliance',
+  'Confederacy',
+  'Wookiee',
+  'Droid',
+  'Bad Writing',
+  'JJ Abrams',
+  'Vulcan',
+  'Lightsaber',
+  'Battle',
+  'Purge',
+  'Ghost',
+  'Dark Jedi',
+  'Knight',
+  'Order',
+  'Temple',
+  'Prophecy',
+  'Chosen One',
+  'CGI',
+  'Plot Hole',
+  'Disney',
+  'Marketing Budget',
+  'Stock Market'
 ];
 
 pluralArray = [
@@ -47,7 +83,13 @@ pluralArray = [
   'Midichlorians',
   'Stars',
   'Hutts',
-  'Rebels'
+  'Rebels',
+  'Ancients',
+  'Forerunners',
+  'Vulcans',
+  'Prophecies',
+  'Plot Holes',
+  'Prequels'
 ];
 
 actionArray = [
@@ -59,7 +101,24 @@ actionArray = [
   'Twilight',
   'Dawn',
   'Empire',
-  'Republic'
+  'Republic',
+  'Fear',
+  'Assault',
+  'Revelation',
+  'Hour',
+  'Era',
+  'Time',
+  'Darkness',
+  'Coarseness',
+  'Prophecy',
+  'Savior',
+  'Emperor',
+  'Victory',
+  'Defeat',
+  'Vanquishing',
+  'Horror',
+  'Terror',
+  'Reign'
 ];
 
 verbArray = [
@@ -67,7 +126,15 @@ verbArray = [
   'Awakens',
   'Returns',
   'Attacks',
-  'Falls'
+  'Falls',
+  'Arrives',
+  'Ascends',
+  'Descends',
+  'is Revealed',
+  'Flops',
+  'Sucks',
+  'is Pretty Meh',
+  'Explodes'
 ];
 
 adjArray = [
@@ -78,13 +145,27 @@ adjArray = [
   'Final',
   'Rising',
   'Risen',
-  'Galactic'
+  'Galactic',
+  'Hidden',
+  'Secret',
+  'Holy',
+  'Sentient',
+  'Poorly Written',
+  'Terrible',
+  'Piss Poor',
+  'Underwhelming',
+  'Record-Breaking'
+];
+
+maybePluralArray = [
+    chooseRandom(nounArray),
+    chooseRandom(nounArray),
+    chooseRandom(pluralArray)
 ];
 
 thingArray = [
     chooseRandom(nounArray),
-    chooseRandom(nounArray),
-    chooseRandom(pluralArray)
+    chooseRandom(actionArray)
 ];
 
 function detectArticle() {
@@ -127,17 +208,13 @@ function chooseRandom(myArray) {
 
 //////////////////// Episode Title Style Chooser ////////////////////
 
-var styles = [
+styles = [
   'theAdjNoun',
   'theNounVerbs',
   'actionOfTheNoun'
 ];
 
-function chooseStyle(myArray) {
-  return myArray[Math.floor(Math.random() * myArray.length)];
-}
-
-selectedStyle = chooseStyle(styles);
+selectedStyle = chooseRandom(styles);
 
 if (selectedStyle == 'theAdjNoun') {
     makeTheAdjNoun();
@@ -153,7 +230,7 @@ else {
 //////////////////// Style 1: The Adjective Noun ////////////////////
 
 function makeTheAdjNoun() {
-    subtitle = chooseRandom(articleArray) + " " + chooseRandom(adjArray) + " " + chooseRandom(nounArray);
+    subtitle = chooseRandom(articleArray) + " " + chooseRandom(adjArray) + " " + chooseRandom(thingArray);
 }
 
 
@@ -167,7 +244,7 @@ function makeTheNounVerbs() {
 //////////////////// Style 3: Action of the Noun ////////////////////
 
 function makeActionOfTheNoun() {
-   subtitle = chooseRandom(actionArray) + " of the " + chooseRandom(thingArray);
+   subtitle = chooseRandom(actionArray) + " of the " + chooseRandom(maybePluralArray);
 }
 
 
@@ -178,5 +255,7 @@ function makeTitle() {
 }
 
 makeTitle();
+
+
 
 console.log(title);
