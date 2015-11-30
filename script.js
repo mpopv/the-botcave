@@ -16,39 +16,46 @@ var adjArray = [ ];
 ///////////////// Word Array Bank /////////////////////
 
 nounArray = [
-  'Hope',
   'Empire',
-  'Return',
   'Jedi',
   'Menace',
-  'Attack',
-  'Clone',
-  'Revenge',
   'Sith',
   'Force'
+];
+
+pluralArray = [
+  'Clones'
+];
+
+actionArray = [
+  'Hope',
+  'Return',
+  'Attack',
+  'Revenge'
 ];
 
 verbArray = [
   'Strikes Back',
   'Awakens'
-]
+];
 
 adjArray = [
   'New',
   'Phantom'
-]
+];
 
 ///////////////// Roman Numeral Generator ////////////////////
 
 // Get a random number to be converted to a Roman numeral
+
 function getRandomInt(min, max) {
  return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// Determines the range of the numerals output by romanize(number)
+// Call romanize() to output a random Roman numeral
+
 number = getRandomInt(9,50);
 
-// Call romanize(number) to output a random Roman numeral
 function romanize (num) {
    if (!+num)
         return false;
