@@ -13,36 +13,83 @@ var adjArray = [ ];
 //   access_token_secret:  ''
 // });
 
+
 ///////////////// Word Array Bank /////////////////////
+
+articleArray = [
+    'The',
+    'A'
+];
 
 nounArray = [
   'Empire',
   'Jedi',
   'Menace',
   'Sith',
-  'Force'
+  'Force',
+  'Jar Jar',
+  'Sand',
+  'George Lucas',
+  'High Ground',
+  'Galaxy',
+  'Metal Bikini',
+  'Hutt',
+  'Federation',
+  'Republic'
 ];
 
 pluralArray = [
-  'Clones'
+  'Clones',
+  'Stormtroopers',
+  'Gungans',
+  'Jedi',
+  'Sith',
+  'Midichlorians',
+  'Stars',
+  'Hutts',
+  'Rebels'
 ];
 
 actionArray = [
   'Hope',
   'Return',
   'Attack',
-  'Revenge'
+  'Revenge',
+  'Fall',
+  'Twilight',
+  'Dawn',
+  'Empire',
+  'Republic'
 ];
 
 verbArray = [
   'Strikes Back',
-  'Awakens'
+  'Awakens',
+  'Returns',
+  'Attacks',
+  'Falls'
 ];
 
 adjArray = [
   'New',
-  'Phantom'
+  'Phantom',
+  'Dark',
+  'Fallen',
+  'Final',
+  'Rising',
+  'Risen',
+  'Galactic'
 ];
+
+thingArray = [
+    chooseRandom(nounArray),
+    chooseRandom(nounArray),
+    chooseRandom(pluralArray)
+];
+
+function detectArticle() {
+
+}
 
 ///////////////// Roman Numeral Generator ////////////////////
 
@@ -70,19 +117,58 @@ function romanize (num) {
     return Array(+digits.join("") + 1).join("M") + roman;
 }
 
-//////////////////// Episode Title Generator ////////////////////
 
-var words = [
-  'Subtitle 1',
-  'Subtitle 2',
-  'Subtitle 3'
-];
+///////////////// Choose Random Element in a Array /////////////////
 
-function findWord(myArray) {
+function chooseRandom(myArray) {
   return myArray[Math.floor(Math.random() * myArray.length)];
 }
 
-subtitle = findWord(words);
+
+//////////////////// Episode Title Style Chooser ////////////////////
+
+var styles = [
+  'theAdjNoun',
+  'theNounVerbs',
+  'actionOfTheNoun'
+];
+
+function chooseStyle(myArray) {
+  return myArray[Math.floor(Math.random() * myArray.length)];
+}
+
+selectedStyle = chooseStyle(styles);
+
+if (selectedStyle == 'theAdjNoun') {
+    makeTheAdjNoun();
+}
+else if (selectedStyle == 'theNounVerbs') {
+    makeTheNounVerbs();
+}
+else {
+    makeActionOfTheNoun();
+}
+
+
+//////////////////// Style 1: The Adjective Noun ////////////////////
+
+function makeTheAdjNoun() {
+    subtitle = chooseRandom(articleArray) + " " + chooseRandom(adjArray) + " " + chooseRandom(nounArray);
+}
+
+
+//////////////////// Style 2: The Noun Verbs ////////////////////
+
+function makeTheNounVerbs() {
+   subtitle = "The " + chooseRandom(nounArray) + " " + chooseRandom(verbArray);
+}
+
+
+//////////////////// Style 3: Action of the Noun ////////////////////
+
+function makeActionOfTheNoun() {
+   subtitle = chooseRandom(actionArray) + " of the " + chooseRandom(thingArray);
+}
 
 
 //////////////////// Final Assembly ///////////////////////////
