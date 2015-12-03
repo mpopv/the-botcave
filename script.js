@@ -193,7 +193,7 @@ function getRandomInt(min, max) {
 
 // Call romanize() to output a random Roman numeral
 
-number = getRandomInt(9,50);
+number = getRandomInt(9,50); // <--Adjust these to set numeral range
 
 function romanize (num) {
    if (!+num)
