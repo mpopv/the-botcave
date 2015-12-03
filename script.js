@@ -71,7 +71,17 @@ nounArray = [
   'Plot Hole',
   'Disney',
   'Marketing Budget',
-  'Stock Market'
+  'Stock Market',
+  'Senate',
+  'Trade Negotiation',
+  'Political Allegory',
+  'Starkiller',
+  'Carbonite',
+  'Wampa',
+  'War',
+  'Ice Cream Maker',
+  'Holiday Special',
+  'Blue Harvest'
 ];
 
 pluralArray = [
@@ -89,7 +99,8 @@ pluralArray = [
   'Vulcans',
   'Prophecies',
   'Plot Holes',
-  'Prequels'
+  'Prequels',
+  'Trade Negotiations'
 ];
 
 actionArray = [
@@ -230,7 +241,10 @@ else {
 //////////////////// Style 1: The Adjective Noun ////////////////////
 
 function makeTheAdjNoun() {
-    subtitle = chooseRandom(articleArray) + " " + chooseRandom(adjArray) + " " + chooseRandom(thingArray);
+    var article = chooseRandom(articleArray);
+    var adj = chooseRandom(adjArray);
+
+    subtitle = article + " " + adj + " " + chooseRandom(thingArray);
 }
 
 
