@@ -1,0 +1,25 @@
+{
+  "name": "swtitlebot",
+  "version": "1.0.0",
+  "description": "Star Wars Titlebot for Twitter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpopv/Star-Wars-Titlebot.git"
+  },
+  "author": "Matt Popovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpopv/Star-Wars-Titlebot/issues"
+  },
+  "homepage": "https://github.com/mpopv/Star-Wars-Titlebot#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.2.9"
+  }
+}
