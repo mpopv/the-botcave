@@ -81,7 +81,19 @@ nounArray = [
   'War',
   'Ice Cream Maker',
   'Holiday Special',
-  'Blue Harvest'
+  'Blue Harvest',
+  'Neckbeard',
+  'Green Screen',
+  'Cantina',
+  'Queen',
+  'Emperor',
+  'Chancellor',
+  'Asteroid Field',
+  'Threat',
+  'Star Forge',
+  'Princess',
+  'Exhaust Port',
+  'Womp Rat'
 ];
 
 pluralArray = [
@@ -92,7 +104,6 @@ pluralArray = [
   'Sith',
   'Midichlorians',
   'Stars',
-  'Hutts',
   'Rebels',
   'Ancients',
   'Forerunners',
@@ -100,7 +111,11 @@ pluralArray = [
   'Prophecies',
   'Plot Holes',
   'Prequels',
-  'Trade Negotiations'
+  'Trade Negotiations',
+  'Hutts',
+  'Droids',
+  'Sand People',
+  'Spaceballs'
 ];
 
 actionArray = [
@@ -129,7 +144,15 @@ actionArray = [
   'Vanquishing',
   'Horror',
   'Terror',
-  'Reign'
+  'Reign',
+  'Awakening',
+  'Redemption',
+  'Anguish',
+  'End',
+  'Beginning',
+  'Warning',
+  'Howl',
+  'Threat'
 ];
 
 verbArray = [
@@ -145,7 +168,15 @@ verbArray = [
   'Flops',
   'Sucks',
   'is Pretty Meh',
-  'Explodes'
+  'Explodes',
+  'Underwhelms',
+  'Goes Public',
+  'Appears',
+  'Looms',
+  'Runs Way Over Budget',
+  'Drinks Blue Milk',
+  'Has Breakfast',
+  'Picks Up Some Power Converters'
 ];
 
 adjArray = [
@@ -164,8 +195,16 @@ adjArray = [
   'Poorly Written',
   'Terrible',
   'Piss Poor',
-  'Underwhelming',
-  'Record-Breaking'
+  'Record-Breaking',
+  'Dangerous',
+  'Cryptic',
+  'Totally Awesome',
+  'Hyperspace',
+  'Outer Rim',
+  'Grand',
+  'Ludicrous',
+  'Hyperspeed',
+  'Chosen'
 ];
 
 maybePluralArray = [
