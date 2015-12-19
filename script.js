@@ -140,7 +140,6 @@ roll = chooseRandom(dice);
 //////////////////// Style 1: The Adjective Noun ///////////////////////////////
 
 function makeTheAdjNoun() {
-  console.log('@@@@@@@TAN@@@@@@@@');
   if (roll == 1) {
     subtitle = "The " + chooseRandom(adjeArray) + " " + chooseRandom(plurArray);
   } else {
