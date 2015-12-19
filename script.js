@@ -1,16 +1,31 @@
+
+//        ________________.  ___     ._______
+//       /                | /   \    |   _   \
+//      |   (-----|  |----`/  ^  \   |  |_)  |
+//       \   \    |  |    /  /_\  \  |      /
+//  .-----)   |   |  |   /  _____  \ |  |\  \-------.
+//  |________/    |__|  /__/     \__\| _| `.________|
+//   ____    __    ____  ___     .______    ________.
+//   \   \  /  \  /   / /   \    |   _  \  /        |
+//    \   \/    \/   / /  ^  \   |  |_)  ||   (-----`
+//     \            / /  /_\  \  |      /  \   \
+//      \    /\    / /  _____  \ |  |\  \---)   |
+//       \__/  \__/ /__/     \__\|__| `._______/
+//
+//          ___ _ ___ _    ____ ___  ____ ___
+//           |  |  |  |    |___ |__] |  |  |
+//           |  |  |  |___ |___ |__] |__|  |
+//
+
+
+////////////////////////////////////////////////////////////////////////////////
+
 // var Twit = require('twit');
-var title = '';
-var subtitle = 'Attack of the Subtitle';
-var articleArray = [ ];
-var nounArray = [ ];
-var pluralArray = [ ];
-var actionArray =  [ ];
-var verbArray = [ ];
-var adjArray = [ ];
-var maybePluralArray = [ ];
-var thingArray = [ ];
-var styles = '';
-var selectedStyle = '';
+var title = ''; var subtitle = ''; var styles = ''; var selectedStyle = '';
+var artcArray = [ ]; var nounArray = [ ]; var plurArray = [ ];
+var actnArray = [ ]; var verbArray = [ ]; var adjeArray = [ ];
+var maybArray = [ ]; var thngArray = [ ]; var propArray = [ ];
+var dice = [ 1, 2, 3 ]; var roll = '';
 
 // insert your twitter app info here
 // var T = new Twit({
@@ -21,208 +36,61 @@ var selectedStyle = '';
 // });
 
 
-///////////////// Word Array Bank /////////////////////
+///////////////// Word Array Bank //////////////////////////////////////////////
 
-articleArray = [
-    'The',
-    'A'
-];
+artcArray = [ 'The', 'A' ];
 
-nounArray = [
-  'Empire',
-  'Jedi',
-  'Menace',
-  'Sith',
-  'Force',
-  'Jar Jar',
-  'Sand',
-  'George Lucas',
-  'High Ground',
-  'Galaxy',
-  'Metal Bikini',
-  'Hutt',
-  'Federation',
-  'Republic',
-  'Retcon',
-  'Gungan',
-  'Acting Job',
-  'Planet',
-  'Nebula',
-  'Starship',
-  'Star Destroyer',
-  'Alliance',
-  'Confederacy',
-  'Wookiee',
-  'Droid',
-  'Bad Writing',
-  'JJ Abrams',
-  'Vulcan',
-  'Lightsaber',
-  'Battle',
-  'Purge',
-  'Ghost',
-  'Dark Jedi',
-  'Knight',
-  'Order',
-  'Temple',
-  'Prophecy',
-  'Chosen One',
-  'CGI',
-  'Plot Hole',
-  'Disney',
-  'Marketing Budget',
-  'Stock Market',
-  'Senate',
-  'Trade Negotiation',
-  'Political Allegory',
-  'Starkiller',
-  'Carbonite',
-  'Wampa',
-  'War',
-  'Ice Cream Maker',
-  'Holiday Special',
-  'Blue Harvest',
-  'Neckbeard',
-  'Green Screen',
-  'Cantina',
-  'Queen',
-  'Emperor',
-  'Chancellor',
-  'Asteroid Field',
-  'Threat',
-  'Star Forge',
-  'Princess',
-  'Exhaust Port',
-  'Womp Rat'
-];
+nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Sand', 'Womp Rat',
+              'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt', 'Exhaust Port',
+              'Federation', 'Republic', 'Retcon', 'Gungan', 'Acting Job',
+              'Planet', 'Nebula', 'Starship', 'Star Destroyer', 'Alliance',
+              'Confederacy', 'Wookiee', 'Droid', 'Princess', 'X-Wing',
+              'Vulcan', 'Lightsaber', 'Battle', 'Purge', 'Ghost', 'Dark Jedi',
+              'Knight', 'Order', 'Temple', 'Prophecy', 'Chosen One', 'CGI',
+              'Plot Hole', 'Marketing Budget', 'Stock Market', 'Star Forge',
+              'Senate', 'Trade Negotiation', 'Political Allegory', 'Starkiller',
+              'Carbonite', 'Wampa', 'War', 'Ice Cream Maker', 'Holiday Special',
+              'Blue Harvest', 'Neckbeard', 'Green Screen', 'Cantina', 'Queen',
+              'Emperor', 'Chancellor', 'Asteroid Field', 'Threat', 'Podracing',
+              'Hosnian System', 'Outer Rim', 'TIE Fighter' ];
 
-pluralArray = [
-  'Clones',
-  'Stormtroopers',
-  'Gungans',
-  'Jedi',
-  'Sith',
-  'Midichlorians',
-  'Stars',
-  'Rebels',
-  'Ancients',
-  'Forerunners',
-  'Vulcans',
-  'Prophecies',
-  'Plot Holes',
-  'Prequels',
-  'Trade Negotiations',
-  'Hutts',
-  'Droids',
-  'Sand People',
-  'Spaceballs'
-];
+propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin',
+              'Jabba the Hutt', 'Palpatine', 'Snoke', 'Leader Snoke',
+              'Supreme Leader Snoke', 'Boba Fett', 'Jar Jar Binks', 'Skywalker',
+              'Han Solo', 'Solo', 'Leia', 'Princess Leia', 'General Organa',
+              'Tatooine', 'Jakku', 'Hosnian Prime', 'Starkiller Base',
+              'Coruscant', 'Emperor Palpatine', 'Vader', 'Darth Vader' ];
 
-actionArray = [
-  'Hope',
-  'Return',
-  'Attack',
-  'Revenge',
-  'Fall',
-  'Twilight',
-  'Dawn',
-  'Empire',
-  'Republic',
-  'Fear',
-  'Assault',
-  'Revelation',
-  'Hour',
-  'Era',
-  'Time',
-  'Darkness',
-  'Coarseness',
-  'Prophecy',
-  'Savior',
-  'Emperor',
-  'Victory',
-  'Defeat',
-  'Vanquishing',
-  'Horror',
-  'Terror',
-  'Reign',
-  'Awakening',
-  'Redemption',
-  'Anguish',
-  'End',
-  'Beginning',
-  'Warning',
-  'Howl',
-  'Threat'
-];
+plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
+              'Midichlorians', 'Stars', 'Rebels', 'Ancients', 'Forerunners',
+              'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
+              'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
+              'Spaceballs' ];
 
-verbArray = [
-  'Strikes Back',
-  'Awakens',
-  'Returns',
-  'Attacks',
-  'Falls',
-  'Arrives',
-  'Ascends',
-  'Descends',
-  'is Revealed',
-  'Flops',
-  'Sucks',
-  'is Pretty Meh',
-  'Explodes',
-  'Underwhelms',
-  'Goes Public',
-  'Appears',
-  'Looms',
-  'Runs Way Over Budget',
-  'Drinks Blue Milk',
-  'Has Breakfast',
-  'Picks Up Some Power Converters'
-];
+actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
+              'Empire', 'Republic', 'Fear', 'Assault', 'Revelation', 'Hour',
+              'Era', 'Time', 'Darkness', 'Coarseness', 'Prophecy', 'Savior',
+              'Emperor', 'Victory', 'Defeat', 'Vanquishing', 'Horror', 'Terror',
+              'Reign', 'Awakening', 'Redemption', 'Anguish', 'End', 'Beginning',
+              'Warning', 'Howl', 'Threat' ];
 
-adjArray = [
-  'New',
-  'Phantom',
-  'Dark',
-  'Fallen',
-  'Final',
-  'Rising',
-  'Risen',
-  'Galactic',
-  'Hidden',
-  'Secret',
-  'Holy',
-  'Sentient',
-  'Poorly Written',
-  'Terrible',
-  'Piss Poor',
-  'Record-Breaking',
-  'Dangerous',
-  'Cryptic',
-  'Totally Awesome',
-  'Hyperspace',
-  'Outer Rim',
-  'Grand',
-  'Ludicrous',
-  'Hyperspeed',
-  'Chosen'
-];
+verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
+              'Arrives', 'Ascends', 'Descends', 'is Revealed', 'Flops', 'Sucks',
+              'is Pretty Meh', 'Explodes', 'Underwhelms', 'Goes Public',
+              'Appears', 'Looms', 'Runs Way Over Budget', 'Drinks Blue Milk',
+              'Has Breakfast', 'Picks Up Some Power Converters' ];
 
-maybePluralArray = [
-    chooseRandom(nounArray),
-    chooseRandom(nounArray),
-    chooseRandom(pluralArray)
-];
+adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
+              'Galactic', 'Hidden', 'Secret', 'Holy', 'Sentient',
+              'Poorly Written', 'Terrible', 'Piss Poor', 'Record-Breaking',
+              'Dangerous', 'Cryptic', 'Totally Awesome', 'Hyperspeed',
+              'Grand', 'Ludicrous', 'Chosen' ];
 
-thingArray = [
-    chooseRandom(nounArray),
-    chooseRandom(actionArray)
-];
+maybArray = [ chooseRandom(nounArray), chooseRandom(nounArray),
+              chooseRandom(plurArray) ];
 
-function detectArticle() {
 
-}
-
-///////////////// Roman Numeral Generator ////////////////////
+///////////////// Roman Numeral Generator //////////////////////////////////////
 
 // Get a random number to be converted to a Roman numeral
 
@@ -249,66 +117,67 @@ function romanize (num) {
 }
 
 
-///////////////// Choose Random Element in a Array /////////////////
+///////////////// Choose Random Element in a Array /////////////////////////////
 
 function chooseRandom(myArray) {
   return myArray[Math.floor(Math.random() * myArray.length)];
 }
 
 
-//////////////////// Episode Title Style Chooser ////////////////////
+//////////////////// Episode Title Style Chooser ///////////////////////////////
 
-styles = [
-  'theAdjNoun',
-  'theNounVerbs',
-  'actionOfTheNoun'
-];
+styles = [ 'theAdjNoun', 'theNounVerbs', 'actnOfTheNoun' ];
 
 selectedStyle = chooseRandom(styles);
 
-if (selectedStyle == 'theAdjNoun') {
-    makeTheAdjNoun();
-}
-else if (selectedStyle == 'theNounVerbs') {
-    makeTheNounVerbs();
-}
-else {
-    makeActionOfTheNoun();
-}
+if (selectedStyle == 'theAdjNoun') { makeTheAdjNoun(); }
+else if (selectedStyle == 'theNounVerbs') { makeTheNounVerbs(); }
+else { makeActionOfTheNoun(); }
+
+roll = chooseRandom(dice);
 
 
-//////////////////// Style 1: The Adjective Noun ////////////////////
+//////////////////// Style 1: The Adjective Noun ///////////////////////////////
 
 function makeTheAdjNoun() {
-    var article = chooseRandom(articleArray);
-    var adj = chooseRandom(adjArray);
-
-    subtitle = article + " " + adj + " " + chooseRandom(thingArray);
+  console.log('@@@@@@@TAN@@@@@@@@');
+  if (roll == 1) {
+    subtitle = "The " + chooseRandom(adjeArray) + " " + chooseRandom(plurArray);
+  } else {
+    subtitle = chooseRandom(artcArray) + " " + chooseRandom(adjeArray) + " " + chooseRandom(nounArray);
+  }
 }
 
 
-//////////////////// Style 2: The Noun Verbs ////////////////////
+//////////////////// Style 2: The Noun Verbs ///////////////////////////////////
 
 function makeTheNounVerbs() {
-   subtitle = "The " + chooseRandom(nounArray) + " " + chooseRandom(verbArray);
+  if (roll == 1) {
+    subtitle = chooseRandom(propArray) + " " + chooseRandom(verbArray);
+  } else {
+    subtitle = "The " + chooseRandom(nounArray) + " " + chooseRandom(verbArray);
+  }
 }
 
 
-//////////////////// Style 3: Action of the Noun ////////////////////
+//////////////////// Style 3: Action of the Noun ///////////////////////////////
 
 function makeActionOfTheNoun() {
-   subtitle = chooseRandom(actionArray) + " of the " + chooseRandom(maybePluralArray);
+  var maybeArticle = [ 'The ', '', '' ];
+  if (roll == 1) {
+    subtitle = chooseRandom(actnArray) + " of the " + chooseRandom(maybArray);
+  } else {
+    subtitle = chooseRandom(maybeArticle) + chooseRandom(actnArray) + " of " + chooseRandom(propArray);
+  }
 }
 
 
-//////////////////// Final Assembly ///////////////////////////
+//////////////////// Final Assembly ////////////////////////////////////////////
 
 function makeTitle() {
   title = "Star Wars Episode " + romanize(number) + ": " + subtitle;
 }
 
 makeTitle();
-
-
 
 console.log(title);
