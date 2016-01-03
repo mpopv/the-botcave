@@ -21,6 +21,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // var Twit = require('twit');
+// var TwitterBot = require("node-twitterbot").TwitterBot;
 var title = ''; var subtitle = ''; var styles = ''; var selectedStyle = '';
 var artcArray = [ ]; var nounArray = [ ]; var plurArray = [ ];
 var actnArray = [ ]; var verbArray = [ ]; var adjeArray = [ ];
@@ -62,7 +63,9 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Smuggler', 'Threat', 'Droid', 'Conquest', 'Trap', 'Admiral',
               'Bounty Hunter', 'Senator', 'Hunter', 'Moisture Farm',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
-              'Gundark', 'Rathtar', 'Chaos', 'Black Hole', 'Future' ];
+              'Gundark', 'Rathtar', 'Chaos', 'Black Hole', 'Future', 'Omen',
+              'Outcast', 'Abyss', 'Storm', 'Traitor', 'Spirit', 'Master',
+              'Apprentice', 'Commander', 'Rift' ];
 
 // propArray contains proper nouns that appear at the end of Action of Proper.
 
@@ -108,9 +111,13 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Scion', 'Deathknell', 'Aether', 'Arbiter', 'Axiom', 'Citadel',
               'Fortress', 'Battlestation', 'Castle', 'Decimation',
               'Destruction', 'Epoch', 'Genesis', 'Harbinger', 'Impunity',
-              'Maelstrom', 'Nemesis', 'Oculus', 'Rift', 'Paradox', 'Progeny',
+              'Maelstrom', 'Nemesis', 'Paradox', 'Progeny',
               'Progenitor', 'Inception', 'Inceptor', 'Sabotage', 'Turmoil',
-              'Upheaval', 'Vindication', 'Zenith' ];
+              'Upheaval', 'Vindication', 'Zenith', 'Deception', 'Trial',
+              'Labyrinth', 'Hive', 'Omen', 'Outcast', 'Ally', 'Allies', 'Abyss',
+              'Conviction', 'Ascension', 'Emissary', 'Void', 'Master',
+              'Apprentice', 'Treason', 'Traitor', 'Cry', 'Call', 'Dance',
+              'Dream', 'Spirit', 'Onslaught', 'Remnant', 'Storm', 'Commander' ];
 
 // verbArray contains verbs, verb phrases, and prepositional phrases that appear
 // at the end of The Noun Verbs. They must be singular.
@@ -124,7 +131,7 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Begins', 'Ends', 'Escapes', 'Burns', 'Rages', 'of the Dead',
               'Implodes', 'in Distress', 'on Fire',  'of Fire', 'of Shadow',
               'Endures', 'Ascendant', 'Fails', 'Falls Silent', 'Lurks',
-              'Has a Bad Feeling About This', 'Without End', ];
+              'Has a Bad Feeling About This', 'Without End' ];
 
 // adjeArray contains adjectives that come before nouns in The Adjective Noun.
 // They must be compatible with 'A' (rather than 'An').
@@ -191,13 +198,14 @@ else if (selectedStyle == 'theNounVerbs') { makeTheNounVerbs(); }
 else if (selectedStyle == 'actnOfTheNoun') { makeActionOfTheNoun(); }
 else { makeActionOfPrpr(); }
 
+roll = chooseRandom(dice);
+
 
 //////////////////// Style 1: The Adjective Noun ///////////////////////////////
 
 // Based on: A New Hope, The Phantom Menace
 
 function makeTheAdjNoun() {
-  roll = chooseRandom(dice);
   if (roll == 1 || roll == 2) {
     subtitle = "The " + chooseRandom(adjeArray) + " " + chooseRandom(plurArray);
   } else {
@@ -211,7 +219,6 @@ function makeTheAdjNoun() {
 // Based on: The Empire Strikes Back, The Force Awakens
 
 function makeTheNounVerbs() {
-  roll = chooseRandom(dice);
   if (roll == 1 || roll == 2) {
     subtitle = chooseRandom(propArray) + " " + chooseRandom(verbArray);
   } else {
