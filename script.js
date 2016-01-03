@@ -52,8 +52,8 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Carbonite', 'Wampa', 'War', 'Holiday Special', 'Battlestation',
               'Queen', 'Eclipse', 'Penumbra', 'Apocalypse', 'Cataclysm',
               'Emperor', 'Chancellor', 'Asteroid Field', 'Threat', 'Podrace',
-              'First Order', 'Destruction', 'Purge', 'Campaign', 'Journey',
-              'Shadow', 'Moon', 'Dynasty', 'Nerf Herder', 'Tribe' ];
+              'First Order', 'Destruction', 'Purge', 'Journey',
+              'Shadow', 'Moon', 'Dynasty', 'Nerf Herder', 'Moof-Milker' ];
 
 propArray = [ 'Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin', 'Padme',
               'Jabba', 'Palpatine', 'Snoke', 'Fett', 'Skywalker', 'Luke',
@@ -82,7 +82,7 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Home', 'Seige', 'Choice', 'Ghosts', 'Ghost', 'Requiem', 'Death',
               'Blood', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
               'Balance', 'Breath', 'Allure', 'Aggression', 'Bargain', 'Deal',
-              'Exile', 'Battle' ];
+              'Exile', 'Battle', 'Courage', 'Campaign' ];
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Arrives', 'Ascends', 'Descends', 'is Revealed',
