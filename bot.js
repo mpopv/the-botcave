@@ -20,8 +20,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// var Twit = require('twit');
-// var TwitterBot = require("node-twitterbot").TwitterBot;
+var Twit = require('twit');
+var TwitterBot = require('node-twitterbot').TwitterBot;
 var title = ''; var subtitle = ''; var styles = ''; var selectedStyle = '';
 var artcArray = [ ]; var nounArray = [ ]; var plurArray = [ ];
 var actnArray = [ ]; var verbArray = [ ]; var adjeArray = [ ];
@@ -29,12 +29,12 @@ var maybArray = [ ]; var thngArray = [ ]; var propArray = [ ];
 var dice = [ 1, 2, 3 ]; var roll = '';
 
 
-// var T = new Twit({
-//   consumer_key:         process.env.SWTITLEBOT_TWIT_CONSUMER_KEY,
-//   consumer_secret:      process.env.SWTITLEBOT_TWIT_CONSUMER_SECRET,
-//   access_token:         process.env.SWTITLEBOT_TWIT_ACCESS_TOKEN,
-//   access_token_secret:  process.env.SWTITLEBOT_TWIT_ACCESS_TOKEN_SECRET
-// });
+var Bot = new TwitterBot({
+  consumer_key:         process.env.SWTITLEBOT_TWIT_CONSUMER_KEY,
+  consumer_secret:      process.env.SWTITLEBOT_TWIT_CONSUMER_SECRET,
+  access_token:         process.env.SWTITLEBOT_TWIT_ACCESS_TOKEN,
+  access_token_secret:  process.env.SWTITLEBOT_TWIT_ACCESS_TOKEN_SECRET
+});
 
 
 ///////////////// Word Array Bank //////////////////////////////////////////////
@@ -256,3 +256,5 @@ function makeTitle() {
 makeTitle();
 
 console.log(title);
+
+Bot.tweet(title);
