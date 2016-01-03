@@ -46,7 +46,7 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Planet', 'Alliance', 'Undertaking', 'Council', 'Temple',
               'Confederacy', 'Princess', 'Vulcan', 'Fleet', 'Rebellion',
               'Lightsaber', 'Dark Jedi', 'Knight', 'Order', 'Prophecy',
-              'Chosen One', 'Night', 'Blood', 'Darkness', 'Resistance',
+              'Chosen One', 'Night', 'Darkness', 'Resistance',
               'Plot Hole', 'Marketing Department', 'Star Forge', 'Force',
               'Senate', 'Trade Negotiation', 'Starkiller', 'Insurgency',
               'Wampa', 'War', 'Holiday Special', 'Battlestation',
@@ -66,7 +66,7 @@ plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Carbonite', 'Toy Sales' ];
+              'Spoilers', 'Carbonite', 'Toy Sales', 'Blood' ];
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
