@@ -40,51 +40,71 @@ var dice = [ 1, 2, 3 ]; var roll = '';
 
 artcArray = [ 'The', 'A' ];
 
-nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Sand', 'Womp Rat',
-              'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt', 'Exhaust Port',
-              'Federation', 'Republic', 'Retcon', 'Gungan', 'Acting Job',
-              'Planet', 'Nebula', 'Starship', 'Star Destroyer', 'Alliance',
-              'Confederacy', 'Wookiee', 'Droid', 'Princess', 'X-Wing',
-              'Vulcan', 'Lightsaber', 'Battle', 'Purge', 'Ghost', 'Dark Jedi',
-              'Knight', 'Order', 'Temple', 'Prophecy', 'Chosen One', 'CGI',
-              'Plot Hole', 'Marketing Budget', 'Stock Market', 'Star Forge',
-              'Senate', 'Trade Negotiation', 'Political Allegory', 'Starkiller',
-              'Carbonite', 'Wampa', 'War', 'Ice Cream Maker', 'Holiday Special',
-              'Blue Harvest', 'Neckbeard', 'Green Screen', 'Cantina', 'Queen',
-              'Emperor', 'Chancellor', 'Asteroid Field', 'Threat', 'Podracing',
-              'Hosnian System', 'Outer Rim', 'TIE Fighter' ];
+nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
+              'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt', 'Outpost',
+              'Federation', 'Republic', 'Gungan', 'Precedent', 'Armistice',
+              'Planet', 'Alliance', 'Undertaking', 'Council', 'Temple',
+              'Confederacy', 'Princess', 'Vulcan', 'Fleet', 'Rebellion',
+              'Lightsaber', 'Dark Jedi', 'Knight', 'Order', 'Prophecy',
+              'Chosen One', 'Night', 'Blood', 'Darkness', 'Resistance',
+              'Plot Hole', 'Marketing Department', 'Star Forge', 'Force',
+              'Senate', 'Trade Negotiation', 'Starkiller', 'Insurgency',
+              'Carbonite', 'Wampa', 'War', 'Holiday Special', 'Battlestation',
+              'Queen', 'Eclipse', 'Penumbra', 'Apocalypse', 'Cataclysm',
+              'Emperor', 'Chancellor', 'Asteroid Field', 'Threat', 'Podrace',
+              'First Order', 'Destruction', 'Purge', 'Campaign', 'Journey',
+              'Shadow', 'Moon', 'Dynasty', 'Nerf Herder', 'Tribe' ];
 
-propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin',
-              'Jabba the Hutt', 'Palpatine', 'Snoke', 'Leader Snoke',
-              'Supreme Leader Snoke', 'Boba Fett', 'Jar Jar Binks', 'Skywalker',
-              'Han Solo', 'Solo', 'Leia', 'Princess Leia', 'General Organa',
+propArray = [ 'Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin', 'Padme',
+              'Jabba', 'Palpatine', 'Snoke', 'Fett', 'Skywalker', 'Luke',
+              'Han Solo', 'Solo', 'Leia', 'General Organa',
               'Tatooine', 'Jakku', 'Hosnian Prime', 'Starkiller Base',
-              'Coruscant', 'Emperor Palpatine', 'Vader', 'Darth Vader' ];
+              'Coruscant', 'Vader', 'Darth Vader', 'Cloud City', 'Yavin',
+              'Scum and Villainy', 'Plagueis' ];
 
 plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
-              'Midichlorians', 'Stars', 'Rebels', 'Ancients', 'Forerunners',
+              'Midichlorians', 'Rebels', 'Ancients', 'Forerunners',
               'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
-              'Spaceballs' ];
+              'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
+              'Spoilers' ];
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
-              'Empire', 'Republic', 'Fear', 'Assault', 'Revelation', 'Hour',
+              'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
               'Era', 'Time', 'Darkness', 'Coarseness', 'Prophecy', 'Savior',
               'Emperor', 'Victory', 'Defeat', 'Vanquishing', 'Horror', 'Terror',
-              'Reign', 'Awakening', 'Redemption', 'Anguish', 'End', 'Beginning',
-              'Warning', 'Howl', 'Threat' ];
+              'Reign', 'Awakening', 'Redemption', 'Anguish', 'End',
+              'Warning', 'Howl', 'Threat', 'Wretched Hive', 'Origin',
+              'Ultimatum', 'Chronicle', 'Journal', 'Saber', 'Homecoming', 'Age',
+              'Sector', 'System', 'Sins', 'Quest', 'Voice', 'Waking', 'Tales',
+              'Betrayal', 'Endgame', 'Aftermath', 'Reunion', 'Rebirth',
+              'Legacy', 'Legend', 'Legends', 'Power', 'Secrets', 'Secret',
+              'Home', 'Seige', 'Choice', 'Ghosts', 'Ghost', 'Requiem', 'Death',
+              'Blood', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
+              'Balance', 'Breath' ];
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
-              'Arrives', 'Ascends', 'Descends', 'is Revealed', 'Flops', 'Sucks',
+              'Arrives', 'Ascends', 'Descends', 'is Revealed',
               'is Pretty Meh', 'Explodes', 'Underwhelms', 'Goes Public',
               'Appears', 'Looms', 'Runs Way Over Budget', 'Drinks Blue Milk',
-              'Has Breakfast', 'Picks Up Some Power Converters' ];
+              'Has Breakfast', 'Picks Up Some Power Converters',
+              'Bullseyes Womp Rats', 'is Victorious', 'is Unleashed',
+              'is Defeated', 'Disappears', 'Reappears', 'is Sold to Disney',
+              'Begins', 'Ends', 'Escapes', 'Burns', 'Rages', 'of the Dead',
+              'Crumbles', 'is Turned', 'Turns', 'Recedes', 'in Distress',
+              'Endures', 'Ascendant', 'in Decline', 'of the Darkness',
+              'of the Light', 'in the Clouds', 'Among the Stars', 'is Sated',
+              'Forged by Darkness', 'Borne of Light', 'Fails', 'Falls Silent',
+              'Has a Bad Feeling About This'
+              ];
 
 adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
-              'Galactic', 'Hidden', 'Secret', 'Holy', 'Sentient',
-              'Poorly Written', 'Terrible', 'Piss Poor', 'Record-Breaking',
-              'Dangerous', 'Cryptic', 'Totally Awesome', 'Hyperspeed',
-              'Grand', 'Ludicrous', 'Chosen' ];
+              'Galactic', 'Hidden', 'Secret', 'Sentient', 'Shadowy',
+              'Long-Lost', 'Terrible', 'Glorious', 'Evil', 'War-Torn',
+              'Dangerous', 'Cryptic', 'Awesome', 'Hyperspeed',
+              'Grand', 'Ludicrous', 'Chosen', 'Second', 'Primordial',
+              'Lost', 'Missing', 'Fatal', 'Deadly', 'Captive', 'Ravaged',
+              'Scruffy-Looking', 'Failing', 'Coarse' ];
 
 maybArray = [ chooseRandom(nounArray), chooseRandom(nounArray),
               chooseRandom(plurArray) ];
@@ -126,13 +146,14 @@ function chooseRandom(myArray) {
 
 //////////////////// Episode Title Style Chooser ///////////////////////////////
 
-styles = [ 'theAdjNoun', 'theNounVerbs', 'actnOfTheNoun' ];
+styles = [ 'theAdjNoun', 'theNounVerbs', 'actnOfTheNoun', 'actnOfTheNoun', 'actnOfPrpr' ];
 
 selectedStyle = chooseRandom(styles);
 
 if (selectedStyle == 'theAdjNoun') { makeTheAdjNoun(); }
 else if (selectedStyle == 'theNounVerbs') { makeTheNounVerbs(); }
-else { makeActionOfTheNoun(); }
+else if (selectedStyle == 'actnOfTheNoun') { makeActionOfTheNoun(); }
+else { makeActionOfPrpr(); }
 
 roll = chooseRandom(dice);
 
@@ -140,7 +161,7 @@ roll = chooseRandom(dice);
 //////////////////// Style 1: The Adjective Noun ///////////////////////////////
 
 function makeTheAdjNoun() {
-  if (roll == 1) {
+  if (roll == 1 || roll == 2) {
     subtitle = "The " + chooseRandom(adjeArray) + " " + chooseRandom(plurArray);
   } else {
     subtitle = chooseRandom(artcArray) + " " + chooseRandom(adjeArray) + " " + chooseRandom(nounArray);
@@ -151,7 +172,7 @@ function makeTheAdjNoun() {
 //////////////////// Style 2: The Noun Verbs ///////////////////////////////////
 
 function makeTheNounVerbs() {
-  if (roll == 1) {
+  if (roll == 1 || roll == 2) {
     subtitle = chooseRandom(propArray) + " " + chooseRandom(verbArray);
   } else {
     subtitle = "The " + chooseRandom(nounArray) + " " + chooseRandom(verbArray);
@@ -162,12 +183,15 @@ function makeTheNounVerbs() {
 //////////////////// Style 3: Action of the Noun ///////////////////////////////
 
 function makeActionOfTheNoun() {
-  var maybeArticle = [ 'The ', '', '' ];
-  if (roll == 1) {
-    subtitle = chooseRandom(actnArray) + " of the " + chooseRandom(maybArray);
-  } else {
-    subtitle = chooseRandom(maybeArticle) + chooseRandom(actnArray) + " of " + chooseRandom(propArray);
-  }
+  subtitle = chooseRandom(actnArray) + " of the " + chooseRandom(maybArray);
+}
+
+
+//////////////////// Style 4: Action of Proper ///////////////////////////////
+
+function makeActionOfPrpr() {
+  var maybeArticle = [ 'The ', '' ];
+  subtitle = chooseRandom(maybeArticle) + chooseRandom(actnArray) + " of " + chooseRandom(propArray);
 }
 
 
