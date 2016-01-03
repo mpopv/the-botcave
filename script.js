@@ -66,7 +66,7 @@ plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Carbonite', 'Toy Sales', 'Blood' ];
+              'Spoilers', 'Carbonite', 'Toy Sales' ];
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
