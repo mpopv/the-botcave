@@ -52,21 +52,27 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Wampa', 'War', 'Holiday Special', 'Battlestation',
               'Queen', 'Eclipse', 'Penumbra', 'Apocalypse', 'Cataclysm',
               'Emperor', 'Chancellor', 'Asteroid Field', 'Threat',
-              'First Order', 'Nerf Herder', 'Moof-Milker' ];
+              'Nerf Herder', 'Moof-Milker', 'Spy', 'Prince',
+              'Smuggler', 'Threat', 'Droid', 'Conquest', 'Trap', 'Admiral',
+              'Bounty Hunter', 'Senator', 'Hunter', 'Moisture Farm',
+              'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
+              'Gundark', 'Rathtar', 'Chaos', 'Black Hole' ];
 
 propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin', 'Padme',
               'Jabba', 'Palpatine', 'Snoke', 'Fett', 'Skywalker', 'Luke',
               'Solo', 'Leia', 'General Organa', 'Jar Jar Binks',
               'Tatooine', 'Jakku', 'Hosnian Prime', 'Starkiller Base',
               'Coruscant', 'Vader', 'Darth Vader', 'Cloud City', 'Yavin',
-              'Scum and Villainy', 'Plagueis', 'George Lucas\'s Neckbeard' ];
+              'Scum and Villainy', 'Plagueis', 'George Lucas\'s Neckbeard',
+              'First Order' ];
 
 plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Midichlorians', 'Rebels', 'Ancients', 'Forerunners',
               'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Carbonite', 'Toy Sales' ];
+              'Spoilers', 'Carbonite', 'Toy Sales', 'Senators', 'Parsecs',
+              'Gundarks', 'Rathtars' ];
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
@@ -79,36 +85,36 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Betrayal', 'Endgame', 'Aftermath', 'Reunion', 'Rebirth',
               'Legacy', 'Legend', 'Legends', 'Power', 'Secrets', 'Secret',
               'Seige', 'Ghosts', 'Ghost', 'Requiem', 'Death',
-              'Blood', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
+              'Order', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
               'Balance', 'Breath', 'Allure', 'Aggression', 'Bargain', 'Deal',
               'Exile', 'Battle', 'Courage', 'Campaign', 'Conquest', 'Betrayal',
               'Squadron', 'Battalion', 'Army', 'Clones', 'Scheme', 'Forge',
-              'Crucible', 'Gauntlet' ];
+              'Crucible', 'Gauntlet', 'Hunt', 'Crash', 'Nest', 'Insurrection',
+              'Alliance', 'Rebellion', 'Resistance', 'Chaos' ];
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Arrives', 'Ascends', 'Descends', 'Strikes', 'Crumbles',
               'is Pretty Meh', 'Explodes', 'Underwhelms', 'Goes Public',
               'Appears', 'Looms', 'Runs Way Over Budget', 'Drinks Blue Milk',
-              'Has Breakfast', 'Picks Up Some Power Converters', 'Investigates',
-              'Bullseyes Womp Rats', 'is Victorious', 'is Unleashed',
-              'is Defeated', 'Disappears', 'Reappears', 'is Sold to Disney',
+              'Has Breakfast', 'Picks Up Some Power Converters', 'Reappears',
+              'Bullseyes Womp Rats', 'Disappears', 'is Sold to Disney',
               'Begins', 'Ends', 'Escapes', 'Burns', 'Rages', 'of the Dead',
-              'Implodes', 'is Turned', 'Turns', 'in Distress',
+              'Implodes', 'in Distress', 'on Fire',  'of Fire', 'of Shadow',
               'Endures', 'Ascendant', 'in Decline', 'of the Darkness',
-              'of the Light', 'in the Clouds', 'Among the Stars', 'is Sated',
-              'Forged by Darkness', 'Borne of Light', 'Fails', 'Falls Silent',
-              'Has a Bad Feeling About This', 'Lurks', 'of Shadow', 'of Fire',
-              'on Fire' ];
+              'of the Light', 'in the Clouds', 'Among the Stars',
+              'Forged by Darkness', 'Fails', 'Falls Silent', 'Lurks',
+              'Has a Bad Feeling About This' ];
 
 adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Galactic', 'Hidden', 'Secret', 'Sentient', 'Shadowy',
-              'Long-Lost', 'Terrible', 'Glorious', 'War-Torn',
-              'Dangerous', 'Cryptic', 'Awesome', 'Hyperspeed',
+              'Long-Lost', 'Terrible', 'Glorious', 'War-Torn', 'First',
+              'Dangerous', 'Cryptic', 'Awesome', 'Lightspeed', 'Ultimate',
               'Grand', 'Ludicrous', 'Chosen', 'Second', 'Primordial',
               'Lost', 'Missing', 'Fatal', 'Deadly', 'Captive', 'Ravaged',
               'Scruffy-Looking', 'Failing', 'Coarse', 'Desolate', 'Criminal',
               'Shrouded', 'Cloaked', 'Traitorous', 'Barren', 'Lethal',
-              'Peaceful' ];
+              'Peaceful', 'Galactic', 'Bothan', 'Jedi', 'Sith', 'Vile',
+              'Awakened', 'Gleaming', 'Fading', 'Burning', 'Hyperspace' ];
 
 maybArray = [ chooseRandom(nounArray), chooseRandom(nounArray),
               chooseRandom(plurArray) ];
