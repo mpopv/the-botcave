@@ -82,17 +82,18 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Home', 'Seige', 'Choice', 'Ghosts', 'Ghost', 'Requiem', 'Death',
               'Blood', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
               'Balance', 'Breath', 'Allure', 'Aggression', 'Bargain', 'Deal',
-              'Exile', 'Battle', 'Courage', 'Campaign' ];
+              'Exile', 'Battle', 'Courage', 'Campaign', 'Conquest', 'Betrayal'
+              ];
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
-              'Arrives', 'Ascends', 'Descends', 'is Revealed',
+              'Arrives', 'Ascends', 'Descends', 'Strikes', 'Crumbles',
               'is Pretty Meh', 'Explodes', 'Underwhelms', 'Goes Public',
               'Appears', 'Looms', 'Runs Way Over Budget', 'Drinks Blue Milk',
               'Has Breakfast', 'Picks Up Some Power Converters', 'Investigates',
               'Bullseyes Womp Rats', 'is Victorious', 'is Unleashed',
               'is Defeated', 'Disappears', 'Reappears', 'is Sold to Disney',
               'Begins', 'Ends', 'Escapes', 'Burns', 'Rages', 'of the Dead',
-              'Crumbles', 'is Turned', 'Turns', 'Recedes', 'in Distress',
+              'Implodes', 'is Turned', 'Turns', 'in Distress',
               'Endures', 'Ascendant', 'in Decline', 'of the Darkness',
               'of the Light', 'in the Clouds', 'Among the Stars', 'is Sated',
               'Forged by Darkness', 'Borne of Light', 'Fails', 'Falls Silent',
@@ -105,8 +106,9 @@ adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Dangerous', 'Cryptic', 'Awesome', 'Hyperspeed',
               'Grand', 'Ludicrous', 'Chosen', 'Second', 'Primordial',
               'Lost', 'Missing', 'Fatal', 'Deadly', 'Captive', 'Ravaged',
-              'Scruffy-Looking', 'Failing', 'Coarse', 'Desolate', 'Abandoned',
-              'Advanced', 'Criminal' ];
+              'Scruffy-Looking', 'Failing', 'Coarse', 'Desolate', 'Criminal',
+              'Shrouded', 'Cloaked', 'Traitorous', 'Barren', 'Lethal',
+              'Peaceful' ];
 
 maybArray = [ chooseRandom(nounArray), chooseRandom(nounArray),
               chooseRandom(plurArray) ];
