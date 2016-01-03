@@ -27,18 +27,24 @@ var actnArray = [ ]; var verbArray = [ ]; var adjeArray = [ ];
 var maybArray = [ ]; var thngArray = [ ]; var propArray = [ ];
 var dice = [ 1, 2, 3 ]; var roll = '';
 
-// insert your twitter app info here
+
 // var T = new Twit({
-//   consumer_key:         '',
-//   consumer_secret:      '',
-//   access_token:         '',
-//   access_token_secret:  ''
+//   consumer_key:         process.env.SWTITLEBOT_TWIT_CONSUMER_KEY,
+//   consumer_secret:      process.env.SWTITLEBOT_TWIT_CONSUMER_SECRET,
+//   access_token:         process.env.SWTITLEBOT_TWIT_ACCESS_TOKEN,
+//   access_token_secret:  process.env.SWTITLEBOT_TWIT_ACCESS_TOKEN_SECRET
 // });
 
 
 ///////////////// Word Array Bank //////////////////////////////////////////////
 
+// artcArray gives A a 1/2 chance to replace The in The Adjective Noun when the
+// noun is nonplural.
+
 artcArray = [ 'The', 'A' ];
+
+// nounArray contains singular nonproper nouns. They may appear in any title
+// except Action of Proper.
 
 nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt', 'Outpost',
@@ -56,25 +62,31 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Smuggler', 'Threat', 'Droid', 'Conquest', 'Trap', 'Admiral',
               'Bounty Hunter', 'Senator', 'Hunter', 'Moisture Farm',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
-              'Gundark', 'Rathtar', 'Chaos', 'Black Hole', 'Xenomorph',
-              'Replicant', 'Predator', 'Terminator', 'Future' ];
+              'Gundark', 'Rathtar', 'Chaos', 'Black Hole', 'Future' ];
 
-propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin', 'Padme',
+// propArray contains proper nouns that appear at the end of Action of Proper.
+
+propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin',
               'Jabba', 'Palpatine', 'Snoke', 'Fett', 'Skywalker', 'Luke',
               'Solo', 'Leia', 'General Organa', 'Jar Jar Binks',
               'Tatooine', 'Jakku', 'Hosnian Prime', 'Starkiller Base',
               'Coruscant', 'Vader', 'Darth Vader', 'Cloud City', 'Yavin',
               'Scum and Villainy', 'Plagueis', 'George Lucas\'s Neckbeard',
-              'First Order', 'HAL 9000' ];
+              'the First Order', 'Padme', 'Ren' ];
+
+// plurArray contains plural nonproper nouns that may randomly replace nounArray
+// nouns at the end of The Adjective Noun (via dice roll) and the end of Action
+// of the Noun (via maybArray).
 
 plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Midichlorians', 'Rebels', 'Ancients', 'Forerunners',
               'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Carbonite', 'Toy Sales', 'Senators', 'Parsecs',
-              'Gundarks', 'Rathtars', 'Machines', 'Borg', 'Klingons', 'Precogs',
-              'Prawns', 'Reavers', 'Na\'vi' ];
+              'Spoilers', 'Carbonite', 'Toy Sales', 'Senators' ];
+
+// actnArray contains action, state, or status nouns that appear at the
+// beginning of Action of the Noun. They can be singular or plural.
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
@@ -86,13 +98,22 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Sector', 'System', 'Sins', 'Quest', 'Voice', 'Waking', 'Tales',
               'Betrayal', 'Endgame', 'Aftermath', 'Reunion', 'Rebirth',
               'Legacy', 'Legend', 'Legends', 'Power', 'Secrets', 'Secret',
-              'Seige', 'Ghosts', 'Ghost', 'Requiem', 'Death',
+              'Seige', 'Ghosts', 'Ghost', 'Requiem', 'Nebula', 'Star',
               'Order', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
               'Balance', 'Breath', 'Allure', 'Aggression', 'Bargain', 'Deal',
               'Exile', 'Battle', 'Courage', 'Campaign', 'Conquest', 'Betrayal',
               'Squadron', 'Battalion', 'Army', 'Clones', 'Scheme', 'Forge',
-              'Crucible', 'Gauntlet', 'Hunt', 'Crash', 'Nest', 'Insurrection',
-              'Alliance', 'Rebellion', 'Resistance', 'Chaos' ];
+              'Crucible', 'Gauntlet', 'Crash', 'Nest', 'Insurrection',
+              'Alliance', 'Rebellion', 'Resistance', 'Chaos', 'Death',
+              'Scion', 'Deathknell', 'Aether', 'Arbiter', 'Axiom', 'Citadel',
+              'Fortress', 'Battlestation', 'Castle', 'Decimation',
+              'Destruction', 'Epoch', 'Genesis', 'Harbinger', 'Impunity',
+              'Maelstrom', 'Nemesis', 'Oculus', 'Rift', 'Paradox', 'Progeny',
+              'Progenitor', 'Inception', 'Inceptor', 'Sabotage', 'Turmoil',
+              'Upheaval', 'Vindication', 'Zenith' ];
+
+// verbArray contains verbs, verb phrases, and prepositional phrases that appear
+// at the end of The Noun Verbs. They must be singular.
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Arrives', 'Ascends', 'Descends', 'Strikes', 'Crumbles',
@@ -102,10 +123,11 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Bullseyes Womp Rats', 'Disappears', 'is Sold to Disney',
               'Begins', 'Ends', 'Escapes', 'Burns', 'Rages', 'of the Dead',
               'Implodes', 'in Distress', 'on Fire',  'of Fire', 'of Shadow',
-              'Endures', 'Ascendant', 'in Decline', 'of the Darkness',
-              'of the Light', 'in the Clouds', 'Among the Stars',
-              'Forged by Darkness', 'Fails', 'Falls Silent', 'Lurks',
-              'Has a Bad Feeling About This' ];
+              'Endures', 'Ascendant', 'Fails', 'Falls Silent', 'Lurks',
+              'Has a Bad Feeling About This', 'Without End', ];
+
+// adjeArray contains adjectives that come before nouns in The Adjective Noun.
+// They must be compatible with 'A' (rather than 'An').
 
 adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Galactic', 'Hidden', 'Secret', 'Sentient', 'Shadowy',
@@ -117,6 +139,8 @@ adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Shrouded', 'Cloaked', 'Traitorous', 'Lethal',
               'Peaceful', 'Galactic', 'Bothan', 'Jedi', 'Sith', 'Vile',
               'Gleaming', 'Fading', 'Burning', 'Hyperspace' ];
+
+// maybArray gives Action of the Noun a 1/3 chance of ending in a plural noun.
 
 maybArray = [ chooseRandom(nounArray), chooseRandom(nounArray),
               chooseRandom(plurArray) ];
@@ -167,12 +191,13 @@ else if (selectedStyle == 'theNounVerbs') { makeTheNounVerbs(); }
 else if (selectedStyle == 'actnOfTheNoun') { makeActionOfTheNoun(); }
 else { makeActionOfPrpr(); }
 
-roll = chooseRandom(dice);
-
 
 //////////////////// Style 1: The Adjective Noun ///////////////////////////////
 
+// Based on: A New Hope, The Phantom Menace
+
 function makeTheAdjNoun() {
+  roll = chooseRandom(dice);
   if (roll == 1 || roll == 2) {
     subtitle = "The " + chooseRandom(adjeArray) + " " + chooseRandom(plurArray);
   } else {
@@ -183,7 +208,10 @@ function makeTheAdjNoun() {
 
 //////////////////// Style 2: The Noun Verbs ///////////////////////////////////
 
+// Based on: The Empire Strikes Back, The Force Awakens
+
 function makeTheNounVerbs() {
+  roll = chooseRandom(dice);
   if (roll == 1 || roll == 2) {
     subtitle = chooseRandom(propArray) + " " + chooseRandom(verbArray);
   } else {
@@ -194,12 +222,16 @@ function makeTheNounVerbs() {
 
 //////////////////// Style 3: Action of the Noun ///////////////////////////////
 
+// Based on: Return of the Jedi, Attack of the Clones, Revenge of the Sith
+
 function makeActionOfTheNoun() {
   subtitle = chooseRandom(actnArray) + " of the " + chooseRandom(maybArray);
 }
 
 
-//////////////////// Style 4: Action of Proper ///////////////////////////////
+//////////////////// Style 4: Action of Proper /////////////////////////////////
+
+// A theoretical style not based on actual titles
 
 function makeActionOfPrpr() {
   subtitle = chooseRandom(actnArray) + " of " + chooseRandom(propArray);
