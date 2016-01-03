@@ -190,8 +190,7 @@ function makeActionOfTheNoun() {
 //////////////////// Style 4: Action of Proper ///////////////////////////////
 
 function makeActionOfPrpr() {
-  var maybeArticle = [ 'The ', '' ];
-  subtitle = chooseRandom(maybeArticle) + chooseRandom(actnArray) + " of " + chooseRandom(propArray);
+  subtitle = chooseRandom(actnArray) + " of " + chooseRandom(propArray);
 }
 
 
