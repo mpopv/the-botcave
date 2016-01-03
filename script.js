@@ -51,23 +51,22 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Senate', 'Trade Negotiation', 'Starkiller', 'Insurgency',
               'Wampa', 'War', 'Holiday Special', 'Battlestation',
               'Queen', 'Eclipse', 'Penumbra', 'Apocalypse', 'Cataclysm',
-              'Emperor', 'Chancellor', 'Asteroid Field', 'Threat', 'Podrace',
-              'First Order', 'Destruction', 'Purge', 'Journey',
-              'Shadow', 'Moon', 'Dynasty', 'Nerf Herder', 'Moof-Milker' ];
+              'Emperor', 'Chancellor', 'Asteroid Field', 'Threat',
+              'First Order', 'Nerf Herder', 'Moof-Milker' ];
 
-propArray = [ 'Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin', 'Padme',
+propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin', 'Padme',
               'Jabba', 'Palpatine', 'Snoke', 'Fett', 'Skywalker', 'Luke',
-              'Han Solo', 'Solo', 'Leia', 'General Organa',
+              'Solo', 'Leia', 'General Organa', 'Jar Jar Binks',
               'Tatooine', 'Jakku', 'Hosnian Prime', 'Starkiller Base',
               'Coruscant', 'Vader', 'Darth Vader', 'Cloud City', 'Yavin',
-              'Scum and Villainy', 'Plagueis' ];
+              'Scum and Villainy', 'Plagueis', 'George Lucas\'s Neckbeard' ];
 
 plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Midichlorians', 'Rebels', 'Ancients', 'Forerunners',
               'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Carbonite' ];
+              'Spoilers', 'Carbonite', 'Toy Sales' ];
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
@@ -79,12 +78,12 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Sector', 'System', 'Sins', 'Quest', 'Voice', 'Waking', 'Tales',
               'Betrayal', 'Endgame', 'Aftermath', 'Reunion', 'Rebirth',
               'Legacy', 'Legend', 'Legends', 'Power', 'Secrets', 'Secret',
-              'Seige', 'Choice', 'Ghosts', 'Ghost', 'Requiem', 'Death',
+              'Seige', 'Ghosts', 'Ghost', 'Requiem', 'Death',
               'Blood', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
               'Balance', 'Breath', 'Allure', 'Aggression', 'Bargain', 'Deal',
               'Exile', 'Battle', 'Courage', 'Campaign', 'Conquest', 'Betrayal',
               'Squadron', 'Battalion', 'Army', 'Clones', 'Scheme', 'Forge',
-              'Crucible', 'Gauntlet', 'Helmet', 'Holocron' ];
+              'Crucible', 'Gauntlet' ];
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Arrives', 'Ascends', 'Descends', 'Strikes', 'Crumbles',
@@ -98,12 +97,12 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Endures', 'Ascendant', 'in Decline', 'of the Darkness',
               'of the Light', 'in the Clouds', 'Among the Stars', 'is Sated',
               'Forged by Darkness', 'Borne of Light', 'Fails', 'Falls Silent',
-              'Has a Bad Feeling About This', 'Lurks', 'of Shadow', 'of Fire'
-              ];
+              'Has a Bad Feeling About This', 'Lurks', 'of Shadow', 'of Fire',
+              'on Fire' ];
 
 adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Galactic', 'Hidden', 'Secret', 'Sentient', 'Shadowy',
-              'Long-Lost', 'Terrible', 'Glorious', 'Evil', 'War-Torn',
+              'Long-Lost', 'Terrible', 'Glorious', 'War-Torn',
               'Dangerous', 'Cryptic', 'Awesome', 'Hyperspeed',
               'Grand', 'Ludicrous', 'Chosen', 'Second', 'Primordial',
               'Lost', 'Missing', 'Fatal', 'Deadly', 'Captive', 'Ravaged',
