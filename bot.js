@@ -56,7 +56,8 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Smuggler', 'Threat', 'Droid', 'Conquest', 'Trap', 'Admiral',
               'Bounty Hunter', 'Senator', 'Hunter', 'Moisture Farm',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
-              'Gundark', 'Rathtar', 'Chaos', 'Black Hole' ];
+              'Gundark', 'Rathtar', 'Chaos', 'Black Hole', 'Xenomorph',
+              'Replicant', 'Predator', 'Terminator', 'Future' ];
 
 propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin', 'Padme',
               'Jabba', 'Palpatine', 'Snoke', 'Fett', 'Skywalker', 'Luke',
@@ -64,7 +65,7 @@ propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin', 'Padme
               'Tatooine', 'Jakku', 'Hosnian Prime', 'Starkiller Base',
               'Coruscant', 'Vader', 'Darth Vader', 'Cloud City', 'Yavin',
               'Scum and Villainy', 'Plagueis', 'George Lucas\'s Neckbeard',
-              'First Order' ];
+              'First Order', 'HAL 9000' ];
 
 plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Midichlorians', 'Rebels', 'Ancients', 'Forerunners',
@@ -72,7 +73,8 @@ plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
               'Spoilers', 'Carbonite', 'Toy Sales', 'Senators', 'Parsecs',
-              'Gundarks', 'Rathtars' ];
+              'Gundarks', 'Rathtars', 'Machines', 'Borg', 'Klingons', 'Precogs',
+              'Prawns', 'Reavers', 'Na\'vi' ];
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
@@ -112,9 +114,9 @@ adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Grand', 'Ludicrous', 'Chosen', 'Second', 'Primordial',
               'Lost', 'Missing', 'Fatal', 'Deadly', 'Captive', 'Ravaged',
               'Scruffy-Looking', 'Failing', 'Coarse', 'Desolate', 'Criminal',
-              'Shrouded', 'Cloaked', 'Traitorous', 'Barren', 'Lethal',
+              'Shrouded', 'Cloaked', 'Traitorous', 'Lethal',
               'Peaceful', 'Galactic', 'Bothan', 'Jedi', 'Sith', 'Vile',
-              'Awakened', 'Gleaming', 'Fading', 'Burning', 'Hyperspace' ];
+              'Gleaming', 'Fading', 'Burning', 'Hyperspace' ];
 
 maybArray = [ chooseRandom(nounArray), chooseRandom(nounArray),
               chooseRandom(plurArray) ];
