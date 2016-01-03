@@ -79,11 +79,12 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Sector', 'System', 'Sins', 'Quest', 'Voice', 'Waking', 'Tales',
               'Betrayal', 'Endgame', 'Aftermath', 'Reunion', 'Rebirth',
               'Legacy', 'Legend', 'Legends', 'Power', 'Secrets', 'Secret',
-              'Home', 'Seige', 'Choice', 'Ghosts', 'Ghost', 'Requiem', 'Death',
+              'Seige', 'Choice', 'Ghosts', 'Ghost', 'Requiem', 'Death',
               'Blood', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
               'Balance', 'Breath', 'Allure', 'Aggression', 'Bargain', 'Deal',
               'Exile', 'Battle', 'Courage', 'Campaign', 'Conquest', 'Betrayal'
-              ];
+              'Squadron', 'Battalion', 'Army', 'Clones', 'Scheme', 'Forge',
+              'Crucible', 'Gauntlet', 'Helmet', 'Holocron' ];
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Arrives', 'Ascends', 'Descends', 'Strikes', 'Crumbles',
