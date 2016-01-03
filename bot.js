@@ -51,7 +51,7 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt', 'Outpost',
               'Federation', 'Republic', 'Gungan', 'Precedent', 'Armistice',
               'Planet', 'Alliance', 'Undertaking', 'Council', 'Temple',
-              'Confederacy', 'Princess', 'Vulcan', 'Fleet', 'Rebellion',
+              'Confederacy', 'Vulcan', 'Fleet', 'Rebellion',
               'Lightsaber', 'Dark Jedi', 'Knight', 'Order', 'Prophecy',
               'Chosen One', 'Night', 'Darkness', 'Resistance',
               'Plot Hole', 'Marketing Department', 'Star Forge', 'Force',
@@ -59,13 +59,14 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Wampa', 'War', 'Holiday Special', 'Battlestation',
               'Queen', 'Eclipse', 'Penumbra', 'Apocalypse', 'Cataclysm',
               'Emperor', 'Chancellor', 'Asteroid Field', 'Threat',
-              'Nerf Herder', 'Moof-Milker', 'Spy', 'Prince',
+              'Nerf Herder', 'Moof-Milker', 'Spy', 'Princess', 'Pirate',
               'Smuggler', 'Threat', 'Droid', 'Conquest', 'Trap', 'Admiral',
               'Bounty Hunter', 'Senator', 'Hunter', 'Moisture Farm',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
               'Gundark', 'Rathtar', 'Chaos', 'Black Hole', 'Future', 'Omen',
               'Outcast', 'Abyss', 'Storm', 'Traitor', 'Spirit', 'Master',
-              'Apprentice', 'Commander', 'Rift' ];
+              'Apprentice', 'Commander', 'Rift', 'Gambit', 'Gamble',
+              'Crossfire', 'Pursuit', 'Survivor', 'Smuggler', 'Wookiee' ];
 
 // propArray contains proper nouns that appear at the end of Action of Proper.
 
@@ -117,7 +118,8 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Labyrinth', 'Hive', 'Omen', 'Outcast', 'Ally', 'Allies', 'Abyss',
               'Conviction', 'Ascension', 'Emissary', 'Void', 'Master',
               'Apprentice', 'Treason', 'Traitor', 'Cry', 'Call', 'Dance',
-              'Dream', 'Spirit', 'Onslaught', 'Remnant', 'Storm', 'Commander' ];
+              'Dream', 'Spirit', 'Onslaught', 'Remnant', 'Storm', 'Commander',
+              'Fist', 'Starfighters', 'Gambit' ];
 
 // verbArray contains verbs, verb phrases, and prepositional phrases that appear
 // at the end of The Noun Verbs. They must be singular.
@@ -145,7 +147,7 @@ adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Scruffy-Looking', 'Failing', 'Coarse', 'Desolate', 'Criminal',
               'Shrouded', 'Cloaked', 'Traitorous', 'Lethal',
               'Peaceful', 'Galactic', 'Bothan', 'Jedi', 'Sith', 'Vile',
-              'Gleaming', 'Fading', 'Burning', 'Hyperspace' ];
+              'Gleaming', 'Fading', 'Burning', 'Hyperspace', 'Coarse' ];
 
 // maybArray gives Action of the Noun a 1/3 chance of ending in a plural noun.
 
@@ -238,7 +240,7 @@ function makeActionOfTheNoun() {
 
 //////////////////// Style 4: Action of Proper /////////////////////////////////
 
-// A theoretical style not based on actual titles
+// Theoretical style not based on actual titles
 
 function makeActionOfPrpr() {
   subtitle = chooseRandom(actnArray) + " of " + chooseRandom(propArray);
