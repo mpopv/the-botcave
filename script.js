@@ -49,7 +49,7 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Chosen One', 'Night', 'Blood', 'Darkness', 'Resistance',
               'Plot Hole', 'Marketing Department', 'Star Forge', 'Force',
               'Senate', 'Trade Negotiation', 'Starkiller', 'Insurgency',
-              'Carbonite', 'Wampa', 'War', 'Holiday Special', 'Battlestation',
+              'Wampa', 'War', 'Holiday Special', 'Battlestation',
               'Queen', 'Eclipse', 'Penumbra', 'Apocalypse', 'Cataclysm',
               'Emperor', 'Chancellor', 'Asteroid Field', 'Threat', 'Podrace',
               'First Order', 'Destruction', 'Purge', 'Journey',
@@ -67,7 +67,7 @@ plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers' ];
+              'Spoilers', 'Carbonite' ];
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
@@ -82,7 +82,7 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Seige', 'Choice', 'Ghosts', 'Ghost', 'Requiem', 'Death',
               'Blood', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
               'Balance', 'Breath', 'Allure', 'Aggression', 'Bargain', 'Deal',
-              'Exile', 'Battle', 'Courage', 'Campaign', 'Conquest', 'Betrayal'
+              'Exile', 'Battle', 'Courage', 'Campaign', 'Conquest', 'Betrayal',
               'Squadron', 'Battalion', 'Army', 'Clones', 'Scheme', 'Forge',
               'Crucible', 'Gauntlet', 'Helmet', 'Holocron' ];
 
