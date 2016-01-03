@@ -81,13 +81,14 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Legacy', 'Legend', 'Legends', 'Power', 'Secrets', 'Secret',
               'Home', 'Seige', 'Choice', 'Ghosts', 'Ghost', 'Requiem', 'Death',
               'Blood', 'Tale', 'Vector', 'Servant', 'Servants', 'Mark',
-              'Balance', 'Breath' ];
+              'Balance', 'Breath', 'Allure', 'Aggression', 'Bargain', 'Deal',
+              'Exile', 'Battle' ];
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Arrives', 'Ascends', 'Descends', 'is Revealed',
               'is Pretty Meh', 'Explodes', 'Underwhelms', 'Goes Public',
               'Appears', 'Looms', 'Runs Way Over Budget', 'Drinks Blue Milk',
-              'Has Breakfast', 'Picks Up Some Power Converters',
+              'Has Breakfast', 'Picks Up Some Power Converters', 'Investigates',
               'Bullseyes Womp Rats', 'is Victorious', 'is Unleashed',
               'is Defeated', 'Disappears', 'Reappears', 'is Sold to Disney',
               'Begins', 'Ends', 'Escapes', 'Burns', 'Rages', 'of the Dead',
@@ -95,7 +96,7 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Endures', 'Ascendant', 'in Decline', 'of the Darkness',
               'of the Light', 'in the Clouds', 'Among the Stars', 'is Sated',
               'Forged by Darkness', 'Borne of Light', 'Fails', 'Falls Silent',
-              'Has a Bad Feeling About This'
+              'Has a Bad Feeling About This', 'Lurks', 'of Shadow', 'of Fire'
               ];
 
 adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
@@ -104,7 +105,8 @@ adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Dangerous', 'Cryptic', 'Awesome', 'Hyperspeed',
               'Grand', 'Ludicrous', 'Chosen', 'Second', 'Primordial',
               'Lost', 'Missing', 'Fatal', 'Deadly', 'Captive', 'Ravaged',
-              'Scruffy-Looking', 'Failing', 'Coarse' ];
+              'Scruffy-Looking', 'Failing', 'Coarse', 'Desolate', 'Abandoned',
+              'Advanced', 'Criminal' ];
 
 maybArray = [ chooseRandom(nounArray), chooseRandom(nounArray),
               chooseRandom(plurArray) ];
