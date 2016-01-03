@@ -30,10 +30,10 @@ var dice = [ 1, 2, 3 ]; var roll = '';
 
 
 var Bot = new TwitterBot({
-  consumer_key:         process.env.SWTITLEBOT_TWIT_CONSUMER_KEY,
-  consumer_secret:      process.env.SWTITLEBOT_TWIT_CONSUMER_SECRET,
-  access_token:         process.env.SWTITLEBOT_TWIT_ACCESS_TOKEN,
-  access_token_secret:  process.env.SWTITLEBOT_TWIT_ACCESS_TOKEN_SECRET
+  consumer_key:         process.env.SWTITLEBOT_CONSUMER_KEY,
+  consumer_secret:      process.env.SWTITLEBOT_CONSUMER_SECRET,
+  access_token:         process.env.SWTITLEBOT_ACCESS_TOKEN,
+  access_token_secret:  process.env.SWTITLEBOT_ACCESS_TOKEN_SECRET
 });
 
 
