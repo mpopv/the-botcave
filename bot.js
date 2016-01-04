@@ -68,7 +68,8 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Gundark', 'Rathtar', 'Chaos', 'Black Hole', 'Future', 'Omen',
               'Outcast', 'Abyss', 'Storm', 'Traitor', 'Spirit', 'Master',
               'Apprentice', 'Commander', 'Rift', 'Gambit', 'Gamble',
-              'Crossfire', 'Pursuit', 'Survivor', 'Smuggler', 'Wookiee' ];
+              'Crossfire', 'Pursuit', 'Survivor', 'Smuggler', 'Wookiee',
+              'Franchise', 'Poor Writing', 'Poor Acting' ];
 
 // propArray contains proper nouns that appear at the end of Action of Proper.
 
@@ -78,7 +79,7 @@ propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin',
               'Tatooine', 'Jakku', 'Hosnian Prime', 'Starkiller Base',
               'Coruscant', 'Vader', 'Darth Vader', 'Cloud City', 'Yavin',
               'Scum and Villainy', 'Plagueis', 'George Lucas\'s Neckbeard',
-              'the First Order', 'Padme', 'Ren' ];
+              'the First Order', 'Padme', 'Ren', 'Mickey Mouse' ];
 
 // plurArray contains plural nonproper nouns that may randomly replace nounArray
 // nouns at the end of The Adjective Noun (via dice roll) and the end of Action
@@ -127,7 +128,8 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Begins', 'Ends', 'Escapes', 'Burns', 'Rages', 'of the Dead',
               'Implodes', 'in Distress', 'on Fire',  'of Fire', 'of Shadow',
               'Endures', 'Ascendant', 'Fails', 'Falls Silent', 'Lurks',
-              'Has a Bad Feeling About This', 'Without End' ];
+              'Has a Bad Feeling About This', 'Without End',
+              'Has a Really Bad Feeling About This' ];
 
 // adjeArray contains adjectives that come before nouns in The Adjective Noun.
 // They must be compatible with 'A' (rather than 'An').
@@ -185,7 +187,7 @@ function chooseRandom(myArray) {
 
 //////////////////// Episode Title Style Chooser ///////////////////////////////
 
-styles = [ 'theAdjNoun', 'theNounVerbs', 'actnOfTheNoun', 'actnOfTheNoun', 'actnOfPrpr' ];
+styles = [ 'theAdjNoun', 'theNounVerbs', 'actnOfTheNoun', 'actnOfPrpr' ];
 
 selectedStyle = chooseRandom(styles);
 
@@ -252,3 +254,5 @@ makeTitle();
 console.log(title);
 
 Bot.tweet(title);
+
+//
