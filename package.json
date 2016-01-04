@@ -24,5 +24,8 @@
     "mongoose": "^4.2.9",
     "node-twitterbot": "^0.2.2",
     "twit": "^2.1.1"
+  },
+  "scripts": {
+    "start": "node bot.js"
   }
 }
