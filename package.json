@@ -4,7 +4,8 @@
   "description": "Star Wars Titlebot for Twitter",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,5 @@
     "mongoose": "^4.2.9",
     "node-twitterbot": "^0.2.2",
     "twit": "^2.1.1"
-  },
-  "scripts": {
-    "start": "node bot.js"
   }
 }
