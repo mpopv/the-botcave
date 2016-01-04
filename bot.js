@@ -113,7 +113,7 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Vindication', 'Deception', 'Trials', 'Emissary', 'Master',
               'Apprentice', 'Treason', 'Traitor', 'Cry', 'Call', 'Dance',
               'Remnant', 'Commander', 'Conviction', 'Ascension',
-              'Fist', 'Starfighters', 'Gambit' ];
+              'Fist', 'Starfighters', 'Gambit', 'Profit Margin' ];
 
 // verbArray contains verbs, verb phrases, and prepositional phrases that appear
 // at the end of The Noun Verbs. They must be singular.
