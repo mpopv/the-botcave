@@ -16,7 +16,7 @@
 //           |  |  |  |    |___ |__] |  |  |
 //           |  |  |  |___ |___ |__] |__|  |
 //
-//     @ S W T i t l e b o t   o n   T w i t t e r
+//               @SWTitlebot on Twitter
 //
 //
 
@@ -58,13 +58,11 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Plot Hole', 'Marketing Department', 'Star Forge',
               'Wampa', 'Bantha', 'Holiday Special', 'Battlestation',
               'Queen', 'Emperor', 'Chancellor', 'Asteroid Field',
-              'Nerf Herder', 'Moof-Milker', 'Spy', 'Princess',
-              'Smuggler', 'Threat', 'Droid', 'Conquest', 'Trap', 'Admiral',
-              'Bounty Hunter', 'Senator', 'Moisture Farm',
+              'Nerf Herder', 'Moof-Milker', 'Spy', 'Princess', 'Moisture Farm',
+              'Bounty Hunter', 'Senator', 'Smuggler', 'Wookiee',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
               'Gundark', 'Rathtar', 'Traitor', 'Spirit', 'Master',
-              'Apprentice', 'Commander', 'Gambit',
-              'Crossfire', 'Pursuit', 'Survivor', 'Smuggler', 'Wookiee',
+              'Apprentice', 'Commander', 'Smuggler', 'Threat', 'Droid',
               'Franchise', 'Poor Writing', 'Poor Acting', 'Bantha Fodder',
               'Fuzzball', 'Ice Cream Maker', 'Furball', 'Twerp', 'Swindler',
               'Sadly Inevitable Marvel Crossover', 'Melted Helmet',
