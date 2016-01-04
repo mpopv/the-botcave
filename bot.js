@@ -63,10 +63,10 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
               'Gundark', 'Rathtar', 'Traitor', 'Spirit', 'Master',
               'Apprentice', 'Commander', 'Smuggler', 'Threat', 'Droid',
-              'Franchise', 'Poor Writing', 'Poor Acting', 'Bantha Fodder',
+              'Franchise', 'Bantha Fodder',
               'Fuzzball', 'Ice Cream Maker', 'Furball', 'Twerp', 'Swindler',
               'Sadly Inevitable Marvel Crossover', 'Melted Helmet',
-              'Spoiler Alert' ];
+              'Spoiler Alert', 'Wild Bantha Chase', 'Walking Carpet' ];
 
 // propArray contains proper nouns that appear at the end of Action of Proper.
 
@@ -85,7 +85,8 @@ plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Midichlorians',
               'Rebels', 'Vulcans', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Toy Sales', 'Senators', 'Scum', 'Ewoks' ];
+              'Spoilers', 'Toy Sales', 'Senators', 'Scum', 'Ewoks',
+              'Poor Writing', 'Poor Acting' ];
 
 // actnArray contains action, state, or status nouns that appear at the
 // beginning of Action of the Noun. They can be singular or plural.
