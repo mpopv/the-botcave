@@ -20,6 +20,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+function run(){
+
 var Twit = require('twit');
 var TwitterBot = require('node-twitterbot').TwitterBot;
 var title = ''; var subtitle = ''; var styles = ''; var selectedStyle = '';
@@ -258,3 +260,14 @@ makeTitle();
 console.log(title);
 
 Bot.tweet(title);
+
+}
+
+setInterval(function() {
+  try {
+    run();
+  }
+  catch (e) {
+    console.log(e);
+  }
+}, 60000* 60);
