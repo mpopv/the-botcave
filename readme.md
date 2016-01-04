@@ -9,5 +9,5 @@ This bot is a parody and is not affiliated with Lucasfilm or Disney.
 
 Special thanks to
 
-* [@murgia](https://twitter.com/murgia) for help with the Roman numeral converter and
-* [@adambray](https://twitter.com/adambray) for inspiration on organizing word bank arrays 
+* [@murgia](https://github.com/murgia) for help with the Roman numeral converter and
+* [@adambray](https://github.com/adambray) for inspiration on organizing word bank arrays 
