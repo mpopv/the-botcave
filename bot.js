@@ -51,7 +51,7 @@ artcArray = [ 'The', 'A' ];
 
 nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt',
-              'Federation', 'Republic', 'Gungan', 'Alliance',
+              'Trade Federation', 'Republic', 'Gungan', 'Alliance',
               'Confederacy', 'Vulcan', 'Fleet', 'Rebellion',
               'Lightsaber', 'Dark Jedi', 'Knight', 'Order', 'Prophecy',
               'Chosen One', 'Resistance', 'Senate', 'Trade Negotiation',
@@ -67,15 +67,15 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Crossfire', 'Pursuit', 'Survivor', 'Smuggler', 'Wookiee',
               'Franchise', 'Poor Writing', 'Poor Acting', 'Bantha Fodder',
               'Fuzzball', 'Ice Cream Maker', 'Furball', 'Twerp', 'Swindler',
-              'Sadly Inevitable Marvel Crossover' ];
+              'Sadly Inevitable Marvel Crossover', 'Melted Helmet',
+              'Spoiler Alert' ];
 
 // propArray contains proper nouns that appear at the end of Action of Proper.
 
 propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin',
               'Jabba', 'Palpatine', 'Snoke', 'Fett', 'Skywalker', 'Luke',
               'Solo', 'Leia', 'General Organa', 'Jar Jar Binks',
-              'Tatooine', 'Jakku', 'Hosnian Prime', 'Starkiller Base',
-              'Coruscant', 'Vader', 'Darth Vader', 'Cloud City', 'Yavin',
+              'Tatooine', 'Jakku', 'Darth Vader',
               'Scum and Villainy', 'Plagueis', 'George Lucas\'s Neckbeard',
               'the First Order', 'Padme', 'Ren', 'Mickey Mouse' ];
 
@@ -83,25 +83,21 @@ propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin',
 // nouns at the end of The Adjective Noun (via dice roll) and the end of Action
 // of the Noun (via maybArray).
 
-plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
-              'Midichlorians', 'Rebels', 'Ancients', 'Forerunners',
-              'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
+plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Midichlorians',
+              'Rebels', 'Vulcans', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Carbonite', 'Toy Sales', 'Senators', 'Scum' ];
+              'Spoilers', 'Toy Sales', 'Senators', 'Scum', 'Ewoks' ];
 
 // actnArray contains action, state, or status nouns that appear at the
 // beginning of Action of the Noun. They can be singular or plural.
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Coarseness',
-              'Prophecy', 'Savior', 'Seige', 'Ghosts', 'Ghost', 'Requiem',
-              'Emperor', 'Victory', 'Defeat', 'Vanquishing', 'Horror', 'Terror',
-              'Reign', 'Awakening', 'Redemption', 'Anguish', 'End',
-              'Warning', 'Threat', 'Wretched Hive', 'Origin', 'Servants',
-              'Ultimatum', 'Chronicle', 'Saber', 'Homecoming', 'Sins', 'Quest',
-              'Betrayal', 'Aftermath', 'Rebirth', 'Order', 'Servant',
-              'Legacy', 'Legend', 'Legends', 'Power', 'Secrets', 'Secret',
+              'Prophecy', 'Savior', 'Seige', 'Ghost', 'Victory', 'Defeat',
+              'Reign', 'Redemption', 'Anguish', 'End', 'Wretched Hive',
+              'Origin', 'Servants', 'Weapon', 'Saber', 'Sins', 'Quest',
+              'Betrayal', 'Rebirth', 'Order', 'Legacy', 'Legend', 'Secret',
               'Balance', 'Aggression', 'Bargain', 'Army', 'Clones', 'Forge',
               'Exile', 'Battle', 'Courage', 'Conquest', 'Inception', 'Sabotage',
               'Crucible', 'Gauntlet', 'Insurrection', 'Labyrinth', 'Omen',
@@ -123,13 +119,12 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Appears', 'Looms', 'Runs Way Over Budget', 'Drinks Blue Milk',
               'Has Breakfast', 'Picks Up Some Power Converters', 'Reappears',
               'Bullseyes Womp Rats', 'Disappears', 'is Sold to Disney',
-              'Begins', 'Ends', 'Escapes', 'Burns', 'Rages', 'of the Dead',
-              'Implodes', 'in Distress', 'on Fire',  'of Fire', 'of Shadow',
-              'Endures', 'Ascendant', 'Fails', 'Falls Silent', 'Lurks',
+              'Implodes', 'Fails', 'Falls Silent', 'Begins', 'Ends', 'Escapes',
               'Has a Bad Feeling About This', 'Without End',
               'Has a Really Bad Feeling About This', 'Laughs It Up',
               'is NOT a COMMITTEE', 'is Your Father',
-              'Will Be With You, Always' ];
+              'Will Be With You, Always', 'Goes Into Exile',
+              'Gets Proton Torpedoed' ];
 
 // adjeArray contains adjectives that come before nouns in The Adjective Noun.
 // They must be compatible with 'A' (rather than 'An').
@@ -256,3 +251,5 @@ makeTitle();
 console.log(title);
 
 Bot.tweet(title);
+
+//
