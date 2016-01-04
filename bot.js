@@ -50,18 +50,15 @@ artcArray = [ 'The', 'A' ];
 // except Action of Proper.
 
 nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
-              'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt', 'Outpost',
-              'Federation', 'Republic', 'Gungan', 'Precedent', 'Armistice',
-              'Planet', 'Alliance', 'Undertaking', 'Council', 'Temple',
+              'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt',
+              'Federation', 'Republic', 'Gungan', 'Alliance',
               'Confederacy', 'Vulcan', 'Fleet', 'Rebellion',
               'Lightsaber', 'Dark Jedi', 'Knight', 'Order', 'Prophecy',
-              'Chosen One', 'Night', 'Darkness', 'Resistance',
-              'Plot Hole', 'Marketing Department', 'Star Forge', 'Force',
-              'Senate', 'Trade Negotiation', 'Starkiller', 'Insurgency',
-              'Wampa', 'War', 'Holiday Special', 'Battlestation',
-              'Queen', 'Eclipse', 'Penumbra', 'Apocalypse', 'Cataclysm',
-              'Emperor', 'Chancellor', 'Asteroid Field', 'Threat',
-              'Nerf Herder', 'Moof-Milker', 'Spy', 'Princess', 'Pirate',
+              'Chosen One', 'Resistance', 'Senate', 'Trade Negotiation',
+              'Plot Hole', 'Marketing Department', 'Star Forge',
+              'Wampa', 'Bantha', 'Holiday Special', 'Battlestation',
+              'Queen', 'Emperor', 'Chancellor', 'Asteroid Field',
+              'Nerf Herder', 'Moof-Milker', 'Spy', 'Princess',
               'Smuggler', 'Threat', 'Droid', 'Conquest', 'Trap', 'Admiral',
               'Bounty Hunter', 'Senator', 'Hunter', 'Moisture Farm',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
@@ -131,7 +128,8 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Endures', 'Ascendant', 'Fails', 'Falls Silent', 'Lurks',
               'Has a Bad Feeling About This', 'Without End',
               'Has a Really Bad Feeling About This', 'Laughs It Up',
-              'is NOT a COMMITTEE' ];
+              'is NOT a COMMITTEE', 'is Your Father',
+              'Will Be With You, Always' ];
 
 // adjeArray contains adjectives that come before nouns in The Adjective Noun.
 // They must be compatible with 'A' (rather than 'An').
