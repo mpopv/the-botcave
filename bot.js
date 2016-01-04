@@ -96,7 +96,7 @@ plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
 
 actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Empire', 'Republic', 'Fear', 'Revelation', 'Hour',
-              'Era', 'Time', 'Darkness', 'Coarseness', 'Prophecy', 'Savior',
+              'Era', 'Darkness', 'Coarseness', 'Prophecy', 'Savior',
               'Emperor', 'Victory', 'Defeat', 'Vanquishing', 'Horror', 'Terror',
               'Reign', 'Awakening', 'Redemption', 'Anguish', 'End',
               'Warning', 'Howl', 'Threat', 'Wretched Hive', 'Origin',
