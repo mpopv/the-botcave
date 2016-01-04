@@ -60,14 +60,14 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Queen', 'Emperor', 'Chancellor', 'Asteroid Field',
               'Nerf Herder', 'Moof-Milker', 'Spy', 'Princess',
               'Smuggler', 'Threat', 'Droid', 'Conquest', 'Trap', 'Admiral',
-              'Bounty Hunter', 'Senator', 'Hunter', 'Moisture Farm',
+              'Bounty Hunter', 'Senator', 'Moisture Farm',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
-              'Gundark', 'Rathtar', 'Chaos', 'Black Hole', 'Future', 'Omen',
-              'Outcast', 'Abyss', 'Storm', 'Traitor', 'Spirit', 'Master',
-              'Apprentice', 'Commander', 'Rift', 'Gambit', 'Gamble',
+              'Gundark', 'Rathtar', 'Traitor', 'Spirit', 'Master',
+              'Apprentice', 'Commander', 'Gambit',
               'Crossfire', 'Pursuit', 'Survivor', 'Smuggler', 'Wookiee',
               'Franchise', 'Poor Writing', 'Poor Acting', 'Bantha Fodder',
-              'Fuzzball', 'Ice Cream Maker', 'Furball', 'Twerp', 'Swindler' ];
+              'Fuzzball', 'Ice Cream Maker', 'Furball', 'Twerp', 'Swindler',
+              'Sadly Inevitable Marvel Crossover' ];
 
 // propArray contains proper nouns that appear at the end of Action of Proper.
 
