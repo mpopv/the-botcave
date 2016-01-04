@@ -69,7 +69,8 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Outcast', 'Abyss', 'Storm', 'Traitor', 'Spirit', 'Master',
               'Apprentice', 'Commander', 'Rift', 'Gambit', 'Gamble',
               'Crossfire', 'Pursuit', 'Survivor', 'Smuggler', 'Wookiee',
-              'Franchise', 'Poor Writing', 'Poor Acting' ];
+              'Franchise', 'Poor Writing', 'Poor Acting', 'Bantha Fodder',
+              'Fuzzball', 'Ice Cream Maker', 'Furball', 'Twerp', 'Swindler' ];
 
 // propArray contains proper nouns that appear at the end of Action of Proper.
 
@@ -90,7 +91,7 @@ plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Jedi', 'Sith',
               'Vulcans', 'Prophecies', 'Plot Holes', 'Prequels',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
               'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Carbonite', 'Toy Sales', 'Senators' ];
+              'Spoilers', 'Carbonite', 'Toy Sales', 'Senators', 'Scum' ];
 
 // actnArray contains action, state, or status nouns that appear at the
 // beginning of Action of the Noun. They can be singular or plural.
@@ -129,7 +130,8 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Implodes', 'in Distress', 'on Fire',  'of Fire', 'of Shadow',
               'Endures', 'Ascendant', 'Fails', 'Falls Silent', 'Lurks',
               'Has a Bad Feeling About This', 'Without End',
-              'Has a Really Bad Feeling About This' ];
+              'Has a Really Bad Feeling About This', 'Laughs It Up',
+              'is NOT a COMMITTEE' ];
 
 // adjeArray contains adjectives that come before nouns in The Adjective Noun.
 // They must be compatible with 'A' (rather than 'An').
@@ -143,7 +145,9 @@ adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Scruffy-Looking', 'Failing', 'Coarse', 'Desolate', 'Criminal',
               'Shrouded', 'Cloaked', 'Traitorous', 'Lethal',
               'Peaceful', 'Galactic', 'Bothan', 'Jedi', 'Sith', 'Vile',
-              'Gleaming', 'Fading', 'Burning', 'Hyperspace', 'Coarse' ];
+              'Gleaming', 'Fading', 'Burning', 'Hyperspace', 'Coarse',
+              'Crazy', 'Malfunctioning', 'Slimy', 'Double-Crossing', 'No-Good',
+              'Stuck-Up', 'Half-Witted' ];
 
 // maybArray gives Action of the Noun a 1/3 chance of ending in a plural noun.
 
