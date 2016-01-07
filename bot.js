@@ -230,5 +230,3 @@ makeTitle();
 console.log(title);
 
 Bot.tweet(title);
-
-//
