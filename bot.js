@@ -27,7 +27,7 @@ var TwitterBot = require('node-twitterbot').TwitterBot;
 var title = ''; var subtitle = ''; var styles = ''; var selectedStyle = '';
 var artcArray = [ ]; var nounArray = [ ]; var plurArray = [ ];
 var actnArray = [ ]; var verbArray = [ ]; var adjeArray = [ ];
-var maybArray = [ ]; var thngArray = [ ]; var propArray = [ ];
+var maybArray = [ ]; var thngArray = [ ];
 var dice = [ 1, 2, 3 ]; var roll = '';
 
 
@@ -50,7 +50,7 @@ artcArray = [ 'The', 'A' ];
 // except Action of Proper.
 
 nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
-              'High Ground', 'Galaxy', 'Metal Bikini', 'Hutt',
+              'High Ground', 'Galaxy', 'Hutt', 'Franchise', 'Bantha Fodder',
               'Trade Federation', 'Republic', 'Gungan', 'Alliance',
               'Confederacy', 'Vulcan', 'Fleet', 'Rebellion',
               'Lightsaber', 'Dark Jedi', 'Knight', 'Order', 'Prophecy',
@@ -58,24 +58,14 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Plot Hole', 'Marketing Department', 'Star Forge',
               'Wampa', 'Bantha', 'Holiday Special', 'Battlestation',
               'Queen', 'Emperor', 'Chancellor', 'Asteroid Field',
-              'Nerf Herder', 'Moof-Milker', 'Spy', 'Princess', 'Moisture Farm',
+              'Nerf Herder', 'Moof-Milker', 'Spy', 'Moisture Farm',
               'Bounty Hunter', 'Senator', 'Smuggler', 'Wookiee',
               'Scavenger', 'Stormtrooper', 'Clone Trooper', 'Kessel Run',
               'Gundark', 'Rathtar', 'Traitor', 'Spirit', 'Master',
               'Apprentice', 'Commander', 'Smuggler', 'Threat', 'Droid',
-              'Franchise', 'Bantha Fodder',
               'Fuzzball', 'Ice Cream Maker', 'Furball', 'Twerp', 'Swindler',
               'Sadly Inevitable Marvel Crossover', 'Melted Helmet',
               'Spoiler Alert', 'Wild Bantha Chase', 'Walking Carpet' ];
-
-// propArray contains proper nouns that appear at the end of Action of Proper.
-
-propArray = [ 'George Lucas', 'JJ Abrams', 'Disney', 'Jar Jar', 'Anakin',
-              'Jabba', 'Palpatine', 'Snoke', 'Fett', 'Skywalker', 'Luke',
-              'Solo', 'Leia', 'General Organa', 'Jar Jar Binks',
-              'Tatooine', 'Jakku', 'Darth Vader',
-              'Scum and Villainy', 'Plagueis', 'George Lucas\'s Neckbeard',
-              'the First Order', 'Padme', 'Ren', 'Mickey Mouse' ];
 
 // plurArray contains plural nonproper nouns that may randomly replace nounArray
 // nouns at the end of The Adjective Noun (via dice roll) and the end of Action
@@ -183,14 +173,13 @@ function chooseRandom(myArray) {
 
 //////////////////// Episode Title Style Chooser ///////////////////////////////
 
-styles = [ 'theAdjNoun', 'theNounVerbs', 'actnOfTheNoun', 'actnOfPrpr' ];
+styles = [ 'theAdjNoun', 'theNounVerbs', 'actnOfTheNoun', 'actnOfTheNoun' ];
 
 selectedStyle = chooseRandom(styles);
 
 if (selectedStyle == 'theAdjNoun') { makeTheAdjNoun(); }
 else if (selectedStyle == 'theNounVerbs') { makeTheNounVerbs(); }
-else if (selectedStyle == 'actnOfTheNoun') { makeActionOfTheNoun(); }
-else { makeActionOfPrpr(); }
+else { makeActionOfTheNoun(); }
 
 roll = chooseRandom(dice);
 
@@ -227,15 +216,6 @@ function makeTheNounVerbs() {
 
 function makeActionOfTheNoun() {
   subtitle = chooseRandom(actnArray) + " of the " + chooseRandom(maybArray);
-}
-
-
-//////////////////// Style 4: Action of Proper /////////////////////////////////
-
-// Theoretical style not based on actual titles
-
-function makeActionOfPrpr() {
-  subtitle = chooseRandom(actnArray) + " of " + chooseRandom(propArray);
 }
 
 
