@@ -47,7 +47,8 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'echo', 'steel', 'law', 'wild', 'blade', 'blood', 'exo',
               'infra', 'pod', 'chem', 'stim', 'night', 'junk', 'scrap', 'zero',
               'space', 'time', 'mind', 'cryo', 'micro', 'post-',
-              'metro', 'hydro', 'geo', 'stealth', 'slum', 'holo', 'contra'
+              'metro', 'hydro', 'geo', 'stealth', 'slum', 'holo', 'contra',
+              'drug', 'info', 'meme', 'noo', 'edge', 'rave', 'slip'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -59,7 +60,8 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'neon', 'chemical', 'illegal', 'bounty', 'freelance', 'night',
               'junk', 'trash', 'scrap', 'orbital', 'space', 'time',
               'crystal', 'stealth', 'electronic', 'rust', 'cable',
-              'contraband'
+              'contraband', 'sprawl', 'planetary', 'spyre', 'radar',
+              'nuclear', 'hydrogen', 'gravity'
             ];
 
 // Job suffixes
@@ -74,7 +76,8 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'zealot', 'bot', 'mech', 'smith', 'droid', 'trooper',
               'commando', 'goblin', 'breaker', 'morph', 'hunter',
               'shredder', 'tek', 'lord', 'watcher', 'scanner', 'vulture',
-              'sniper', 'wraith', 'priest', 'spider'
+              'sniper', 'wraith', 'priest', 'spider', 'breaker', 'phreaker',
+              'pirate', 'pagan'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -86,7 +89,8 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'medic', 'drifter', 'splicer', 'slicer', 'marketeer',
               'mechanic', 'engineer', 'zealot', 'correspondent', 'robot',
               'mech', 'droid', 'trooper', 'solider', 'commando', 'cannibal',
-              'hunter', 'assassin', 'dealer', 'zombie', 'sniper', 'priest'
+              'hunter', 'assassin', 'dealer', 'zombie', 'sniper', 'priest',
+              'hound', 'pirate', 'phreaker', 'raver', 'governor'
             ];
 
 var compoundTitle = get(jobPreN) + get(jobSuff);
@@ -97,6 +101,53 @@ var adjectiveTitle = get(jobPreS) + ' ' + get(jobTtlS);
 
 var whichTitle = [ adjectiveTitle, compoundTitle ];
 var title = random( whichTitle );
+
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////// Jobs & Titles ////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
+                       'anarcho', 'hover', 'bio',
+                       'data', 'cyber', 'nano', 'street ', 'gene ', 'wire',
+                       'web ', 'dark ', 'mech', 'neo', 'war', 'echo',
+                       'exo', 'hyper', 'giga', 'mega', 'infra', 'chem',
+                       'stim', 'night', 'zero ', 'space ', 'time ', 'mind ',
+                       'cryo', 'micro', 'post-', 'metro', 'hydro', 'geo',
+                       'stealth ', 'holo', 'contra', 'anti', 'meme ', 'noo',
+                       'corporate ', 'data ', 'cyborg ', 'virtual ', 'dread',
+                       'digital ', 'nano', 'void', 'rogue ', 'special ',
+                       'mech ', 'android ', 'zone ', 'DNA', 'neon ',
+                       'chemical ', 'orbital ', 'crystal ', 'electronic ',
+                       'planetary ', 'nuclear ', 'hydrogen ', 'gravity ',
+                       'thought', 'SQL '
+                     ];
+
+var genericCrimes   = [ 'perjury', 'arson', 'corruption', 'larceny',
+                        'crime', 'hacking', 'phishing', 'phreaking',
+                        'injection', 'theft', 'murder', 'terrorism',
+                        'activism', 'protesting', 'forgery', 'witchcraft',
+                        'vampirism', 'racketeering', 'conspiracy',
+                        'immigration', 'emigration', 'espionage', 'extortion',
+                        'embezzlement', 'piracy', 'mutiny', 'desertion',
+                        'burglarly', 'defamation', 'fraud', 'impersonation',
+                        'assault', 'battery', 'jaywalking', 'loitering',
+                        'malfeasance', 'intoxication', 'sabotage', 'sedition',
+                        'shoplifting', 'blackmail', 'profiteering',
+                        'smuggling', 'blockade running', 'resistance',
+                        'vandalism', 'trespass', 'treason', 'tampering',
+                        'treachery'
+                      ];
+
+      var crimes    = [ 'Bitcoin laundering', 'thoughtperjury', 'virtual arson',
+                        'corruption', 'nanolarceny',
+                        'arson', 'mindcrime'
+                      ];
+
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////// Jobs & Titles ////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 var dangerStates = [ 'mutant', 'furious', 'vicious', 'rampaging',
                      'raging', 'violent', 'bloodthirsty', 'homicidal',
@@ -110,6 +161,6 @@ var group = random(dangerGroups);
 var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking' ];
 var warning = random(warnings).toUpperCase();
 
-var warningStatement = warning + ': A ' + state + ' ' + group + ' of ' + title + 's have broken into Sector 7.';
+var warningStatement = warning + ': A ' + state + ' ' + group + ' of ' + title + 's have broken into Sector 7, and are committing acts of ' + random(crimePrefixes) + random(genericCrimes) + '.';
 
 console.log(warningStatement);
