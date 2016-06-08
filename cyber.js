@@ -14,7 +14,7 @@
 
 ///////////////// Choose Random Element in a Array ////////////////////////////
 
- function chooseRandom(myArray) {
+ function random(myArray) {
    return myArray[Math.floor(Math.random() * myArray.length)];
  }
 
@@ -34,7 +34,8 @@ var corps;
 jobPreN =   [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'solo', 'med', 'data', 'cyber', 'arch', 'under', 'sewer', 'hack'
               'deep', 'nano', 'street', 'ex-', 'gene', 'wire', 'web', 'dark',
-              'mech', 'armor', 'gun', 'waste', 'tube', 'tank'
+              'mech', 'armor', 'gun', 'waste', 'tube', 'tank', 'neo', 'war',
+              'slag', 'echo', 'steel', 'law', 'wild', 'blade', 'blood', 'exo'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -42,7 +43,7 @@ jobPreS =   [ 'corporate', 'data', 'cyborg', 'grand', 'low', 'virtual',
               'hacker', 'dread', 'digital', 'street', 'sector', 'contract',
               'nano', 'gene', 'hack', 'virtual', 'net', 'internet', 'dark',
               'void', 'rogue', 'special', 'mech', 'armored', 'weapon',
-              'steam'
+              'steam', 'zone', 'slag', 'DNA', 'steel', 'blade', 'blood'
             ];
 
 // Job suffixes
@@ -55,7 +56,7 @@ jobSuff =   [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'rebel', 'pilot', 'spacer', 'capitalist', 'communist',
               'socialist', 'libertarian', 'nihilist', 'crawler', 'jacker',
               'zealot', 'bot', 'mech', 'smith', 'droid', 'trooper',
-              'commando'
+              'commando', 'goblin', 'breaker', 'morph'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -66,16 +67,12 @@ jobTtlS =   [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'rebel', 'juggernaut', 'technician', 'trader', 'smuggler',
               'medic', 'drifter', 'splicer', 'slicer', 'marketeer',
               'mechanic', 'engineer', 'zealot', 'correspondent', 'robot',
-              'mech', 'droid', 'trooper', 'solider', 'commando'
+              'mech', 'droid', 'trooper', 'solider', 'commando', 'cannibal',
+              'goblin', 'ghost'
             ];
 
+var compoundTitle = random(jobPreN) + random(jobSuff);
+console.log('Compound: ' + compoundTitle);
 
-////////////////////////////////////////////////////////////////////////////////
-///////////////// Jobs & Titles ////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-// Corporations
-corps =     [ 'Infocomp', 'IEC', 'EBM', 'Biotechnica', 'Arasaka',
-              'Lazarus', 'Petrochem', 'Raven Microcybernetics',
-              'Mitsubishi-Sugo', 'SovOil', 'Zetatech', 'Militech',
-            ];
+var adjectiveTitle = random(jobPreS) + random(jobTtlS);
+console.log('Adjective: ' + adjectiveTitle);
