@@ -23,6 +23,10 @@
    else { return term; }
  }
 
+ function get(something) {
+   return check(random(something));
+ }
+
 var jobPreN;
 var jobPreS;
 var jobSuff;
@@ -36,48 +40,76 @@ var corps;
 
 
 // Job Prefixes that can be attached as a compound word
-jobPreN =   [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
+var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'solo', 'med', 'data', 'cyber', 'arch', 'under', 'sewer', 'hack',
               'deep', 'nano', 'street', 'ex-', 'gene', 'wire', 'web', 'dark',
-              'mech', 'armor', 'gun', 'waste', 'tube', 'tank', 'neo', 'war',
-              'slag', 'echo', 'steel', 'law', 'wild', 'blade', 'blood', 'exo'
+              'mech', 'armor', 'gun', 'waste', 'tank', 'neo', 'war',
+              'echo', 'steel', 'law', 'wild', 'blade', 'blood', 'exo',
+              'infra', 'pod', 'chem', 'stim', 'night', 'junk', 'scrap', 'zero',
+              'space', 'time', 'mind', 'cryo', 'micro', 'post-',
+              'metro', 'hydro', 'geo', 'stealth', 'slum', 'holo', 'contra'
             ];
 
 // Job prefixes that can be adjectives modifying a title
-jobPreS =   [ 'corporate', 'data', 'cyborg', 'grand', 'low', 'virtual',
+var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'hacker', 'dread', 'digital', 'street', 'sector', 'contract',
               'nano', 'gene', 'hack', 'virtual', 'net', 'internet', 'dark',
               'void', 'rogue', 'special', 'mech', 'armored', 'weapon',
-              'steam', 'zone', 'slag', 'DNA', 'steel', 'blade', 'blood'
+              'steam', 'zone', 'DNA', 'steel', 'blade', 'blood',
+              'neon', 'chemical', 'illegal', 'bounty', 'freelance', 'night',
+              'junk', 'trash', 'scrap', 'orbital', 'space', 'time',
+              'crystal', 'stealth', 'electronic', 'rust', 'cable',
+              'contraband'
             ];
 
 // Job suffixes
-jobSuff =   [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
+var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'anarchist', 'hacker', 'junkie', 'courier', 'merc', 'panzer',
-              'boy', 'girl', 'nerd', 'surfer', 'cyborg', 'fixer', 'nomad',
+              'boy', 'girl', 'surfer', 'cyborg', 'fixer', 'nomad',
               'punk', 'cultist', 'slinger', 'doctor', [ 'thief', 'thieves' ],
               'mage', 'bandit', 'technician', 'shade', 'trader',
               'smuggler', 'keeper', 'medic', 'rat', 'splicer', 'slicer',
               'rebel', 'pilot', 'spacer', 'capitalist', 'communist',
               'socialist', 'nihilist', 'crawler', 'jacker',
               'zealot', 'bot', 'mech', 'smith', 'droid', 'trooper',
-              'commando', 'goblin', 'breaker', 'morph'
+              'commando', 'goblin', 'breaker', 'morph', 'hunter',
+              'shredder', 'tek', 'lord', 'watcher', 'scanner', 'vulture',
+              'sniper', 'wraith', 'priest', 'spider'
             ];
 
 // Job titles that can be independent w/ adjective modifier
-jobTtlS =   [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
+var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'junkie', 'courier', 'agent', 'nomad', 'prince',
               [ 'princess', 'princesses' ], [ 'ronin', 'ronin' ],
-              [ 'samurai', 'samurai' ], 'blackhat', 'whitehat', 'cultist',
+              [ 'samurai', 'samurai' ], 'cultist', 'warrior',
               'rebel', 'juggernaut', 'technician', 'trader', 'smuggler',
               'medic', 'drifter', 'splicer', 'slicer', 'marketeer',
               'mechanic', 'engineer', 'zealot', 'correspondent', 'robot',
               'mech', 'droid', 'trooper', 'solider', 'commando', 'cannibal',
-              'goblin', 'ghost'
+              'hunter', 'assassin', 'dealer', 'zombie', 'sniper', 'priest'
             ];
 
-var compoundTitle = check(random(jobPreN)) + check(random(jobSuff));
-console.log('Compound: ' + compoundTitle);
+var compoundTitle = get(jobPreN) + get(jobSuff);
+// console.log('Compound: ' + compoundTitle);
 
-var adjectiveTitle = check(random(jobPreS)) + ' ' + check(random(jobTtlS));
-console.log('Adjective: ' + adjectiveTitle);
+var adjectiveTitle = get(jobPreS) + ' ' + get(jobTtlS);
+// console.log('Adjective: ' + adjectiveTitle);
+
+var whichTitle = [ adjectiveTitle, compoundTitle ];
+var title = random( whichTitle );
+
+var dangerStates = [ 'mutant', 'furious', 'vicious', 'rampaging',
+                     'raging', 'violent', 'bloodthirsty', 'homicidal',
+                     'stim-addled'
+                   ];
+var state = random(dangerStates);
+
+var dangerGroups = [ 'gang', 'pack', 'band' ];
+var group = random(dangerGroups);
+
+var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking' ];
+var warning = random(warnings).toUpperCase();
+
+var warningStatement = warning + ': A ' + state + ' ' + group + ' of ' + title + 's have broken into Sector 7.';
+
+console.log(warningStatement);
