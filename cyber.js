@@ -66,7 +66,9 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'infra', 'pod', 'chem', 'stim', 'night', 'junk', 'scrap', 'zero',
               'space', 'time', 'mind', 'cryo', 'micro', 'post-',
               'metro', 'hydro', 'geo', 'stealth', 'slum', 'holo', 'contra',
-              'drug', 'info', 'meme', 'noo', 'edge', 'rave', 'slip'
+              'drug', 'info', 'meme', 'noo', 'edge', 'rave', 'slip', 'robo',
+              'tachyo', 'terra', 'magna', 'shadow', 'bullet', 'chroma',
+              'chrono', 'toxo', 'dream'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -79,7 +81,10 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'junk', 'trash', 'scrap', 'orbital', 'space', 'time',
               'crystal', 'stealth', 'electronic', 'rust', 'cable',
               'contraband', 'sprawl', 'planetary', 'spyre', 'radar',
-              'nuclear', 'hydrogen', 'gravity'
+              'nuclear', 'hydrogen', 'gravity', 'ansible', 'drone', 'blaster',
+              'shield', 'plasma', 'sentient', 'raman', 'varelse', 'tachyon',
+              'Tellurian', 'Terran', 'cybernetic', 'cyberspace', 'artificial',
+              'shadow', 'chromatic', 'toxic', 'keyboard', 'plastic'
             ];
 
 // Job suffixes
@@ -95,7 +100,9 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'commando', 'goblin', 'breaker', 'morph', 'hunter',
               'shredder', 'tek', 'lord', 'watcher', 'scanner', 'vulture',
               'sniper', 'wraith', 'priest', 'spider', 'breaker', 'phreaker',
-              'pirate', 'pagan'
+              'pirate', 'pagan', 'blaster', 'decker', 'disrupter',
+              'empath', 'esper', 'lander', 'sophont', 'stunner', 'bleeder',
+              'booster', 'doc', 'worlder'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -108,7 +115,9 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'mechanic', 'engineer', 'zealot', 'correspondent', 'robot',
               'mech', 'droid', 'trooper', 'solider', 'commando', 'cannibal',
               'hunter', 'assassin', 'dealer', 'zombie', 'sniper', 'priest',
-              'hound', 'pirate', 'phreaker', 'raver', 'governor'
+              'hound', 'pirate', 'phreaker', 'raver', 'governor', 'blaster',
+              'decker', 'disrupter', 'empath', 'esper', 'flatlander',
+              'slugthrower', 'sophont', 'adept'
             ];
 
 var compoundTitle = get(jobPreN) + get(jobSuff);
@@ -150,7 +159,14 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'cranial ', 'reverse ', 'nextlevel ', 'cyberwar ',
                        'solar ', 'lunar ', 'giga ', 'mega ', 'hyper ',
                        'super', 'big data ', 'electro', 'SEO ', 'Pokémon ',
-                       'ATM ', 'bank ', 'proton ', 'electron ', 'neutron '
+                       'ATM ', 'bank ', 'proton ', 'electron ', 'neutron ',
+                       'ansible ', 'robo', 'robot ', 'droid ', 'android ',
+                       'drone ', 'autonomous ', 'blaster ', 'Dyson ',
+                       'FTL ', 'genetic ', 'hyperspace ', 'interdimensional ',
+                       'jump drive ', 'warp drive ', 'hyperdrive ', 'plasma ',
+                       'tachyon ', 'tachyo', 'Tellurian ', 'Terran ',
+                       'cybernetic ', 'cyberspace ', 'artificial ', 'shadow',
+                       'shadow ', 'arc ', 'chrono', 'chroma', 'toxic ', 'toxo'
                      ];
 
 // Standard crimes to be modified by prefixes
@@ -212,8 +228,8 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'journalism', 'journalist' ],
                         [ 'bombing', 'bomber' ],
                         [ 'pollution', 'pollutor' ],
-                        [ 'littering', 'litterer' ],
-                        [ 'driving', 'driver' ]
+                        [ 'littering', 'litterer' ]
+                        [ 'boosting', 'booster' ]
                       ];
 
 
