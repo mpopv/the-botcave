@@ -18,13 +18,22 @@
    return someArray[Math.floor(Math.random() * someArray.length)];
  }
 
- function check(something) {
+ function checkSing(something) {
    if (something.constructor === Array) { return something[0]; }
    else { return something; }
  }
 
- function get(something) {
-   return check(random(something));
+ function checkPlur(something) {
+   if (something.constructor === Array) { return something[1]; }
+   else { return something + 's'; }
+ }
+
+ function getSing(something) {
+   return checkSing(random(something));
+ }
+
+ function getPlur(something) {
+   return checkPlur(random(something));
  }
 
  function threeQuarter(something) {
@@ -52,6 +61,16 @@
    else { return ''; }
  }
 
+ function fifth(something) {
+   if (Math.random() >= 0.8 ) { return something; }
+   else { return ''; }
+ }
+
+ function tenth(something) {
+   if (Math.random() >= 0.9 ) { return something; }
+   else { return ''; }
+ }
+
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////// Jobs & Titles ////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -68,7 +87,11 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'metro', 'hydro', 'geo', 'stealth', 'slum', 'holo', 'contra',
               'drug', 'info', 'meme', 'noo', 'edge', 'rave', 'slip', 'robo',
               'tachyo', 'terra', 'magna', 'shadow', 'bullet', 'chroma',
-              'chrono', 'toxo', 'dream', 'mecha'
+              'chrono', 'toxo', 'dream', 'mecha', 'retro', 'grid', 'shock',
+              'power', 'kill', 'proto', 'synth', 'super-', 'cyber-', 'mech-',
+              'psyko-', 'hover-', 'nano-', 'chem-', 'arch-', 'bio-', 'glitter',
+              'glimmer', 'stim', 'laser', 'lazer', 'phaser', 'phazer',
+              'plasma', 'sym', 'meta'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -84,7 +107,13 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'nuclear', 'hydrogen', 'gravity', 'ansible', 'drone', 'blaster',
               'shield', 'plasma', 'sentient', 'varelse', 'tachyon',
               'Tellurian', 'Terran', 'cybernetic', 'cyberspace', 'artificial',
-              'shadow', 'chromatic', 'toxic', 'keyboard', 'plastic', 'mecha'
+              'shadow', 'chromatic', 'toxic', 'keyboard', 'plastic', 'mecha',
+              '\'net', 'script', 'JavaScript', 'node', 'spice', 'soma',
+              'drug', 'hot pink', 'retro', 'datatape', 'tape', 'lightning',
+              'power', 'synth', 'synthetic', 'synthskin', 'glitter', 'glimmer', 'stim', 'evolved', 'computer', 'network', 'laser', 'lazer',
+              'phaser', 'phazer', 'aluminum', 'titanium', 'virus', 'viral',
+              'malware', 'sym', 'meta', 'security', 'script', 'military',
+              'systems'
             ];
 
 // Job suffixes
@@ -102,7 +131,11 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'sniper', 'wraith', 'priest', 'spider', 'breaker', 'phreaker',
               'pirate', 'pagan', 'blaster', 'decker', 'disrupter',
               'empath', 'esper', 'lander', 'sophont', 'stunner', 'bleeder',
-              'booster', 'doc', 'worlder'
+              'booster', 'doc', 'worlder', 'futurist', 'rocketeer', 'zilla',
+              'star', 'synth', 'shambler', 'laser', 'lazer', 'phaser',
+              'phazer', 'freak', 'jacker', 'worm', 'reaver', 'phantom',
+              'banshee', 'colonist', 'replicant', 'miner', 'splitter',
+              'khan', 'vagrant', 'monarchaist', 'syndicalist'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -119,16 +152,28 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'decker', 'disrupter', 'empath', 'esper', 'flatlander',
               'slugthrower', 'sophont', 'adept', 'mutant', 'berserker',
               'rodent', 'snake', 'slug', 'lizard',
-              [ 'lizardmen', 'lizardmen' ], [ 'snake person', 'snake people' ]
+              [ 'lizardmen', 'lizardmen' ], [ 'snake person', 'snake people' ],
+              'rocketeer', 'dragon', 'terminator', 'predator', 'synth',
+              'synthetic', 'synthdroid', 'synthbot', 'synthskin', 'elephant',
+              [ 'rhinoceros', 'rhinoceroses' ], 'turtle', 'alligator',
+              'slime', 'shambler', 'citizen', 'netizen', 'commander',
+              'elemental', 'wizard', 'sorcerer', 'freak', 'virus', 'DDOSer',
+              'symlinker', 'spoofer', 'hijacker', 'clickjacker', 'worm',
+              'reaver', 'phantom', 'banshee', 'offworld colony escapee',
+              'replicant', 'miner', 'gunner', 'traveler', 'wanderer',
+              'mongol', 'khan', 'tsar', 'czar', 'vagrant'
             ];
 
-var compoundTitle = get(jobPreN) + get(jobSuff);
+var compoundTitle = getSing(jobPreN) + getPlur(jobSuff);
 // console.log('Compound: ' + compoundTitle);
 
-var adjectiveTitle = get(jobPreS) + ' ' + get(jobTtlS);
+var adjectiveTitle = getSing(jobPreS) + ' ' + getPlur(jobTtlS);
 // console.log('Adjective: ' + adjectiveTitle);
 
 var whichTitle = [ adjectiveTitle, compoundTitle ];
+
+
+
 var title = random( whichTitle );
 
 
@@ -171,7 +216,17 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'tachyon ', 'tachyo', 'Tellurian ', 'Terran ',
                        'cybernetic ', 'cyberspace ', 'artificial ', 'shadow',
                        'shadow ', 'arc ', 'chrono', 'chroma', 'toxic ', 'toxo',
-                       'mecha'
+                       'mecha', 'spice ', 'soma ', 'drug ', 'datatape ',
+                       'tape ', 'retro', 'future ', 'urban ', 'metro',
+                       'invisa', 'power', 'kill', 'synth', 'synthetic ',
+                       'synthdroid ', 'synthbot ', 'proto', 'glitter',
+                       'glimmer', 'stim', 'evolved ', 'computer ',
+                       'network ', 'laser', 'laser ', 'lazer',
+                       'phaser', 'phaser ', 'phazer', 'aluminum ', 'titanium ',
+                       'plasma', 'Van Eck ', 'malware ', 'viral ', 'virus ',
+                       'sym', 'meta', 'sym ', 'meta ', 'firewall ', 'fire',
+                       'flame', 'mana', 'protonsaber ', 'lasersword ',
+                       'plasmagun ', 'railgun '
                      ];
 
 // Standard crimes to be modified by prefixes
@@ -234,26 +289,60 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'bombing', 'bomber' ],
                         [ 'pollution', 'pollutor' ],
                         [ 'littering', 'litterer' ],
-                        [ 'boosting', 'booster' ]
+                        [ 'boosting', 'booster' ],
+                        [ 'politics', 'politician' ],
+                        [ 'running', 'runner' ],
+                        [ 'blasting', 'blaster' ],
+                        [ 'dancing', 'dancer' ],
+                        [ 'raving', 'raver' ],
+                        [ 'partying', 'partier' ],
+                        [ 'hashing', 'hasher' ],
+                        [ 'bruteforcing', 'bruteforcer' ],
+                        [ 'scripting', 'script kiddie' ],
+                        [ 'hijacking', 'hijacker' ],
+                        [ 'clickjacking', 'clickjacker' ],
+                        [ 'spoofing', 'spoofer' ],
+                        [ 'social engineering', 'social engineer' ],
+                        [ 'cache poisoning', 'cache poisoner' ],
+                        [ 'symlinking', 'symlinker' ],
+                        [ 'code execution', 'code executor' ],
+                        [ 'DDOSing', 'DDOSer' ]
                       ];
 
 
 ////////////////////////////////////////////////////////////////////////////////
-///////////////// Jobs & Titles ////////////////////////////////////////////////
+///////////////// Groups ///////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-var dangerStates = [ 'mutant', 'furious', 'vicious', 'rampaging',
-                     'raging', 'violent', 'bloodthirsty', 'homicidal',
-                     'stim-addled'
+var dangerStates = [ 'mutant', 'furious', 'vicious', 'bloodthirsty',
+                     'homicidal', 'dimensional', 'stim-addled',
+                     'curiously ethereal', 'plague-infested', 'enraged',
+                     'zombified', 'cybernetic-enhanced', 'superpowered',
+                     'mecha-armored'
                    ];
 var state = random(dangerStates);
 
-var dangerGroups = [ 'gang', 'pack', 'band' ];
+var dangerGroups = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
+                      'battlegroup', 'division', 'faction',
+                      'freighter', 'mining vessel', 'hovertransport',
+                      'battlegang', 'war party', 'group', 'band',
+                      'batch', 'guild', 'society', 'ensemble',
+                      'association', 'battalion', 'platoon', 'cabal',
+                      'fringe movement', 'splinter group', 'splinter cell',
+                      'group', 'cell', 'cult', 'bloodgang', 'colony ship',
+                      'teletransport', 'airtaxi', 'horde', 'battlecarrier',
+                      'tank division', 'militia faction'
+                   ];
 var group = random(dangerGroups);
+
+var groupStates = [ 'rampaging', 'raging', 'violent', 'false-flag', 'large',
+                    'massive', 'swarming', 'stampeding', 'panicked', 'fleeing'
+                  ];
+var gState = random(groupStates);
 
 var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking' ];
 var warning = random(warnings).toUpperCase();
 
-var warningStatement = warning + ': A ' + state + ' ' + group + ' of ' + title + 's have broken into Sector 7, and are committing acts of ' + half(uberPref) + random(crimePrefixes) + check(random(genericCrimes)) + '.';
+var warningStatement = warning + ': A ' + gState + ' ' + group + ' of ' + state + ' ' + title + ' has suddenly appeared in Sector 7, and is committing acts of ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + '.';
 
 console.log(warningStatement);
