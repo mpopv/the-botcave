@@ -1,21 +1,26 @@
 
  // Untitled Cyperpunk Twitter Bot
 
- var Twit = require('twit');
- var TwitterBot = require('node-twitterbot').TwitterBot;
-
- var Bot = new TwitterBot({
-   consumer_key:         process.env.CYBERBOT_CONSUMER_KEY,
-   consumer_secret:      process.env.CYBERBOT_CONSUMER_SECRET,
-   access_token:         process.env.CYBERBOT_ACCESS_TOKEN,
-   access_token_secret:  process.env.CYBERBOT_ACCESS_TOKEN_SECRET
- });
+ // var Twit = require('twit');
+ // var TwitterBot = require('node-twitterbot').TwitterBot;
+ //
+ // var Bot = new TwitterBot({
+ //   consumer_key:         process.env.CYBERBOT_CONSUMER_KEY,
+ //   consumer_secret:      process.env.CYBERBOT_CONSUMER_SECRET,
+ //   access_token:         process.env.CYBERBOT_ACCESS_TOKEN,
+ //   access_token_secret:  process.env.CYBERBOT_ACCESS_TOKEN_SECRET
+ // });
 
 
 ///////////////// Choose Random Element in a Array ////////////////////////////
 
  function random(myArray) {
    return myArray[Math.floor(Math.random() * myArray.length)];
+ }
+
+ function check(term) {
+   if (term.constructor === Array) { return term[0]; }
+   else { return term; }
  }
 
 var jobPreN;
@@ -32,7 +37,7 @@ var corps;
 
 // Job Prefixes that can be attached as a compound word
 jobPreN =   [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
-              'solo', 'med', 'data', 'cyber', 'arch', 'under', 'sewer', 'hack'
+              'solo', 'med', 'data', 'cyber', 'arch', 'under', 'sewer', 'hack',
               'deep', 'nano', 'street', 'ex-', 'gene', 'wire', 'web', 'dark',
               'mech', 'armor', 'gun', 'waste', 'tube', 'tank', 'neo', 'war',
               'slag', 'echo', 'steel', 'law', 'wild', 'blade', 'blood', 'exo'
@@ -54,7 +59,7 @@ jobSuff =   [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'mage', 'bandit', 'technician', 'shade', 'trader',
               'smuggler', 'keeper', 'medic', 'rat', 'splicer', 'slicer',
               'rebel', 'pilot', 'spacer', 'capitalist', 'communist',
-              'socialist', 'libertarian', 'nihilist', 'crawler', 'jacker',
+              'socialist', 'nihilist', 'crawler', 'jacker',
               'zealot', 'bot', 'mech', 'smith', 'droid', 'trooper',
               'commando', 'goblin', 'breaker', 'morph'
             ];
@@ -71,8 +76,8 @@ jobTtlS =   [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'goblin', 'ghost'
             ];
 
-var compoundTitle = random(jobPreN) + random(jobSuff);
+var compoundTitle = check(random(jobPreN)) + check(random(jobSuff));
 console.log('Compound: ' + compoundTitle);
 
-var adjectiveTitle = random(jobPreS) + random(jobTtlS);
+var adjectiveTitle = check(random(jobPreS)) + ' ' + check(random(jobTtlS));
 console.log('Adjective: ' + adjectiveTitle);
