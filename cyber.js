@@ -12,27 +12,45 @@
  // });
 
 
-///////////////// Choose Random Element in a Array ////////////////////////////
+///////////////// Functions ////////////////////////////////////////////////////
 
- function random(myArray) {
-   return myArray[Math.floor(Math.random() * myArray.length)];
+ function random(someArray) {
+   return someArray[Math.floor(Math.random() * someArray.length)];
  }
 
- function check(term) {
-   if (term.constructor === Array) { return term[0]; }
-   else { return term; }
+ function check(something) {
+   if (something.constructor === Array) { return something[0]; }
+   else { return something; }
  }
 
  function get(something) {
    return check(random(something));
  }
 
-var jobPreN;
-var jobPreS;
-var jobSuff;
-var jobTtlS;
-var corps;
+ function threeQuarter(something) {
+   if (Math.random() >= 0.25 ) { return something; }
+   else { return ''; }
+ }
 
+ function twoThird(something) {
+   if (Math.random() >= 0.33 ) { return something; }
+   else { return ''; }
+ }
+
+ function half(something) {
+   if (Math.random() >= 0.5 ) { return something; }
+   else { return ''; }
+ }
+
+ function third(something) {
+   if (Math.random() >= 0.66 ) { return something; }
+   else { return ''; }
+ }
+
+ function quarter(something) {
+   if (Math.random() >= 0.75 ) { return something; }
+   else { return ''; }
+ }
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////// Jobs & Titles ////////////////////////////////////////////////
@@ -107,6 +125,14 @@ var title = random( whichTitle );
 ///////////////// Jobs & Titles ////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+// Additional crime prefixes
+var crimeUberPrefs = [ 'illegal', 'illicit', 'serial', 'first-degree',
+                       'second-degree', 'third-degree', 'aggravated',
+                       'spontaneous', 'reckless', 'malicious'
+                     ];
+      var uberPref = random(crimeUberPrefs) + ' ';
+
+// Standard cyberpunk crime prefixes
 var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'anarcho', 'hover', 'bio',
                        'data', 'cyber', 'nano', 'street ', 'gene ', 'wire',
@@ -117,30 +143,77 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'stealth ', 'holo', 'contra', 'anti', 'meme ', 'noo',
                        'corporate ', 'data ', 'cyborg ', 'virtual ', 'dread',
                        'digital ', 'nano', 'void', 'rogue ', 'special ',
-                       'mech ', 'android ', 'zone ', 'DNA', 'neon ',
+                       'mech ', 'android ', 'zone ', 'DNA ', 'neon ',
                        'chemical ', 'orbital ', 'crystal ', 'electronic ',
                        'planetary ', 'nuclear ', 'hydrogen ', 'gravity ',
                        'thought', 'SQL ', 'Bitcoin ', 'Tamagotchi ',
                        'cranial ', 'reverse ', 'nextlevel ', 'cyberwar ',
                        'solar ', 'lunar ', 'giga ', 'mega ', 'hyper ',
-                       'super', 'big data ', 'electro', 'SEO '
+                       'super', 'big data ', 'electro', 'SEO ', 'Pokémon ',
+                       'ATM ', 'bank ', 'proton ', 'electron ', 'neutron '
                      ];
 
-var genericCrimes   = [ 'perjury', 'arson', 'corruption', 'larceny',
-                        'crime', 'hacking', 'phishing', 'phreaking',
-                        'injection', 'theft', 'murder', 'terrorism',
-                        'activism', 'protesting', 'forgery', 'witchcraft',
-                        'vampirism', 'racketeering', 'conspiracy',
-                        'immigration', 'emigration', 'espionage', 'extortion',
-                        'embezzlement', 'piracy', 'mutiny', 'desertion',
-                        'burglarly', 'defamation', 'fraud', 'impersonation',
-                        'assault', 'battery', 'jaywalking', 'loitering',
-                        'malfeasance', 'intoxication', 'sabotage', 'sedition',
-                        'shoplifting', 'blackmail', 'profiteering',
-                        'smuggling', 'blockade running', 'resistance',
-                        'vandalism', 'trespass', 'treason', 'tampering',
-                        'treachery', 'journalism', 'bombing', 'pollution',
-                        'littering', 'driving'
+// Standard crimes to be modified by prefixes
+var genericCrimes   = [ [ 'perjury', 'perjurer' ],
+                        [ 'arson', 'arsonist' ],
+                        [ 'corruption', 'corruptor' ],
+                        [ 'larceny', 'larcenist' ],
+                        [ 'crime', 'criminal' ],
+                        [ 'hacking', 'hacker' ],
+                        [ 'phishing', 'phisher' ],
+                        [ 'phreaking', 'phreaker' ],
+                        [ 'injection', 'injector' ],
+                        [ 'theft', 'thief', 'thieves' ],
+                        [ 'murder', 'murderer' ],
+                        [ 'terrorism', 'terrorist' ],
+                        [ 'activism', 'activist' ],
+                        [ 'protesting', 'protestor' ],
+                        [ 'forgery', 'forger' ],
+                        [ 'witchcraft', 'witch', 'witches' ],
+                        [ 'vampirism', 'vampire' ],
+                        [ 'racketeering', 'racketeer' ],
+                        [ 'conspiracy', 'conspirator' ],
+                        [ 'immigration', 'immigrant' ],
+                        [ 'emigration', 'emigrant' ],
+                        [ 'espionage', 'spy', 'spies' ],
+                        [ 'extortion', 'extortionist' ],
+                        [ 'embezzlement', 'embezzler' ],
+                        [ 'piracy', 'pirate' ],
+                        [ 'deviance', 'deviant' ],
+                        [ 'mutiny', 'mutineer' ],
+                        [ 'military desertion', 'deserter' ],
+                        [ 'burglarly', 'burglar' ],
+                        [ 'defamation', 'defamer' ],
+                        [ 'fraud', 'fraudster' ],
+                        [ 'impersonation', 'impersonator' ],
+                        [ 'assault', 'assaulter' ],
+                        [ 'jaywalking', 'jaywalker' ],
+                        [ 'loitering', 'loiterer' ],
+                        [ 'malfeasance', 'malfeasant' ],
+                        [ 'intoxication', 'drunkard' ],
+                        [ 'sabotage', 'sabateur' ],
+                        [ 'sedition', 'seditor' ],
+                        [ 'shoplifting', 'shoplifter' ],
+                        [ 'blackmail', 'blackmailer' ],
+                        [ 'profiteering', 'profiteer' ],
+                        [ 'smuggling', 'smuggler' ],
+                        [ 'blockade running', 'blockade runner' ],
+                        [ 'resistance', 'resistance fighter' ],
+                        [ 'vandalism', 'vandal' ],
+                        [ 'trespass', 'trespasser' ],
+                        [ 'treason', 'traitor' ],
+                        [ 'truancy', 'truant' ],
+                        [ 'tampering', 'tamperer' ],
+                        [ 'skimming', 'skimmer' ],
+                        [ 'slicing', 'slicer' ],
+                        [ 'splicing', 'splicer' ],
+                        [ 'cloning', 'cloner' ],
+                        [ 'treachery', 'treacherer' ],
+                        [ 'journalism', 'journalist' ],
+                        [ 'bombing', 'bomber' ],
+                        [ 'pollution', 'pollutor' ],
+                        [ 'littering', 'litterer' ],
+                        [ 'driving', 'driver' ]
                       ];
 
 
@@ -160,6 +233,6 @@ var group = random(dangerGroups);
 var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking' ];
 var warning = random(warnings).toUpperCase();
 
-var warningStatement = warning + ': A ' + state + ' ' + group + ' of ' + title + 's have broken into Sector 7, and are committing acts of ' + random(crimePrefixes) + random(genericCrimes) + '.';
+var warningStatement = warning + ': A ' + state + ' ' + group + ' of ' + title + 's have broken into Sector 7, and are committing acts of ' + half(uberPref) + random(crimePrefixes) + check(random(genericCrimes)) + '.';
 
 console.log(warningStatement);
