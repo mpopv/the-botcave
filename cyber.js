@@ -68,7 +68,7 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'metro', 'hydro', 'geo', 'stealth', 'slum', 'holo', 'contra',
               'drug', 'info', 'meme', 'noo', 'edge', 'rave', 'slip', 'robo',
               'tachyo', 'terra', 'magna', 'shadow', 'bullet', 'chroma',
-              'chrono', 'toxo', 'dream'
+              'chrono', 'toxo', 'dream', 'mecha'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -82,9 +82,9 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'crystal', 'stealth', 'electronic', 'rust', 'cable',
               'contraband', 'sprawl', 'planetary', 'spyre', 'radar',
               'nuclear', 'hydrogen', 'gravity', 'ansible', 'drone', 'blaster',
-              'shield', 'plasma', 'sentient', 'raman', 'varelse', 'tachyon',
+              'shield', 'plasma', 'sentient', 'varelse', 'tachyon',
               'Tellurian', 'Terran', 'cybernetic', 'cyberspace', 'artificial',
-              'shadow', 'chromatic', 'toxic', 'keyboard', 'plastic'
+              'shadow', 'chromatic', 'toxic', 'keyboard', 'plastic', 'mecha'
             ];
 
 // Job suffixes
@@ -117,7 +117,9 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'hunter', 'assassin', 'dealer', 'zombie', 'sniper', 'priest',
               'hound', 'pirate', 'phreaker', 'raver', 'governor', 'blaster',
               'decker', 'disrupter', 'empath', 'esper', 'flatlander',
-              'slugthrower', 'sophont', 'adept'
+              'slugthrower', 'sophont', 'adept', 'mutant', 'berserker',
+              'rodent', 'snake', 'slug', 'lizard',
+              [ 'lizardmen', 'lizardmen' ], [ 'snake person', 'snake people' ]
             ];
 
 var compoundTitle = get(jobPreN) + get(jobSuff);
@@ -137,7 +139,9 @@ var title = random( whichTitle );
 // Additional crime prefixes
 var crimeUberPrefs = [ 'illegal', 'illicit', 'serial', 'first-degree',
                        'second-degree', 'third-degree', 'aggravated',
-                       'spontaneous', 'reckless', 'malicious'
+                       'spontaneous', 'reckless', 'malicious', 'felony',
+                       'misdemeanor', 'grand',
+                       'recreational', 'contract'
                      ];
       var uberPref = random(crimeUberPrefs) + ' ';
 
@@ -166,7 +170,8 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'jump drive ', 'warp drive ', 'hyperdrive ', 'plasma ',
                        'tachyon ', 'tachyo', 'Tellurian ', 'Terran ',
                        'cybernetic ', 'cyberspace ', 'artificial ', 'shadow',
-                       'shadow ', 'arc ', 'chrono', 'chroma', 'toxic ', 'toxo'
+                       'shadow ', 'arc ', 'chrono', 'chroma', 'toxic ', 'toxo',
+                       'mecha'
                      ];
 
 // Standard crimes to be modified by prefixes
@@ -228,7 +233,7 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'journalism', 'journalist' ],
                         [ 'bombing', 'bomber' ],
                         [ 'pollution', 'pollutor' ],
-                        [ 'littering', 'litterer' ]
+                        [ 'littering', 'litterer' ],
                         [ 'boosting', 'booster' ]
                       ];
 
