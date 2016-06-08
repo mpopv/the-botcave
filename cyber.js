@@ -33,12 +33,16 @@ var corps;
 // Job Prefixes that can be attached as a compound word
 jobPreN =   [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'solo', 'med', 'data', 'cyber', 'arch', 'under', 'sewer', 'hack'
-              'deep', 'nano', 'street', 'ex-', 'gene'
+              'deep', 'nano', 'street', 'ex-', 'gene', 'wire', 'web', 'dark',
+              'mech', 'armor', 'gun', 'waste', 'tube', 'tank'
             ];
 
 // Job prefixes that can be adjectives modifying a title
 jobPreS =   [ 'corporate', 'data', 'cyborg', 'grand', 'low', 'virtual',
-              'hacker', 'dread', 'digital', 'street', 'sector'
+              'hacker', 'dread', 'digital', 'street', 'sector', 'contract',
+              'nano', 'gene', 'hack', 'virtual', 'net', 'internet', 'dark',
+              'void', 'rogue', 'special', 'mech', 'armored', 'weapon',
+              'steam'
             ];
 
 // Job suffixes
@@ -47,7 +51,11 @@ jobSuff =   [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'boy', 'girl', 'nerd', 'surfer', 'cyborg', 'fixer', 'nomad',
               'punk', 'cultist', 'slinger', 'doctor', [ 'thief', 'thieves' ],
               'mage', 'bandit', 'technician', 'shade', 'trader',
-              'smuggler', 'keeper', 'medic', 'rat', 'splicer', 'slicer'
+              'smuggler', 'keeper', 'medic', 'rat', 'splicer', 'slicer',
+              'rebel', 'pilot', 'spacer', 'capitalist', 'communist',
+              'socialist', 'libertarian', 'nihilist', 'crawler', 'jacker',
+              'zealot', 'bot', 'mech', 'smith', 'droid', 'trooper',
+              'commando'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -56,7 +64,9 @@ jobTtlS =   [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               [ 'princess', 'princesses' ], [ 'ronin', 'ronin' ],
               [ 'samurai', 'samurai' ], 'blackhat', 'whitehat', 'cultist',
               'rebel', 'juggernaut', 'technician', 'trader', 'smuggler',
-              'medic', 'drifter', 'splicer', 'slicer'
+              'medic', 'drifter', 'splicer', 'slicer', 'marketeer',
+              'mechanic', 'engineer', 'zealot', 'correspondent', 'robot',
+              'mech', 'droid', 'trooper', 'solider', 'commando'
             ];
 
 
