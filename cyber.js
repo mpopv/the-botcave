@@ -120,7 +120,10 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'mech ', 'android ', 'zone ', 'DNA', 'neon ',
                        'chemical ', 'orbital ', 'crystal ', 'electronic ',
                        'planetary ', 'nuclear ', 'hydrogen ', 'gravity ',
-                       'thought', 'SQL '
+                       'thought', 'SQL ', 'Bitcoin ', 'Tamagotchi ',
+                       'cranial ', 'reverse ', 'nextlevel ', 'cyberwar ',
+                       'solar ', 'lunar ', 'giga ', 'mega ', 'hyper ',
+                       'super', 'big data ', 'electro', 'SEO '
                      ];
 
 var genericCrimes   = [ 'perjury', 'arson', 'corruption', 'larceny',
@@ -136,12 +139,8 @@ var genericCrimes   = [ 'perjury', 'arson', 'corruption', 'larceny',
                         'shoplifting', 'blackmail', 'profiteering',
                         'smuggling', 'blockade running', 'resistance',
                         'vandalism', 'trespass', 'treason', 'tampering',
-                        'treachery'
-                      ];
-
-      var crimes    = [ 'Bitcoin laundering', 'thoughtperjury', 'virtual arson',
-                        'corruption', 'nanolarceny',
-                        'arson', 'mindcrime'
+                        'treachery', 'journalism', 'bombing', 'pollution',
+                        'littering', 'driving'
                       ];
 
 
