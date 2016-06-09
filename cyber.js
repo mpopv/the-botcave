@@ -92,7 +92,9 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'psyko-', 'hover-', 'nano-', 'chem-', 'arch-', 'bio-', 'glitter',
               'glimmer', 'stim', 'laser', 'lazer', 'phaser', 'phazer',
               'plasma', 'sym', 'meta', 'tetra', 'terror', 'horror', 'pseudo',
-              'quasi-', 'jet'
+              'quasi-', 'jet', 'nitro', 'petro', 'audio', 'video',
+              'anthro', 'swoop', 'whisper', 'dread', 'fear', 'rocket',
+              'astro'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -104,7 +106,7 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'neon', 'chemical', 'illegal', 'bounty', 'freelance', 'night',
               'junk', 'trash', 'scrap', 'orbital', 'space', 'time',
               'crystal', 'stealth', 'electronic', 'rust', 'cable',
-              'contraband', 'sprawl', 'planetary', 'spyre', 'radar',
+              'contraband', 'sprawl', 'planetary', 'Spyre', 'radar',
               'nuclear', 'hydrogen', 'gravity', 'ansible', 'drone', 'blaster',
               'shield', 'plasma', 'sentient', 'varelse', 'tachyon',
               'Tellurian', 'Terran', 'cybernetic', 'cyberspace', 'artificial',
@@ -115,7 +117,8 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'phaser', 'phazer', 'aluminum', 'titanium', 'virus', 'viral',
               'malware', 'sym', 'meta', 'security', 'script', 'military',
               'systems', 'nightmare', 'drone', 'AI', 'autonomous',
-              'semiautonomous', 'Tumblr', 'Google', 'Twitter'
+              'semiautonomous', 'Tumblr', 'Twitter', 'imperial', 'lunar',
+              'solar', 'Plutonian'
             ];
 
 // Job suffixes
@@ -138,7 +141,13 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'phazer', 'freak', 'jacker', 'worm', 'reaver', 'phantom',
               'banshee', 'colonist', 'replicant', 'miner', 'splitter',
               'khan', 'vagrant', 'monarchaist', 'syndicalist', 'straggler',
-              'hound'
+              'hound', 'phobe', 'crat', 'tracer', 'spinner', 'dog',
+              'scorpion', 'bear', 'shark', [ 'octopus', 'octopi' ],
+              'dinosaur', 'fascist', 'jockey', 'racer', 'crafter',
+              'psyker', 'runner', 'reaver', 'star', 'prophet', 'cleric',
+              'whisper', 'emperor', 'praetor', 'jaeger', 'caliph', 'knight',
+              'skater', 'boarder', 'skiier', 'diver', 'naut',
+              'physicist'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -154,29 +163,25 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'hound', 'pirate', 'phreaker', 'raver', 'governor', 'blaster',
               'decker', 'disrupter', 'empath', 'esper', 'flatlander',
               'slugthrower', 'sophont', 'adept', 'mutant', 'berserker',
-              'rodent', 'snake', 'slug', 'lizard',
+              'rodent', 'snake', 'slug', 'lizard', 'populist',
               [ 'lizardmen', 'lizardmen' ], [ 'snake person', 'snake people' ],
               'rocketeer', 'dragon', 'terminator', 'predator', 'synth',
               'synthetic', 'synthdroid', 'synthbot', 'synthskin', 'elephant',
-              [ 'rhinoceros', 'rhinoceroses' ], 'turtle', 'alligator',
+              [ 'rhinoceros', 'rhinoceroses' ], 'alligator',
               'slime', 'shambler', 'citizen', 'netizen', 'commander',
               'elemental', 'wizard', 'sorcerer', 'freak', 'virus', 'DDOSer',
               'symlinker', 'spoofer', 'hijacker', 'clickjacker', 'worm',
               'reaver', 'phantom', 'banshee', 'offworld colony escapee',
               'replicant', 'miner', 'gunner', 'traveler', 'wanderer',
               'mongol', 'khan', 'tsar', 'czar', 'vagrant', 'tankbuster',
-              'fireteam', 'armorpiercer', 'hound', 'furrie'
+              'fireteam', 'armorpiercer', 'hound', 'furrie', 'noble',
+              'dog', 'cat', 'lion', 'scorpion', 'bear', 'shark',
+              [ 'octopus', 'octopi' ], 'manta ray', 'dinosaur', 'fascist',
+              'prophet', 'oracle', 'cleric', 'NeoBernieBro',
+              'monarch', 'legionnaire', 'king', 'queen', 'sheikh', 'jaeger',
+              'caliph', 'baron', 'knight', 'ape', 'centaur', 'ogre',
+              'apostate', 'heretic', 'redemptionist', 'mammoth'
             ];
-
-var compoundTitle = getSing(jobPreN) + getPlur(jobSuff);
-// console.log('Compound: ' + compoundTitle);
-
-var adjectiveTitle = getSing(jobPreS) + ' ' + getPlur(jobTtlS);
-// console.log('Adjective: ' + adjectiveTitle);
-
-var whichTitle = [ adjectiveTitle, compoundTitle ];
-
-var title = random( whichTitle );
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////// Jobs & Titles ////////////////////////////////////////////////
@@ -189,7 +194,6 @@ var crimeUberPrefs = [ 'illegal', 'illicit', 'serial', 'first-degree',
                        'misdemeanor', 'grand',
                        'recreational', 'contract'
                      ];
-      var uberPref = random(crimeUberPrefs) + ' ';
 
 // Standard cyberpunk crime prefixes
 var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
@@ -200,7 +204,7 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'stim', 'night', 'zero ', 'space ', 'time ', 'mind ',
                        'cryo', 'micro', 'post-', 'metro', 'hydro', 'geo',
                        'stealth ', 'holo', 'contra', 'anti', 'meme ', 'noo',
-                       'corporate ', 'data ', 'cyborg ', 'virtual ', 'dread',
+                       'corporate ', 'data ', 'cyborg ', 'virtual ', 'dread ',
                        'digital ', 'nano', 'void', 'rogue ', 'special ',
                        'mech ', 'android ', 'zone ', 'DNA ', 'neon ',
                        'chemical ', 'orbital ', 'crystal ', 'electronic ',
@@ -310,7 +314,8 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'DDOSing', 'DDOSer' ],
                         [ 'libel', 'libeler' ],
                         [ 'regicide', 'kingslayer' ],
-                        [ 'deicide', 'godslayer' ]
+                        [ 'deicide', 'godslayer' ],
+                        [ 'CamelCasing', 'CamelCaser' ]
                       ];
 
 
@@ -320,24 +325,26 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
 
 var dangerStates = [ 'mutant', 'furious', 'vicious', 'bloodthirsty',
                      'homicidal', 'dimensional', 'stim-addled',
-                     'curiously ethereal', 'plague-infested', 'enraged',
+                     'deadly', 'plague-infested', 'enraged',
                      'zombified', 'cybernetic-enhanced', 'superpowered',
-                     'mecha-armored'
+                     'mecha-armored', 'lethal', 'crazed', 'conniving',
+                     'vengeful', 'exiled', 'foreign', 'ancient', 'evil',
+                     'amoral', 'Cthulhu-worshipping'
                    ];
-var state = random(dangerStates);
 
 var dangerGroups = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                       'battlegroup', 'division', 'faction',
                       'freighter', 'mining vessel', 'hovertransport',
                       'battlegang', 'war party', 'group', 'band',
-                      'batch', 'guild', 'society', 'ensemble',
-                      'association', 'battalion', 'platoon', 'cabal',
+                      'batch', 'guild', 'society', 'vast ensemble',
+                      'trade association', 'battalion', 'platoon', 'cabal',
                       'fringe movement', 'splinter group', 'splinter cell',
                       'group', 'cell', 'cult', 'bloodgang', 'colony ship',
-                      'teletransport', 'airtaxi', 'horde', 'battlecarrier',
-                      'tank division', 'militia faction'
+                      'teletransport', 'skytaxi', 'horde', 'battlecarrier',
+                      'tank division', 'militia faction', 'political party',
+                      'religious sect', 'sectarian faction', 'tribe',
+                      'resistance group', 'secret order'
                    ];
-var group = random(dangerGroups);
 
 var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
                      'is reportedly committing', 'has committed',
@@ -347,12 +354,10 @@ var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
                      'is plotting acts of', 'is planning', 'is plotting',
                      'was discovered committing', 'was caught committing'
                   ];
-var crimeAction = random(crimeActions);
 
 var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking',
                  'advisory', 'report'
                ];
-var warning = random(warnings).toUpperCase();
 
 var locations = [ 'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
                   'in Sector 86', 'in Sector AA23', 'in Sector 1138',
@@ -373,15 +378,68 @@ var locations = [ 'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
                   'outside the Western Mars Airlock',
                   'near the ruins of Trump\'s Wall', 'on the outernet',
                   'on the darknet', 'on the darkweb', 'inside the darkmind',
-                  'in the MagmaCore Colonies', 'on Titan Colony 7'
+                  'in the MagmaCore Colonies', 'on Titan Colony 7',
+                  'in the distant past', 'in the far future',
+                  'six weeks in the future', 'in the year 432',
+                  'on Level 2346', 'on Level 834', 'on Level 61',
+                  'somewhere near Level 729', 'around Level 1254',
+                  'on Levels 663 through 669', 'in the sewers near Level 3114',
+                  'in Sector 84, Level 312', 'in Sector 6008, Level 5',
+                  'in the cloud tradelanes', 'in the stratospheric tradelanes',
+                  'in the orbital tradelanes', 'in the underdark',
+                  'in an alley in the underhive', 'in an undersewer cavern',
+                  'inside a Net Fortress', 'in a netcavern',
+                  'beneath the Artificial Ice Cap', 'in Neo Chernobyl',
+                  'in eastern NeoTokyo', 'in a Wakandan mine',
+                  'in the Kuiper Belt', 'in the chaos dimension',
+                  'from the lair of the Undersewer King',
+                  'near the White House', 'beneath the ruins of San Francisco',
+                  'in what was once New York', 'beyond the time border',
+                  'in the fourth dimension', 'in the second dimension',
+                  'aboard a starcarrier', 'aboard a solar freight hauler',
+                  'aboard the Genesis Station', 'aboard StarCylinder Epsilon',
+                  'in World of Warcraft', 'while streaming on Twitch'
                ];
-var location = random(locations);
 
-var count = 140;
+
+
+var compoundTitle;
+var adjectiveTitle;
+var whichTitle;
+var title;
+
+var uberPref;
+var state;
+var group;
+var crimeAction;
+var warning;
+var location;
+
+
+
+function chooseTerms(){
+
+  compoundTitle = getSing(jobPreN) + getPlur(jobSuff);
+  adjectiveTitle = getSing(jobPreS) + ' ' + getPlur(jobTtlS);
+  whichTitle = [ adjectiveTitle, compoundTitle ];
+  title = random( whichTitle );
+
+  uberPref = random(crimeUberPrefs) + ' ';
+  state = random(dangerStates);
+  group = random(dangerGroups);
+  crimeAction = random(crimeActions);
+  warning = random(warnings).toUpperCase();
+  location = random(locations);
+
+}
+
+var count = 141;
 var warningStatement = '';
 
 function buildWarningStatement(){
-  while ( count > 139 ){
+  while ( count > 140 ){
+
+    chooseTerms();
 
     warningStatement = warning + ': A ' + group + ' of ' + state + ' ' + title + ' ' + crimeAction + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + ' ' + location + '.';
 
