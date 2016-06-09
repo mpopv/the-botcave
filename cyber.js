@@ -91,7 +91,8 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'power', 'kill', 'proto', 'synth', 'super-', 'cyber-', 'mech-',
               'psyko-', 'hover-', 'nano-', 'chem-', 'arch-', 'bio-', 'glitter',
               'glimmer', 'stim', 'laser', 'lazer', 'phaser', 'phazer',
-              'plasma', 'sym', 'meta'
+              'plasma', 'sym', 'meta', 'tetra', 'terror', 'horror', 'pseudo',
+              'quasi-', 'jet'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -113,7 +114,8 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'power', 'synth', 'synthetic', 'synthskin', 'glitter', 'glimmer', 'stim', 'evolved', 'computer', 'network', 'laser', 'lazer',
               'phaser', 'phazer', 'aluminum', 'titanium', 'virus', 'viral',
               'malware', 'sym', 'meta', 'security', 'script', 'military',
-              'systems'
+              'systems', 'nightmare', 'drone', 'AI', 'autonomous',
+              'semiautonomous', 'Tumblr', 'Google', 'Twitter'
             ];
 
 // Job suffixes
@@ -135,7 +137,8 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'star', 'synth', 'shambler', 'laser', 'lazer', 'phaser',
               'phazer', 'freak', 'jacker', 'worm', 'reaver', 'phantom',
               'banshee', 'colonist', 'replicant', 'miner', 'splitter',
-              'khan', 'vagrant', 'monarchaist', 'syndicalist'
+              'khan', 'vagrant', 'monarchaist', 'syndicalist', 'straggler',
+              'hound'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -161,7 +164,8 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'symlinker', 'spoofer', 'hijacker', 'clickjacker', 'worm',
               'reaver', 'phantom', 'banshee', 'offworld colony escapee',
               'replicant', 'miner', 'gunner', 'traveler', 'wanderer',
-              'mongol', 'khan', 'tsar', 'czar', 'vagrant'
+              'mongol', 'khan', 'tsar', 'czar', 'vagrant', 'tankbuster',
+              'fireteam', 'armorpiercer', 'hound', 'furrie'
             ];
 
 var compoundTitle = getSing(jobPreN) + getPlur(jobSuff);
@@ -172,10 +176,7 @@ var adjectiveTitle = getSing(jobPreS) + ' ' + getPlur(jobTtlS);
 
 var whichTitle = [ adjectiveTitle, compoundTitle ];
 
-
-
 var title = random( whichTitle );
-
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////// Jobs & Titles ////////////////////////////////////////////////
@@ -226,7 +227,7 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'plasma', 'Van Eck ', 'malware ', 'viral ', 'virus ',
                        'sym', 'meta', 'sym ', 'meta ', 'firewall ', 'fire',
                        'flame', 'mana', 'protonsaber ', 'lasersword ',
-                       'plasmagun ', 'railgun '
+                       'plasmagun ', 'railgun ', 'dank', 'butt', 'sleep'
                      ];
 
 // Standard crimes to be modified by prefixes
@@ -306,7 +307,10 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'cache poisoning', 'cache poisoner' ],
                         [ 'symlinking', 'symlinker' ],
                         [ 'code execution', 'code executor' ],
-                        [ 'DDOSing', 'DDOSer' ]
+                        [ 'DDOSing', 'DDOSer' ],
+                        [ 'libel', 'libeler' ],
+                        [ 'regicide', 'kingslayer' ],
+                        [ 'deicide', 'godslayer' ]
                       ];
 
 
@@ -340,9 +344,44 @@ var groupStates = [ 'rampaging', 'raging', 'violent', 'false-flag', 'large',
                   ];
 var gState = random(groupStates);
 
-var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking' ];
+var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
+                     'is reportedly committing', 'has committed',
+                     'is rumored to be committing', 'was sighted committing',
+                     'was spotted committing',
+                     'is reportedly committing', 'has commenced', 'has begun',
+                     'is plotting acts of', 'is planning', 'is plotting',
+                     'was discovered committing', 'was caught committing'
+                  ];
+var crimeAction = random(crimeActions);
+
+var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking',
+                 'advisory', 'report'
+               ];
 var warning = random(warnings).toUpperCase();
 
-var warningStatement = warning + ': A ' + gState + ' ' + group + ' of ' + state + ' ' + title + ' has suddenly appeared in Sector 7, and is committing acts of ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + '.';
+var locations = [ 'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
+                  'in Sector 86', 'in Sector AA23', 'in Sector 1138',
+                  'in Sector 327', 'in the Irradiated Sector-Chain',
+                  'in the outer deathwastes', 'in the Underspyre',
+                  'in the Upper Spyre', 'in the hive depths',
+                  'deep in the lower levels', 'in the far undersewers',
+                  'in the Mutant Caverns', 'in the spice mines of Kessel',
+                  'at Neo New York Spaceport', 'on the Kansas zombie plains',
+                  'in Whoppersconsin, Presented by Burger King®',
+                  'in near Earth orbit',
+                  'in low Earth orbit', 'at the solarside Lagrange point',
+                  'in the exoatmosphere',
+                  'on the virtuanet', 'on the holonet',
+                  'at a New Delhi holocafe', 'at the World War IV Memorial',
+                  'aboard Satellite Station Delta', 'in orbit over Mars',
+                  'inside the MindInternet',
+                  'outside the Western Mars Airlock',
+                  'near the ruins of Trump\'s Wall', 'on the outernet',
+                  'on the darknet', 'on the darkweb', 'inside the darkmind',
+                  'in the MagmaCore Colonies', 'on Titan Colony 7'
+               ];
+var location = random(locations);
+
+var warningStatement = warning + ': A ' + gState + ' ' + group + ' of ' + state + ' ' + title + ' ' + crimeAction + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + ' ' + location + '.';
 
 console.log(warningStatement);
