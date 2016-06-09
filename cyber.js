@@ -1,15 +1,16 @@
 
- // Untitled Cyperpunk Twitter Bot
+ // MegaCity Police bot
+ // @megacitypolice on Twitter
 
- // var Twit = require('twit');
- // var TwitterBot = require('node-twitterbot').TwitterBot;
- //
- // var Bot = new TwitterBot({
- //   consumer_key:         process.env.CYBERBOT_CONSUMER_KEY,
- //   consumer_secret:      process.env.CYBERBOT_CONSUMER_SECRET,
- //   access_token:         process.env.CYBERBOT_ACCESS_TOKEN,
- //   access_token_secret:  process.env.CYBERBOT_ACCESS_TOKEN_SECRET
- // });
+ var Twit = require('twit');
+ var TwitterBot = require('node-twitterbot').TwitterBot;
+
+ var Bot = new TwitterBot({
+   consumer_key:         process.env.CYBERBOT_CONSUMER_KEY,
+   consumer_secret:      process.env.CYBERBOT_CONSUMER_SECRET,
+   access_token:         process.env.CYBERBOT_ACCESS_TOKEN,
+   access_token_secret:  process.env.CYBERBOT_ACCESS_TOKEN_SECRET
+ });
 
 
 ///////////////// Functions ////////////////////////////////////////////////////
