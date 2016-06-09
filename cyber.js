@@ -516,3 +516,5 @@ function buildWarningStatement(){
 buildWarningStatement();
 console.log(warningStatement);
 console.log(count);
+
+Bot.tweet(warningStatement);
