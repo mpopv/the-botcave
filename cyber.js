@@ -231,7 +231,9 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'plasma', 'Van Eck ', 'malware ', 'viral ', 'virus ',
                        'sym', 'meta', 'sym ', 'meta ', 'firewall ', 'fire',
                        'flame', 'mana', 'protonsaber ', 'lasersword ',
-                       'plasmagun ', 'railgun ', 'dank', 'butt', 'sleep'
+                       'plasmagun ', 'railgun ', 'dank', 'butt', 'sleep',
+                       'disc ', 'disk ', 'sleep ', 'mind ',
+                       'consciousness ', 'subconscious '
                      ];
 
 // Standard crimes to be modified by prefixes
@@ -343,7 +345,8 @@ var dangerGroups = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                       'teletransport', 'skytaxi', 'horde', 'battlecarrier',
                       'tank division', 'militia faction', 'political party',
                       'religious sect', 'sectarian faction', 'tribe',
-                      'resistance group', 'secret order'
+                      'resistance group', 'secret order', 'pair',
+                      'dark order'
                    ];
 
 var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
@@ -398,7 +401,16 @@ var locations = [ 'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
                   'in the fourth dimension', 'in the second dimension',
                   'aboard a starcarrier', 'aboard a solar freight hauler',
                   'aboard the Genesis Station', 'aboard StarCylinder Epsilon',
-                  'in World of Warcraft', 'while streaming on Twitch'
+                  'in World of Warcraft', 'while streaming on Twitch',
+                  'near the machine city', 'near the nation of exiled robots',
+                  'on an interstellar colony craft', 'in a junk heap',
+                  'both inside and outside of Schrödinger\'s Box',
+                  'in a Soylent factory', 'in a robotic robot factory factory',
+                  'between the six worlds', 'at the edge of known space',
+                  'at the event horizon of a black hole',
+                  'beyond a black hole', 'inside a paradox',
+                  'in Erdoğantinople', 'in the Second Islamic State',
+                  'in United Korea'
                ];
 
 
