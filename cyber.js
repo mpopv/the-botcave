@@ -339,11 +339,6 @@ var dangerGroups = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                    ];
 var group = random(dangerGroups);
 
-var groupStates = [ 'rampaging', 'raging', 'violent', 'false-flag', 'large',
-                    'massive', 'swarming', 'stampeding', 'panicked', 'fleeing'
-                  ];
-var gState = random(groupStates);
-
 var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
                      'is reportedly committing', 'has committed',
                      'is rumored to be committing', 'was sighted committing',
@@ -382,6 +377,19 @@ var locations = [ 'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
                ];
 var location = random(locations);
 
-var warningStatement = warning + ': A ' + gState + ' ' + group + ' of ' + state + ' ' + title + ' ' + crimeAction + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + ' ' + location + '.';
+var count = 140;
+var warningStatement = '';
 
+function buildWarningStatement(){
+  while ( count > 139 ){
+
+    warningStatement = warning + ': A ' + group + ' of ' + state + ' ' + title + ' ' + crimeAction + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + ' ' + location + '.';
+
+    count = warningStatement.length;
+
+  }
+}
+
+buildWarningStatement();
 console.log(warningStatement);
+console.log(count);
