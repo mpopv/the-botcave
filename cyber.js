@@ -94,7 +94,7 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'plasma', 'sym', 'meta', 'tetra', 'terror', 'horror', 'pseudo',
               'quasi-', 'jet', 'nitro', 'petro', 'audio', 'video',
               'anthro', 'swoop', 'whisper', 'dread', 'fear', 'rocket',
-              'astro'
+              'astro', 'titano', 'astral'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -118,7 +118,8 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'malware', 'sym', 'meta', 'security', 'script', 'military',
               'systems', 'nightmare', 'drone', 'AI', 'autonomous',
               'semiautonomous', 'Tumblr', 'Twitter', 'imperial', 'lunar',
-              'solar', 'Plutonian'
+              'solar', 'Plutonian', 'titan', 'astral', 'Weyland-Yutani',
+              'Weyland', 'Yutani'
             ];
 
 // Job suffixes
@@ -147,7 +148,7 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'psyker', 'runner', 'reaver', 'star', 'prophet', 'cleric',
               'whisper', 'emperor', 'praetor', 'jaeger', 'caliph', 'knight',
               'skater', 'boarder', 'skiier', 'diver', 'naut',
-              'physicist'
+              'physicist', 'titan', 'bruiser'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -177,10 +178,11 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
               'fireteam', 'armorpiercer', 'hound', 'furrie', 'noble',
               'dog', 'cat', 'lion', 'scorpion', 'bear', 'shark',
               [ 'octopus', 'octopi' ], 'manta ray', 'dinosaur', 'fascist',
-              'prophet', 'oracle', 'cleric', 'NeoBernieBro',
+              'prophet', 'oracle', 'cleric',
               'monarch', 'legionnaire', 'king', 'queen', 'sheikh', 'jaeger',
               'caliph', 'baron', 'knight', 'ape', 'centaur', 'ogre',
-              'apostate', 'heretic', 'redemptionist', 'mammoth'
+              'apostate', 'heretic', 'redemptionist', 'mammoth', 'titan',
+              'bruiser'
             ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -231,7 +233,8 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'plasma', 'Van Eck ', 'malware ', 'viral ', 'virus ',
                        'sym', 'meta', 'sym ', 'meta ', 'firewall ', 'fire',
                        'flame', 'mana', 'protonsaber ', 'lasersword ',
-                       'plasmagun ', 'railgun ', 'dank', 'butt', 'sleep',
+                       'plasmagun ', 'railgun ', 'election ', 'political ',
+                       'judicial ', 'legislative ',
                        'disc ', 'disk ', 'sleep ', 'mind ',
                        'consciousness ', 'subconscious '
                      ];
@@ -317,7 +320,12 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'libel', 'libeler' ],
                         [ 'regicide', 'kingslayer' ],
                         [ 'deicide', 'godslayer' ],
-                        [ 'CamelCasing', 'CamelCaser' ]
+                        [ 'CamelCasing', 'CamelCaser' ],
+                        [ 'assassination', 'assassin' ],
+                        [ 'homicide', 'killer' ],
+                        [ 'omnicide', 'omnikiller' ],
+                        [ 'tyrannicide', 'tyrantslayer' ],
+                        [ 'xenocide', 'xenoslayer' ]
                       ];
 
 
@@ -362,24 +370,41 @@ var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking',
                  'advisory', 'report'
                ];
 
-var locations = [ 'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
+var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
+                  'in Sector 6477', 'in Null Sector', 'in Sector 2436',
+                  'in Sector 3478', 'in Sector 701', 'in Sector 972',
+                  'in Echo Sector', 'in Sector 6903', 'in Sector 9834',
+                  'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
                   'in Sector 86', 'in Sector AA23', 'in Sector 1138',
                   'in Sector 327', 'in the Irradiated Sector-Chain',
-                  'in the outer deathwastes', 'in the Underspyre',
-                  'in the Upper Spyre', 'in the hive depths',
+                  'in the Far Northern Sector-Chain', 'in NullSec',
+                  'in Sub-Tropical Sector-Chain B',
+                  'in the Grey Sector-Chain', 'in the Pacific Sector-Chain',
+                  'in the Crumbling Sector-Chain',
+                  'in the Lost Sector-Chain Array',
+                  'across the Pan-Continental Sector-Chain Array',
+                  'in the outer deathwastes', 'in the near deathwastes',
+                  'in the Underspyre', 'in the Midspyre',
+                  'in the Upper Spyre', 'in the Far-Upper Spyrepoint',
+                  'in the hive depths', 'in the far-deep hive levels',
                   'deep in the lower levels', 'in the far undersewers',
                   'in the Mutant Caverns', 'in the spice mines of Kessel',
-                  'at Neo New York Spaceport', 'on the Kansas zombie plains',
-                  'in Whoppersconsin, Presented by Burger King®',
-                  'in near Earth orbit',
+                  'in near Earth orbit', 'at the South Pole Colony',
                   'in low Earth orbit', 'at the solarside Lagrange point',
-                  'in the exoatmosphere',
-                  'on the virtuanet', 'on the holonet',
+                  'in the exoatmosphere', 'on a stratospheric airplatform',
+                  'on the virtuanet', 'on the holonet', 'on the internet',
                   'at a New Delhi holocafe', 'at the World War IV Memorial',
                   'aboard Satellite Station Delta', 'in orbit over Mars',
-                  'inside the MindInternet',
+                  'inside the MindInternet', 'in Second Life 3',
                   'outside the Western Mars Airlock',
+                  'near the Southern Mars Airlock',
                   'near the ruins of Trump\'s Wall', 'on the outernet',
+                  'on the ethernet', 'on the starnet', 'on the spacenet',
+                  'on the cybernet', 'on the echonet', 'on the metanet',
+                  'on the tetranet', 'on the synthnet', 'on the tachyonet',
+                  'on the etherweb', 'on the starweb', 'on the spaceweb',
+                  'on the cyberweb', 'on the echoweb', 'on the metaweb',
+                  'on the tetraweb', 'on the synthweb', 'on the tachyoweb',
                   'on the darknet', 'on the darkweb', 'inside the darkmind',
                   'in the MagmaCore Colonies', 'on Titan Colony 7',
                   'in the distant past', 'in the far future',
@@ -388,6 +413,14 @@ var locations = [ 'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
                   'somewhere near Level 729', 'around Level 1254',
                   'on Levels 663 through 669', 'in the sewers near Level 3114',
                   'in Sector 84, Level 312', 'in Sector 6008, Level 5',
+                  'on Level 3425', 'on Level 8214', 'on Level 93',
+                  'somewhere near Level 106', 'around Level 938',
+                  'on Levels 3301 through 3315', 'in the sewers near Level 239',
+                  'in Sector 7654, Level 48', 'in Sector 124, Level 9469',
+                  'on Level 435', 'on Level 610', 'on Level 9380',
+                  'somewhere near Level 784', 'around Level 7701',
+                  'on Levels 9987 through 10004', 'near Level 897',
+                  'in Sector 3457, Level 9386', 'in Sector 9854, Level 3256',
                   'in the cloud tradelanes', 'in the stratospheric tradelanes',
                   'in the orbital tradelanes', 'in the underdark',
                   'in an alley in the underhive', 'in an undersewer cavern',
@@ -408,9 +441,28 @@ var locations = [ 'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
                   'in a Soylent factory', 'in a robotic robot factory factory',
                   'between the six worlds', 'at the edge of known space',
                   'at the event horizon of a black hole',
-                  'beyond a black hole', 'inside a paradox',
-                  'in Erdoğantinople', 'in the Second Islamic State',
-                  'in United Korea'
+                  'inside a black hole', 'inside a net paradox',
+                  'aboard the Skyforge',
+                  'in the Coreforge', 'aboard a space elevator',
+                  'at a classified location', 'at a classified facility',
+                  'at a research facility', 'at a research outpost',
+                  'at a sky hotel', 'at Jasna Góra Monastery',
+                  'in Upper Taipei', 'in the depths of Old Prague',
+                  'at the World Capital', 'inside a world engine',
+                  'at the Vladivostok Starharbor', 'in a dark alley',
+                  'from a secret base', 'in a secret lair', 'on Isla Nublar',
+                  'near London\'s Fall', 'somewhere on the Shadow Wastes',
+                  'somewhere on the Dreadplains', 'in the Sierra Razortower',
+                  'at a Budapest hotel', 'in the mind of the Prime Autarch',
+                  'at Jackpoint Six-Four', 'at the Darknet Exchange',
+                  'against the Fourteenth Sons', 'at a rogue data haven',
+                  'aboard a floating libertarian island',
+                  'at a Congolese server megafarm', 'at Darkside Junction',
+                  'on the Himmelsschmiede', 'aboard the Zurich-Orbital',
+                  'at Cape Arkona', 'at the Societá Thaumaturgica',
+                  'in the Neutral Zone', 'in the Armistice Zone',
+                  'in the Protected Zone', 'in the Forbidden Zone',
+                  'in the Watcher\'s Domain', 'in the Sixth Fury'
                ];
 
 
