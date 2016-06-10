@@ -538,7 +538,7 @@ var firstNames = [ 'Pauley', 'Hideo', 'Riviera', 'Henry', 'Linda', 'Molly',
                    'Escher', 'Sahasrara', 'Paricia', 'Himitsu', 'Eliza',
                    'Elizabeth', 'Fenris', 'Tallie', 'Y.T.', 'May', 'Gemini',
                    'Savoir-faire', 'Caprice', 'Tori', 'Iain', 'Ken',
-                   'Markus', 'Valencia'
+                   'Markus', 'Valencia', 'Robert'
                  ];
 
 var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
@@ -552,7 +552,7 @@ var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
                    'Mai', 'Diego', 'Li', 'Beale', 'Ruhr', 'Haas-Bioroid',
                    'Burke', 'Wotan', 'Bako', 'Bishop', 'Scheherazade',
                    'Mills', 'Perrault', 'Nisej', 'Hanzō', 'Tenma', 'Stirling',
-                   'Estevez'
+                   'Estevez', '\'); DROP TABLE users;--'
                  ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -626,7 +626,7 @@ function buildCaptureStatement(){
 
     chooseTerms();
 
-    captureStatement = state.capitalize() + ' ' + singTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + '.';
+    captureStatement = state.capitalize() + ' ' + singTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + ' ' + location + '.';
 
     count = captureStatement.length;
 
