@@ -507,7 +507,11 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'in the Googleverse', 'in Chiba City', 'in the Matrix',
                   'at Villa Straylight', 'aboard Freeside',
                   'at the Terminus Ceasefire Plaza',
-                  'atop the Stadtkrone Tower', 'in the Tyrell Building'
+                  'atop the Stadtkrone Tower', 'in the Tyrell Building',
+                  'in NeurOceania', 'in central ExoPakistan',
+                  'in Third Zealand', 'in ReSpain',
+                  'in the Twelfth French Republic', 'in Omni-Iceland',
+                  'in Mega-Outer Mongolia', 'between the Twin Void Terrors'
                ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -577,9 +581,15 @@ function chooseTerms(){
 
   compoundTitle = getSing(jobPreN) + getPlur(jobSuff);
   adjectiveTitle = getSing(jobPreS) + ' ' + getPlur(jobTtlS);
+
+  compoundSingTitle = getSing(jobPreN) + getSing(jobSuff);
+  adjectiveSingTitle = getSing(jobPreS) + ' ' + getSing(jobTtlS);
+
   whichTitle = [ adjectiveTitle, compoundTitle ];
+  whichSingTitle = [ adjectiveSingTitle, compoundSingTitle ];
+
   title = random( whichTitle );
-  singTitle = title.slice(0, -1);
+  singTitle = random( whichSingTitle );
 
   uberPref = random(crimeUberPrefs) + ' ';
   state = random(dangerStates);
