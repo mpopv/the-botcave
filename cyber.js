@@ -95,11 +95,13 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'plasma', 'sym', 'meta', 'tetra', 'terror', 'horror', 'pseudo',
               'quasi-', 'jet', 'nitro', 'petro', 'audio', 'video',
               'anthro', 'swoop', 'whisper', 'dread', 'fear', 'rocket',
-              'astro', 'titano', 'astral'
+              'astro', 'titano', 'astral', 'crypto', 'crypto-', 'wiki',
+              'razor', 'ice', 'magma', 'lava', 'glitch', 'karma',
+              'aero', 'dyno', 'mirror', 'bug', 'cell', 'thorn', 'mine'
             ];
 
 // Job prefixes that can be adjectives modifying a title
-var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
+var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
               'hacker', 'dread', 'digital', 'street', 'sector', 'contract',
               'nano', 'gene', 'hack', 'virtual', 'net', 'internet', 'dark',
               'void', 'rogue', 'special', 'mech', 'armored', 'weapon',
@@ -120,7 +122,11 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual',
               'systems', 'nightmare', 'drone', 'AI', 'autonomous',
               'semiautonomous', 'Tumblr', 'Twitter', 'imperial', 'lunar',
               'solar', 'Plutonian', 'titan', 'astral', 'Weyland-Yutani',
-              'Weyland', 'Yutani'
+              'Weyland', 'Yutani', 'mafia', 'isotope', 'flechette', 'ultima',
+              'railgun', 'attack', 'fluid', 'matter', 'molecular', 'modem',
+              'panther', 'cryonic', 'vat-grown', 'glitch', 'karma',
+              'Mercerist', 'aurora', 'shield', 'carapace', 'philotic',
+              'psychic', 'ansible'
             ];
 
 // Job suffixes
@@ -149,42 +155,48 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'psyker', 'runner', 'reaver', 'star', 'prophet', 'cleric',
               'whisper', 'emperor', 'praetor', 'jaeger', 'caliph', 'knight',
               'skater', 'boarder', 'skiier', 'diver', 'naut',
-              'physicist', 'titan', 'bruiser'
+              'physicist', 'titan', 'bruiser', 'raider', 'daemon', 'demon',
+              'theologist', 'cowboy', 'paladin', 'warlock', 'shaman',
+              'Mercerist', 'wyrm', 'djinn', 'sphere'
             ];
 
 // Job titles that can be independent w/ adjective modifier
 var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
-              'junkie', 'courier', 'agent', 'nomad', 'prince',
-              [ 'princess', 'princesses' ], [ 'ronin', 'ronin' ],
-              [ 'samurai', 'samurai' ], 'cultist', 'warrior',
-              'rebel', 'juggernaut', 'technician', 'trader', 'smuggler',
-              'medic', 'drifter', 'splicer', 'slicer', 'marketeer',
-              'mechanic', 'engineer', 'zealot', 'correspondent', 'robot',
-              'mech', 'droid', 'trooper', 'solider', 'commando', 'cannibal',
-              'hunter', 'assassin', 'dealer', 'zombie', 'sniper', 'priest',
-              'hound', 'pirate', 'phreaker', 'raver', 'governor', 'blaster',
-              'decker', 'disrupter', 'empath', 'esper', 'flatlander',
-              'slugthrower', 'sophont', 'adept', 'mutant', 'berserker',
-              'rodent', 'snake', 'slug', 'lizard', 'populist',
-              [ 'lizardmen', 'lizardmen' ], [ 'snake person', 'snake people' ],
-              'rocketeer', 'dragon', 'terminator', 'predator', 'synth',
-              'synthetic', 'synthdroid', 'synthbot', 'synthskin', 'elephant',
-              [ 'rhinoceros', 'rhinoceroses' ], 'alligator',
-              'slime', 'shambler', 'citizen', 'netizen', 'commander',
-              'elemental', 'wizard', 'sorcerer', 'freak', 'virus', 'DDOSer',
-              'symlinker', 'spoofer', 'hijacker', 'clickjacker', 'worm',
-              'reaver', 'phantom', 'banshee', 'offworld colony escapee',
-              'replicant', 'miner', 'gunner', 'traveler', 'wanderer',
-              'mongol', 'khan', 'tsar', 'czar', 'vagrant', 'tankbuster',
-              'fireteam', 'armorpiercer', 'hound', 'furrie', 'noble',
-              'dog', 'cat', 'lion', 'scorpion', 'bear', 'shark',
-              [ 'octopus', 'octopi' ], 'manta ray', 'dinosaur', 'fascist',
-              'prophet', 'oracle', 'cleric',
-              'monarch', 'legionnaire', 'king', 'queen', 'sheikh', 'jaeger',
-              'caliph', 'baron', 'knight', 'ape', 'centaur', 'ogre',
-              'apostate', 'heretic', 'redemptionist', 'mammoth', 'titan',
-              'bruiser'
-            ];
+                'junkie', 'courier', 'agent', 'nomad', 'prince',
+                [ 'princess', 'princesses' ], [ 'ronin', 'ronin' ],
+                [ 'samurai', 'samurai' ], 'cultist', 'warrior',
+                'rebel', 'juggernaut', 'technician', 'trader', 'smuggler',
+                'medic', 'drifter', 'splicer', 'slicer', 'marketeer',
+                'mechanic', 'engineer', 'zealot', 'correspondent', 'robot',
+                'mech', 'droid', 'trooper', 'solider', 'commando', 'cannibal',
+                'hunter', 'assassin', 'dealer', 'zombie', 'sniper', 'priest',
+                'hound', 'pirate', 'phreaker', 'raver', 'governor', 'blaster',
+                'decker', 'disrupter', 'empath', 'esper', 'flatlander',
+                'slugthrower', 'sophont', 'adept', 'mutant', 'berserker',
+                'rodent', 'snake', 'slug', 'lizard', 'populist',
+                [ 'lizardmen', 'lizardmen' ],
+                [ 'snake person', 'snake people' ],
+                'rocketeer', 'dragon', 'terminator', 'predator', 'synth',
+                'synthetic', 'synthdroid', 'synthbot', 'synthskin', 'elephant',
+                [ 'rhinoceros', 'rhinoceroses' ], 'alligator',
+                'slime', 'shambler', 'citizen', 'netizen', 'commander',
+                'elemental', 'wizard', 'sorcerer', 'freak', 'virus', 'DDOSer',
+                'symlinker', 'spoofer', 'hijacker', 'clickjacker', 'worm',
+                'reaver', 'phantom', 'banshee', 'offworld colony escapee',
+                'replicant', 'miner', 'gunner', 'traveler', 'wanderer',
+                'mongol', 'khan', 'tsar', 'czar', 'vagrant', 'tankbuster',
+                'fireteam', 'armorpiercer', 'hound', 'furrie', 'noble',
+                'dog', 'cat', 'lion', 'scorpion', 'bear', 'shark',
+                [ 'octopus', 'octopi' ], 'manta ray', 'dinosaur', 'fascist',
+                'prophet', 'oracle', 'cleric', 'chimera',
+                'monarch', 'legionnaire', 'king', 'queen', 'sheikh', 'jaeger',
+                'caliph', 'baron', 'knight', 'ape', 'centaur', 'ogre',
+                'apostate', 'heretic', 'redemptionist', 'mammoth', 'titan',
+                'bruiser', 'raider', 'marine', 'sergeant', 'avatar',
+                'demon', 'daemon', 'denizen', 'kourier', 'gargoyle',
+                'mercenary', 'basilisk', 'cowboy', 'paladin', 'warlock',
+                'shaman', 'wyrm', 'djinn', 'medium', 'siphon', 'archer'
+              ];
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////// Jobs & Titles ////////////////////////////////////////////////
@@ -200,7 +212,7 @@ var crimeUberPrefs = [ 'illegal', 'illicit', 'serial', 'first-degree',
 
 // Standard cyberpunk crime prefixes
 var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
-                       'anarcho', 'hover', 'bio',
+                       'anarcho', 'hover', 'bio', 'carbon', 'silicon ',
                        'data', 'cyber', 'nano', 'street ', 'gene ', 'wire',
                        'web ', 'dark ', 'mech', 'neo', 'war', 'echo',
                        'exo', 'hyper', 'giga', 'mega', 'infra', 'chem',
@@ -235,9 +247,11 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'sym', 'meta', 'sym ', 'meta ', 'firewall ', 'fire',
                        'flame', 'mana', 'protonsaber ', 'lasersword ',
                        'plasmagun ', 'railgun ', 'election ', 'political ',
-                       'judicial ', 'legislative ',
-                       'disc ', 'disk ', 'sleep ', 'mind ',
-                       'consciousness ', 'subconscious '
+                       'judicial ', 'legislative ', 'crypto', 'crypto-',
+                       'disc ', 'disk ', 'sleep ', 'mind ', 'galvanic ',
+                       'consciousness ', 'subconscious ', 'acoustic ',
+                       'pre', 'post-', 'uber', 'molecular ', 'aero',
+                       'dyno', 'philotic ', 'psychic '
                      ];
 
 // Standard crimes to be modified by prefixes
@@ -326,7 +340,17 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'homicide', 'killer' ],
                         [ 'omnicide', 'omnikiller' ],
                         [ 'tyrannicide', 'tyrantslayer' ],
-                        [ 'xenocide', 'xenoslayer' ]
+                        [ 'xenocide', 'xenoslayer' ],
+                        [ 'raiding', 'raider' ],
+                        [ 'leaking', 'leaker' ],
+                        [ 'drug trafficking', 'trafficker' ],
+                        [ 'narcotic trafficking', 'narcotrafficker' ],
+                        [ 'stim trafficking', 'stimrunner' ],
+                        [ 'juice trafficking', 'juicerunner' ],
+                        [ 'drug dealing', 'dealer' ],
+                        [ 'narcotic dealing', 'dealer' ],
+                        [ 'stim dealing', 'stim slinger' ],
+                        [ 'juice dealing', 'juice dealer' ]
                       ];
 
 
@@ -343,7 +367,7 @@ var dangerStates = [ 'mutant', 'furious', 'vicious', 'bloodthirsty',
                      'amoral', 'Cthulhu-worshipping'
                    ];
 
-var dangerGroups = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
+var dangerGroups  = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                       'battlegroup', 'division', 'faction',
                       'freighter', 'mining vessel', 'hovertransport',
                       'battlegang', 'war party', 'group', 'band',
@@ -356,7 +380,7 @@ var dangerGroups = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                       'religious sect', 'sectarian faction', 'tribe',
                       'resistance group', 'secret order', 'pair',
                       'dark order'
-                   ];
+                    ];
 
 var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
                      'is reportedly committing', 'has committed',
@@ -377,6 +401,10 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'in Echo Sector', 'in Sector 6903', 'in Sector 9834',
                   'in Sector 7', 'in Sector 127.0.0.1', 'in Sector 64a5',
                   'in Sector 86', 'in Sector AA23', 'in Sector 1138',
+                  'in Undefined Sector', 'in Error Sector',
+                  'in NaN Sector', 'in Segfault Sector',
+                  'in the missing sector', 'in the drowned sectors',
+                  'in the lost sectors', 'in every sector',
                   'in Sector 327', 'in the Irradiated Sector-Chain',
                   'in the Far Northern Sector-Chain', 'in NullSec',
                   'in Sub-Tropical Sector-Chain B',
@@ -443,11 +471,11 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'between the six worlds', 'at the edge of known space',
                   'at the event horizon of a black hole',
                   'inside a black hole', 'inside a net paradox',
-                  'aboard the Skyforge',
+                  'aboard the Skyforge', 'on Sealand', 'on the Freenet',
                   'in the Coreforge', 'aboard a space elevator',
                   'at a classified location', 'at a classified facility',
                   'at a research facility', 'at a research outpost',
-                  'at a sky hotel', 'at Jasna Góra Monastery',
+                  'at a sky hotel', 'in onion space',
                   'in Upper Taipei', 'in the depths of Old Prague',
                   'at the World Capital', 'inside a world engine',
                   'at the Vladivostok Starharbor', 'in a dark alley',
@@ -460,13 +488,59 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'aboard a floating libertarian island',
                   'at a Congolese server megafarm', 'at Darkside Junction',
                   'on the Himmelsschmiede', 'aboard the Zurich-Orbital',
-                  'at Cape Arkona', 'at the Societá Thaumaturgica',
                   'in the Neutral Zone', 'in the Armistice Zone',
                   'in the Protected Zone', 'in the Forbidden Zone',
-                  'in the Watcher\'s Domain', 'in the Sixth Fury'
+                  'in the Watcher\'s Domain', 'in the Sixth Fury',
+                  'at a Bitcoin mining colony', 'on an asteroid colony',
+                  'at an illegal Bitcoin production dungeon',
+                  'in the Sultanate of Kinakuta', 'in the Black Chamber',
+                  'at a Kinakutan data haven', 'at the Black Sun',
+                  'in Greater Hong Kong', 'in Kowloon Walled Metropolis',
+                  'on Amchitka', 'in the eye of a nebula hurricane',
+                  'at Express Port 142', 'at Express Port 81',
+                  'at Express Port 9', 'at Local Port 13', 'at Local Port 55',
+                  'at Local Port 223', 'on the Supranet', 'on the Subnet',
+                  'in the Googleverse', 'in Chiba City', 'in the Matrix',
+                  'at Villa Straylight', 'aboard Freeside',
+                  'at the Terminus Ceasefire Plaza',
+                  'atop the Stadtkrone Tower', 'in the Tyrell Building'
                ];
 
+////////////////////////////////////////////////////////////////////////////////
+///////////////// Names ////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
+var firstNames = [ 'Pauley', 'Hideo', 'Riviera', 'Henry', 'Linda', 'Molly',
+                   'Willis', 'Marcus', 'Sally', 'Johnny', 'Julius', 'Iran',
+                   'Dixie', 'McCoy', 'Rick', 'Phil', 'Pris', 'John', 'Roy',
+                   'Rachael', 'Antonio', 'Sydney', 'Eldon', 'Sarah', 'Iris',
+                   'Meyer', 'Carsten', 'Kevin', 'Lora', 'Sark', 'Tron',
+                   'Ram', 'Yori', 'Crom', 'Déjà', 'Switch', 'Cypher', 'Kate',
+                   'Aesop', 'Jinteki', 'Sherlock', 'Surge', 'Kati',
+                   'Bernice', 'Simone', 'Midori', 'Thomas', 'Tyr', 'Anson',
+                   'Escher', 'Sahasrara', 'Paricia', 'Himitsu', 'Eliza',
+                   'Elizabeth', 'Fenris', 'Tallie', 'Y.T.', 'May', 'Gemini',
+                   'Savoir-faire', 'Caprice', 'Tori', 'Iain', 'Ken',
+                   'Markus', 'Valencia'
+                 ];
+
+var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
+                   'Comstock', 'Altamira', 'Turing', 'MacArthur', 'Einstein',
+                   'Halaby', 'Kepler', 'Loeb', 'Föhr', 'Cantrell', 'Rife',
+                   'Asherah', 'Enzo', 'Tessier-Ashpool', 'Maelcum', 'Batty',
+                   'Wintermute', 'Deckard', 'Resch', 'Stratton', 'Isidore',
+                   'Rosen', 'Voight-Kampff', 'Sant\'Elia', 'Mead', 'Kubrick',
+                   'Vangelis', 'Flynn', 'Baines', 'Dillinger', 'Vu',
+                   'McCaffrey', 'Sumer', 'Xanadu', 'Jones', 'Smith', 'Peters',
+                   'Mai', 'Diego', 'Li', 'Beale', 'Ruhr', 'Haas-Bioroid',
+                   'Burke', 'Wotan', 'Bako', 'Bishop', 'Scheherazade',
+                   'Mills', 'Perrault', 'Nisej', 'Hanzō', 'Tenma', 'Stirling',
+                   'Estevez'
+                 ];
+
+////////////////////////////////////////////////////////////////////////////////
+////////////// Tweet Creation: Warning Statement ///////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 var compoundTitle;
 var adjectiveTitle;
