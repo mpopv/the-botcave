@@ -15,6 +15,10 @@
 
 ///////////////// Functions ////////////////////////////////////////////////////
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
  function random(someArray) {
    return someArray[Math.floor(Math.random() * someArray.length)];
  }
@@ -510,6 +514,15 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
 ///////////////// Names ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+var fates = [ 'indicted for', 'detained on suspicion of',
+              'captured after committing',
+              'released after being acquitted of'
+            ];
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////// Names ////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
 var firstNames = [ 'Pauley', 'Hideo', 'Riviera', 'Henry', 'Linda', 'Molly',
                    'Willis', 'Marcus', 'Sally', 'Johnny', 'Julius', 'Iran',
                    'Dixie', 'McCoy', 'Rick', 'Phil', 'Pris', 'John', 'Roy',
@@ -539,13 +552,14 @@ var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
                  ];
 
 ////////////////////////////////////////////////////////////////////////////////
-////////////// Tweet Creation: Warning Statement ///////////////////////////////
+////////////// Tweet Creation //////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 var compoundTitle;
 var adjectiveTitle;
 var whichTitle;
 var title;
+var singTitle;
 
 var uberPref;
 var state;
@@ -554,7 +568,10 @@ var crimeAction;
 var warning;
 var location;
 
+var fate;
 
+var firstName;
+var lastName;
 
 function chooseTerms(){
 
@@ -562,6 +579,7 @@ function chooseTerms(){
   adjectiveTitle = getSing(jobPreS) + ' ' + getPlur(jobTtlS);
   whichTitle = [ adjectiveTitle, compoundTitle ];
   title = random( whichTitle );
+  singTitle = title.slice(0, -1);
 
   uberPref = random(crimeUberPrefs) + ' ';
   state = random(dangerStates);
@@ -570,10 +588,16 @@ function chooseTerms(){
   warning = random(warnings).toUpperCase();
   location = random(locations);
 
+  firstName = random(firstNames);
+  lastName = random(lastNames);
+
+  fate = random(fates);
+
 }
 
 var count = 141;
 var warningStatement = '';
+var captureStatement = '';
 
 function buildWarningStatement(){
   while ( count > 140 ){
@@ -587,8 +611,38 @@ function buildWarningStatement(){
   }
 }
 
-buildWarningStatement();
-console.log(warningStatement);
+function buildCaptureStatement(){
+  while ( count > 140 ){
+
+    chooseTerms();
+
+    captureStatement = state.capitalize() + ' ' + singTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + '.';
+
+    count = captureStatement.length;
+
+  }
+}
+
+var finalStatement;
+
+function chooseStatement(){
+
+    if ( random([0,1]) === 0 ){
+
+      buildWarningStatement();
+      finalStatement = warningStatement;
+
+    }
+    else {
+
+      buildCaptureStatement();
+      finalStatement = captureStatement;
+
+    }
+}
+chooseStatement();
+
+console.log(finalStatement);
 console.log(count);
 
-Bot.tweet(warningStatement);
+Bot.tweet(finalStatement);
