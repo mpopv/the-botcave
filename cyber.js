@@ -19,18 +19,28 @@ String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
+// Get a random item from an array;
  function random(someArray) {
    return someArray[Math.floor(Math.random() * someArray.length)];
  }
 
+ // Return the string if passed a string or first item if passed an array
  function checkSing(something) {
    if (something.constructor === Array) { return something[0]; }
    else { return something; }
  }
 
+// Return the string if passed a string
+// or second item if passed an array, plus 's'
  function checkPlur(something) {
    if (something.constructor === Array) { return something[1]; }
    else { return something + 's'; }
+ }
+
+ // Return the string if passed a string or second item if passed an array
+ function checkSecond(something) {
+   if (something.constructor === Array) { return something[1]; }
+   else { return something; }
  }
 
  function getSing(something) {
@@ -39,6 +49,14 @@ String.prototype.capitalize = function() {
 
  function getPlur(something) {
    return checkPlur(random(something));
+ }
+
+ function getSecond(something) {
+   return checkSecond(random(something));
+ }
+
+ function getThird(something) {
+   return (random(something))[3];
  }
 
  function threeQuarter(something) {
@@ -130,7 +148,7 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
               'railgun', 'attack', 'fluid', 'matter', 'molecular', 'modem',
               'panther', 'cryonic', 'vat-grown', 'glitch', 'karma',
               'Mercerist', 'aurora', 'shield', 'carapace', 'philotic',
-              'psychic', 'ansible'
+              'psychic', 'ansible', 'Imperial', 'Rebel', 'Resistance'
             ];
 
 // Job suffixes
@@ -161,7 +179,7 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'skater', 'boarder', 'skiier', 'diver', 'naut',
               'physicist', 'titan', 'bruiser', 'raider', 'daemon', 'demon',
               'theologist', 'cowboy', 'paladin', 'warlock', 'shaman',
-              'Mercerist', 'wyrm', 'djinn', 'sphere'
+              'Mercerist', 'wyrm', 'djinn', 'sphere', 'walker'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -375,7 +393,7 @@ var dangerGroups  = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                       'battlegroup', 'division', 'faction',
                       'freighter', 'mining vessel', 'hovertransport',
                       'battlegang', 'war party', 'group', 'band',
-                      'batch', 'guild', 'society', 'vast ensemble',
+                      'batch', 'guild', 'society',
                       'trade association', 'battalion', 'platoon', 'cabal',
                       'fringe movement', 'splinter group', 'splinter cell',
                       'group', 'cell', 'cult', 'bloodgang', 'colony ship',
@@ -390,13 +408,14 @@ var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
                      'is reportedly committing', 'has committed',
                      'is rumored to be committing', 'was sighted committing',
                      'was spotted committing',
-                     'is reportedly committing', 'has commenced', 'has begun',
+                     'is reportedly committing',
                      'is plotting acts of', 'is planning', 'is plotting',
-                     'was discovered committing', 'was caught committing'
+                     'was discovered committing', 'was caught committing',
+                     'is suspected of committing'
                   ];
 
 var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking',
-                 'advisory', 'report'
+                 'advisory', 'report', 'update'
                ];
 
 var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
@@ -511,7 +530,9 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'in NeurOceania', 'in central ExoPakistan',
                   'in Third Zealand', 'in ReSpain',
                   'in the Twelfth French Republic', 'in Omni-Iceland',
-                  'in Mega-Outer Mongolia', 'between the Twin Void Terrors'
+                  'in Mega-Outer Mongolia', 'between the Twin Void Terrors',
+                  'close to Holding Sector MV-7', 'on the North Ridge',
+                  'at Echo Station 3T8'
                ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -538,7 +559,22 @@ var firstNames = [ 'Pauley', 'Hideo', 'Riviera', 'Henry', 'Linda', 'Molly',
                    'Escher', 'Sahasrara', 'Paricia', 'Himitsu', 'Eliza',
                    'Elizabeth', 'Fenris', 'Tallie', 'Y.T.', 'May', 'Gemini',
                    'Savoir-faire', 'Caprice', 'Tori', 'Iain', 'Ken',
-                   'Markus', 'Valencia', 'Robert'
+                   'Markus', 'Valencia', 'Robert', 'Luke', 'Leia', 'Han',
+                   'Kylo', 'Ellen', 'Sara', 'River', 'Laura', 'Malcolm',
+                   'Ben', 'Leeloo', 'Korben', 'Jean-Baptiste', 'Vito',
+                   'Massimo', 'Rico', 'Vienna', 'Paris', 'Cal', 'Spike',
+                   'Fink', 'Sabbat', 'Yassa', 'Martin', 'Alex', 'Victor',
+                   'Julie', 'Ian', 'Neo', 'Trinity', 'Morpheus', 'Tank',
+                   'Apoc', 'Dozer', 'Thadeus', 'Jue', 'Robbie', 'Cis', 'Duo',
+                   'Yoko', 'Yuki', 'Ash', 'Ezekiel', 'Niobe', 'Link',
+                   'Persephone', 'Zee', 'Seraph', 'Bane', 'Axel', 'Cas',
+                   'Ghost', 'Demosthenes', 'Socrates', 'Plato', 'Sati',
+                   'Ramachandra', 'Kamala', 'Dizzy', 'Carmen', 'Ace',
+                   'Carl', 'Zander', 'Jean', 'Rose', 'Mercury',
+                   'Venus', 'Mars', 'Jupiter', 'Saturn', 'Neptune',
+                   'Pluto', 'Juno', 'Minerva', 'Janus', 'Vesta', 'Vishnu',
+                   'Tidus', 'Yuna', 'Auron', 'Wakka', 'Lulu', 'Rikku',
+                   'Seymour'
                  ];
 
 var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
@@ -552,7 +588,19 @@ var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
                    'Mai', 'Diego', 'Li', 'Beale', 'Ruhr', 'Haas-Bioroid',
                    'Burke', 'Wotan', 'Bako', 'Bishop', 'Scheherazade',
                    'Mills', 'Perrault', 'Nisej', 'Hanzō', 'Tenma', 'Stirling',
-                   'Estevez', '\'); DROP TABLE users;--'
+                   'Estevez', '\'); DROP TABLE users;--', 'Skywalker',
+                   'Starkiller', 'Solo', 'Vader', 'Ren', 'Ripley', 'Connor',
+                   'Tam', 'Roslin', 'Reynolds', 'Kenobi', 'Dallas',
+                   'Emanuel Zorg', 'Cornelius', 'Munro', 'Mactilburgh',
+                   'Pacoli', 'Staedert', 'Tudor', 'Plavalaguna', 'Dredd',
+                   'Kraken', 'Feyy', 'Angel', 'Povey', 'Pasternak',
+                   'Fargo', 'Francisco', 'Bachmann', 'Sinfield', 'Furlong',
+                   'Vacendak', 'Redlund', 'McCandless', 'Smith', 'Brown',
+                   'Jones', 'Nebuchadnezzar', 'Osiris', 'Rawlins', 'Mifune',
+                   'Ballard', 'West', 'Soren', 'Locke', 'Hobbes', 'Hamann',
+                   'Flores', 'Ibanez', 'Levy', 'Jenkins', 'Barcalow',
+                   'Rasczak', 'Vrataski', 'Farell', 'Brigham', 'Kimmel',
+                   'Skinner', 'Takeda'
                  ];
 
 ////////////////////////////////////////////////////////////////////////////////
