@@ -1,14 +1,17 @@
 # The Botcave
 
-A collection of Twitter bots.
+A small collection of Node.js Twitter bots.
 
-## Untitled Retrofuturistic Cyperpunk Bot
+## MegaCity Police
 
-A work in progress.
+A Twitter bot that tweets randomly generated cyberpunk / science fiction crime alerts once per hour.
+
+* Bot handle: [@MegaCityPolice](https://twitter.com/MegaCityPolice)
+* My handle: [@mpopv](https://twitter.com/mpopv)
 
 ## Star Wars Titlebot
 
-A Twitter bot that tweets Star Wars episode titles that are ~~randomly generated~~ leaked from deep within the top-secret Lucasfilm archives.
+A Twitter bot that tweets future Star Wars episode titles that are ~~randomly generated~~ leaked from deep within the top-secret Lucasfilm archives once per day.
 
 This bot is a parody and is not affiliated with Lucasfilm or Disney.
 
