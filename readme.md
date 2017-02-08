@@ -1,6 +1,8 @@
 # The Botcave
 
-A small collection of Node.js Twitter bots.
+A small collection of Twitter bots in Node.js and triggered via Heroku cron jobs.
+
+For more info, check out my Medium writeup on how to build bots like these: [Build a Twitter Bot in Half an Hour with Node.js and Heroku](https://medium.com/@mattpopovich/how-to-build-and-deploy-a-simple-twitter-bot-super-fast-with-node-js-and-heroku-7b322dbb5dd3#.nne1p3thq)
 
 ## MegaCity Police
 
