@@ -119,7 +119,8 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'anthro', 'swoop', 'whisper', 'dread', 'fear', 'rocket',
               'astro', 'titano', 'astral', 'crypto', 'crypto-', 'wiki',
               'razor', 'ice', 'magma', 'lava', 'glitch', 'karma',
-              'aero', 'dyno', 'mirror', 'bug', 'cell', 'thorn', 'mine'
+              'aero', 'dyno', 'mirror', 'bug', 'cell', 'thorn', 'mine',
+              'automa'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -148,7 +149,8 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
               'railgun', 'attack', 'fluid', 'matter', 'molecular', 'modem',
               'panther', 'cryonic', 'vat-grown', 'glitch', 'karma',
               'Mercerist', 'aurora', 'shield', 'carapace', 'philotic',
-              'psychic', 'ansible', 'Imperial', 'Rebel', 'Resistance'
+              'psychic', 'ansible', 'Imperial', 'Rebel', 'Resistance',
+              'automated'
             ];
 
 // Job suffixes
@@ -179,7 +181,8 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'skater', 'boarder', 'skiier', 'diver', 'naut',
               'physicist', 'titan', 'bruiser', 'raider', 'daemon', 'demon',
               'theologist', 'cowboy', 'paladin', 'warlock', 'shaman',
-              'Mercerist', 'wyrm', 'djinn', 'sphere', 'walker'
+              'Mercerist', 'wyrm', 'djinn', 'sphere', 'walker',
+              'exterminator'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -217,7 +220,8 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
                 'bruiser', 'raider', 'marine', 'sergeant', 'avatar',
                 'demon', 'daemon', 'denizen', 'kourier', 'gargoyle',
                 'mercenary', 'basilisk', 'cowboy', 'paladin', 'warlock',
-                'shaman', 'wyrm', 'djinn', 'medium', 'siphon', 'archer'
+                'shaman', 'wyrm', 'djinn', 'medium', 'siphon', 'archer',
+                'exterminator'
               ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -532,7 +536,8 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'in the Twelfth French Republic', 'in Omni-Iceland',
                   'in Mega-Outer Mongolia', 'between the Twin Void Terrors',
                   'close to Holding Sector MV-7', 'on the North Ridge',
-                  'at Echo Station 3T8'
+                  'at Echo Station 3T8', 'at an Automated Factory',
+                  'in the Netsphere'
                ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -541,7 +546,26 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
 
 var fates = [ 'indicted for', 'detained on suspicion of',
               'captured after committing',
-              'released after being acquitted of'
+              'released after being acquitted of',
+              'quarantined on suspicion of', 'detained after committing',
+              'neutralized after committing',
+              'sent to a reprogramming facility after committing',
+              'indicted on the charge of', 'indicted on multiple charges of',
+              'assigned a bounty of 10 million credits on suspicion of',
+              'assigned a bounty of 20 million credits on suspicion of',
+              'assigned a bounty of 30 million credits on suspicion of',
+              'assigned a bounty of 100 million credits on suspicion of',
+              'assigned a bounty of 1 billion credits on suspicion of',
+              'assigned a bounty of 100 billion credits on suspicion of',
+              'vaporized after being convicted of',
+              'atomized after being convicted of',
+              'disintegrated after being convicted of',
+              'mind-severed after being convicted of',
+              'imprisoned after being convicted of',
+              'imprisoned on suspicion of', 'imprisoned after committing',
+              'neuroisolated after committing',
+              'neuroisolated after being convicted of',
+              'neuroisolated on suspicion of'
             ];
 
 ////////////////////////////////////////////////////////////////////////////////
