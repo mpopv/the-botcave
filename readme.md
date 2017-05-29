@@ -1,19 +1,26 @@
 # The Botcave
 
-A collection of Twitter bots.
+A small collection of Twitter bots in Node.js and triggered via Heroku cron jobs.
 
-## Untitled Retrofuturistic Cyperpunk Bot
+My handle on Twitter: [@mpopv](https://twitter.com/mpopv)
 
-A work in progress.
+My Medium writeup on how to build bots like these: [Build a Twitter Bot in Half an Hour with Node.js and Heroku](https://medium.com/@mattpopovich/how-to-build-and-deploy-a-simple-twitter-bot-super-fast-with-node-js-and-heroku-7b322dbb5dd3#.nne1p3thq)
+
+## MegaCity Police
+
+A Twitter bot that tweets randomly generated cyberpunk / science fiction crime alerts once per hour.
+
+* Bot handle: [@MegaCityPolice](https://twitter.com/MegaCityPolice)
+* Bot source code: [cyber.js](https://github.com/mpopv/the-botcave/blob/master/cyber.js)
 
 ## Star Wars Titlebot
 
-A Twitter bot that tweets Star Wars episode titles that are ~~randomly generated~~ leaked from deep within the top-secret Lucasfilm archives.
+A Twitter bot that tweets future Star Wars episode titles that are ~~randomly generated~~ leaked from deep within the top-secret Lucasfilm archives once per day.
 
 This bot is a parody and is not affiliated with Lucasfilm or Disney.
 
 * Bot handle: [@SWTitlebot](https://twitter.com/SWTitlebot)
-* My handle: [@mpopv](https://twitter.com/mpopv)
+* Bot source code: [bot.js](https://github.com/mpopv/the-botcave/blob/master/bot.js)
 
 Special thanks to
 
