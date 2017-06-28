@@ -384,13 +384,13 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
 ///////////////// Groups ///////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-var dangerStates = [ 'mutant', 'furious', 'vicious', 'bloodthirsty',
-                     'homicidal', 'dimensional', 'stim-addled',
-                     'deadly', 'plague-infested', 'enraged',
+var dangerStates = [ 'mutant', 'bloodthirsty', 'pandimensional', 'solar',
+                     'homicidal', 'dimensional', 'stim-addled', 'lunar',
+                     'plague-infested', 'gene-enhanced', 'elemental',
                      'zombified', 'cybernetic-enhanced', 'superpowered',
-                     'mecha-armored', 'lethal', 'crazed', 'conniving',
-                     'vengeful', 'exiled', 'foreign', 'ancient', 'evil',
-                     'amoral', 'Cthulhu-worshipping'
+                     'mecha-armored', 'exiled', 'foreign', 'ancient', 'evil',
+                     'amoral', 'Cthulhu-worshipping', 'Martian', 'Venusian',
+                     'Plutonian'
                    ];
 
 var dangerGroups  = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
@@ -686,7 +686,7 @@ function buildWarningStatement(){
 
     chooseTerms();
 
-    warningStatement = warning + ': A ' + group + ' of ' + state + ' ' + title + ' ' + crimeAction + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + ' ' + location + '.';
+    warningStatement = half(warning + ': ') + 'A ' + group + ' of ' + twoThird(state + ' ') + title + ' ' + crimeAction + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + half(' ' + location) + '.';
 
     count = warningStatement.length;
 
@@ -698,7 +698,11 @@ function buildCaptureStatement(){
 
     chooseTerms();
 
-    captureStatement = state.capitalize() + ' ' + singTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + ' ' + location + '.';
+    var fullTitle = (random([0,1]) === 0) ?
+                    singTitle.capitalize() :
+                    state.capitalize() + ' ' + singTitle;
+
+    captureStatement = half(warning + ': ') + fullTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + half(' ' + location) + '.';
 
     count = captureStatement.length;
 
