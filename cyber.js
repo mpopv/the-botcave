@@ -59,6 +59,11 @@ String.prototype.capitalize = function() {
    return (random(something))[3];
  }
 
+ function nineTenths(something) {
+   if (Math.random() >= 0.1 ) { return something; }
+   else { return ''; }
+ }
+
  function threeQuarter(something) {
    if (Math.random() >= 0.25 ) { return something; }
    else { return ''; }
@@ -686,7 +691,7 @@ function buildWarningStatement(){
 
     chooseTerms();
 
-    warningStatement = half(warning + ': ') + 'A ' + group + ' of ' + twoThird(state + ' ') + title + ' ' + crimeAction + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + half(' ' + location) + '.';
+    warningStatement = nineTenths(warning + ': ') + 'A ' + group + ' of ' + threeQuarter(state + ' ') + title + ' ' + crimeAction + ' ' + threeQuarter(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + threeQuarter(' ' + location) + '.';
 
     count = warningStatement.length;
 
@@ -702,7 +707,7 @@ function buildCaptureStatement(){
                     singTitle.capitalize() :
                     state.capitalize() + ' ' + singTitle;
 
-    captureStatement = half(warning + ': ') + fullTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + half(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + half(' ' + location) + '.';
+    captureStatement = threeQuarter(warning + ': ') + fullTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + threeQuarter(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + threeQuarter(' ' + location) + '.';
 
     count = captureStatement.length;
 
