@@ -549,29 +549,44 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
 ///////////////// Names ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-var fates = [ 'indicted for', 'detained on suspicion of',
-              'captured after committing',
-              'released after being acquitted of',
-              'quarantined on suspicion of', 'detained after committing',
-              'neutralized after committing',
-              'sent to a reprogramming facility after committing',
-              'indicted on the charge of', 'indicted on multiple charges of',
-              'assigned a bounty of 10 million credits on suspicion of',
-              'assigned a bounty of 20 million credits on suspicion of',
-              'assigned a bounty of 30 million credits on suspicion of',
-              'assigned a bounty of 100 million credits on suspicion of',
-              'assigned a bounty of 1 billion credits on suspicion of',
-              'assigned a bounty of 100 billion credits on suspicion of',
-              'vaporized after being convicted of',
-              'atomized after being convicted of',
-              'disintegrated after being convicted of',
-              'mind-severed after being convicted of',
-              'imprisoned after being convicted of',
-              'imprisoned on suspicion of', 'imprisoned after committing',
-              'neuroisolated after committing',
-              'neuroisolated after being convicted of',
-              'neuroisolated on suspicion of'
-            ];
+var sentences = {
+                 innocent: [
+                   'released', 'reatomized', 'mind-revived', 'de-marooned',
+                   'de-exiled', 'returned to the Prime Dimension'
+                 ],
+                 guilty: [
+                   'indicted', 'detained', 'captured', 'mind-severed',
+                   'quarantined', 'neutralized', 'deatomized',
+                   'disintegrated',
+                   'neuroisolated', 'imprisoned', 'jailed',
+                   'indicted before a grand jury',
+                   'sent to a reprogramming facility',
+                   'indicted on multiple charges',
+                   'assigned a bounty of 10 million credits',
+                   'assigned a bounty of 20 million credits',
+                   'assigned a bounty of 30 million credits',
+                   'assigned a bounty of 100 million credits',
+                   'assigned a bounty of 1 billion credits',
+                   'assigned a bounty of 100 billion credits',
+                   'exiled from the Prime Dimension',
+                   'exiled from the Core Worlds',
+                   'exiled from the Offworld Colonies',
+                   'sent to the spice mines of Kessel',
+                   'marooned on a prison colony',
+                   'marooned in the Outer Reaches',
+                   'marooned in a parallel dimension'
+                 ]
+               };
+
+var verdicts = {
+                 innocent: [
+                   'after being acquitted of', 'after being exonerated for'
+                 ],
+                 guilty: [
+                   'for', 'on suspicion of', 'after committing',
+                   'after allegedly committing'
+                 ]
+               };
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////// Names ////////////////////////////////////////////////////////
@@ -649,6 +664,7 @@ var crimeAction;
 var warning;
 var location;
 
+var judgement;
 var fate;
 
 var firstName;
@@ -678,7 +694,9 @@ function chooseTerms(){
   firstName = random(firstNames);
   lastName = random(lastNames);
 
-  fate = random(fates);
+  judgement = (random([0,1,2]) === 0) ? 'innocent' : 'guilty';
+  fate = random(sentences[judgement]) + ' ' + random(verdicts[judgement]);
+
 
 }
 
