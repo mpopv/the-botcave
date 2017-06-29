@@ -648,6 +648,35 @@ var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
                  ];
 
 ////////////////////////////////////////////////////////////////////////////////
+///////////////// Decree ///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+var decreeActions     = [
+                          'is now illegal', 'has been decreed a crime',
+                          'has been outlawed', 'has been forbidden',
+                          'has been legalized', 'is now mandatory'
+                        ];
+
+var decreeModifiers   = [
+                          'for medical purposes', 'in all sectors',
+                          'without a prescription', 'across the Core Worlds',
+                          'across the Offworld Colonies',
+                          'across the Prime Dimension', 'while intoxicated',
+                          'while traveling across dimensions',
+                          'in outer space'
+                        ];
+
+var decreeAuthorities = [
+                          'by the authority of the Prime Autarch',
+                          'by order of the World Capital Senate',
+                          'by decree of the MegaCity Supreme Court',
+                          'by agreement of a coalition of Sector Councils',
+                          'according to the terms of a new interdimensional armistice accord',
+                          'by order of the MegaCity legislature',
+                          'by order of the MegaCity police code'
+                        ];
+
+////////////////////////////////////////////////////////////////////////////////
 ////////////// Tweet Creation //////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -669,6 +698,10 @@ var fate;
 
 var firstName;
 var lastName;
+
+var decreeAction;
+var decreeModifier;
+var decreeAuthority;
 
 function chooseTerms(){
 
@@ -694,6 +727,10 @@ function chooseTerms(){
   firstName = random(firstNames);
   lastName = random(lastNames);
 
+  decreeAction = random(decreeActions);
+  decreeModifier = random(decreeModifiers);
+  decreeAuthority = random(decreeAuthorities);
+
   judgement = (random([0,1,2]) === 0) ? 'innocent' : 'guilty';
   fate = random(sentences[judgement]) + ' ' + random(verdicts[judgement]);
 
@@ -703,6 +740,7 @@ function chooseTerms(){
 var count = 141;
 var warningStatement = '';
 var captureStatement = '';
+var decreeStatement = '';
 
 function buildWarningStatement(){
   while ( count > 140 ){
@@ -732,20 +770,38 @@ function buildCaptureStatement(){
   }
 }
 
+function buildDecreeStatement(){
+  while ( count > 140 ){
+
+    chooseTerms();
+
+    decreeStatement = warning + ': ' + random(crimePrefixes).capitalize() + checkSing(random(genericCrimes)) + ' ' + decreeAction + ' ' + twoThird(random([ decreeModifier, decreeModifier, location ]) + ' ') + decreeAuthority + '.';
+
+    count = decreeStatement.length;
+
+  }
+}
+
 var finalStatement;
 
 function chooseStatement(){
 
-    if ( random([0,1]) === 0 ){
+    if ( random([0,1,2]) === 0 ){
 
       buildWarningStatement();
       finalStatement = warningStatement;
 
     }
-    else {
+    else if ( random([0,1]) === 0 ){
 
       buildCaptureStatement();
       finalStatement = captureStatement;
+
+    }
+    else {
+
+      buildDecreeStatement();
+      finalStatement = decreeStatement;
 
     }
 }
