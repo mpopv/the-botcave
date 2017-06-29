@@ -653,8 +653,11 @@ var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
 
 var decreeActions     = [
                           'is now illegal', 'has been decreed a crime',
-                          'has been outlawed', 'has been forbidden',
-                          'has been legalized', 'is now mandatory'
+                          'has been outlawed', 'has been prohibited',
+                          'has been forbidden', 'has been re-outlawed',
+                          'has been legalized', 'has been re-legalized',
+                          'is now mandatory',
+                          'has been decriminalized to a citation'
                         ];
 
 var decreeModifiers   = [
@@ -663,10 +666,13 @@ var decreeModifiers   = [
                           'across the Offworld Colonies',
                           'across the Prime Dimension', 'while intoxicated',
                           'while driving or operating machinery',
+                          'while piloting hovercraft or spacecraft',
+                          'for all noncitizens',
                           'while traveling across dimensions',
                           'while on a tourist visa',
                           'while under the age of 18',
-                          'while under the age of 21'
+                          'while under the age of 21',
+                          'without a license', 'without a permit'
                         ];
 
 var decreeAuthorities = [
