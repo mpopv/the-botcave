@@ -657,7 +657,10 @@ var decreeActions     = [
                           'has been forbidden', 'has been re-outlawed',
                           'has been legalized', 'has been re-legalized',
                           'is now mandatory',
-                          'has been decriminalized to a citation'
+                          'has been decriminalized to a citation',
+                          'has been declared a health risk',
+                          'has been declared an act of terrorism',
+                          'has been declared an act of treason'
                         ];
 
 var decreeModifiers   = [
