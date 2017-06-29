@@ -662,8 +662,11 @@ var decreeModifiers   = [
                           'without a prescription', 'across the Core Worlds',
                           'across the Offworld Colonies',
                           'across the Prime Dimension', 'while intoxicated',
+                          'while driving or operating machinery',
                           'while traveling across dimensions',
-                          'in outer space'
+                          'while on a tourist visa',
+                          'while under the age of 18',
+                          'while under the age of 21'
                         ];
 
 var decreeAuthorities = [
