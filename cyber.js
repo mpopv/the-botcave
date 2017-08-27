@@ -374,14 +374,22 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'xenocide', 'xenoslayer' ],
                         [ 'raiding', 'raider' ],
                         [ 'leaking', 'leaker' ],
-                        [ 'drug trafficking', 'trafficker' ],
-                        [ 'narcotic trafficking', 'narcotrafficker' ],
                         [ 'stim trafficking', 'stimrunner' ],
                         [ 'juice trafficking', 'juicerunner' ],
-                        [ 'drug dealing', 'dealer' ],
-                        [ 'narcotic dealing', 'dealer' ],
+                        [ 'dust trafficking', 'dustrunner' ],
+                        [ 'spice trafficking', 'spicerunner' ],
                         [ 'stim dealing', 'stim slinger' ],
-                        [ 'juice dealing', 'juice dealer' ]
+                        [ 'juice dealing', 'juice dealer' ],
+                        [ 'dust dealing', 'dust dealer' ],
+                        [ 'spice dealing', 'spice dealer' ],
+                        [ 'doppelganging', 'doppelganger' ],
+                        [ 'raiding', 'raider' ],
+                        [ 'mutation', 'mutant' ],
+                        [ 'experimentation', 'experimenter' ],
+                        [ 'manipulation', 'manipulator' ],
+                        [ 'surfing', 'surfer' ],
+                        [ 'spearphishing', 'spearphisher' ],
+                        [ 'keylogging', 'keylogger' ]
                       ];
 
 
@@ -798,10 +806,10 @@ var finalStatement;
 
 function chooseStatement(){
 
-    if ( random([0,1,2]) === 0 ){
+    if ( random([0,1,2,3]) === 0 ){
 
-      buildWarningStatement();
-      finalStatement = warningStatement;
+      buildDecreeStatement();
+      finalStatement = decreeStatement;
 
     }
     else if ( random([0,1]) === 0 ){
@@ -812,8 +820,8 @@ function chooseStatement(){
     }
     else {
 
-      buildDecreeStatement();
-      finalStatement = decreeStatement;
+      buildWarningStatement();
+      finalStatement = warningStatement;
 
     }
 }
