@@ -464,10 +464,9 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'on the virtuanet', 'on the holonet', 'on the internet',
                   'at a New Delhi holocafe', 'at the World War IV Memorial',
                   'aboard Satellite Station Delta', 'in orbit over Mars',
-                  'inside the MindInternet', 'in Second Life 3',
+                  'in Second Life 3',
                   'outside the Western Mars Airlock',
-                  'near the Southern Mars Airlock',
-                  'near the ruins of Trump\'s Wall', 'on the outernet',
+                  'near the Southern Mars Airlock', 'on the outernet',
                   'on the ethernet', 'on the starnet', 'on the spacenet',
                   'on the cybernet', 'on the echonet', 'on the metanet',
                   'on the tetranet', 'on the synthnet', 'on the tachyonet',
@@ -479,8 +478,7 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'in the distant past', 'in the far future',
                   'six weeks in the future', 'in the year 432',
                   'on Level 2346', 'on Level 834', 'on Level 61',
-                  'somewhere near Level 729', 'around Level 1254',
-                  'on Levels 663 through 669', 'in the sewers near Level 3114',
+                  'on Levels 663 through 669',
                   'in Sector 84, Level 312', 'in Sector 6008, Level 5',
                   'on Level 3425', 'on Level 8214', 'on Level 93',
                   'somewhere near Level 106', 'around Level 938',
@@ -511,23 +509,20 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'between the six worlds', 'at the edge of known space',
                   'at the event horizon of a black hole',
                   'inside a black hole', 'inside a net paradox',
-                  'aboard the Skyforge', 'on Sealand', 'on the Freenet',
+                  'aboard the Skyforge', 'on Sealand',
                   'in the Coreforge', 'aboard a space elevator',
                   'at a classified location', 'at a classified facility',
                   'at a research facility', 'at a research outpost',
                   'at a sky hotel', 'in onion space',
-                  'in Upper Taipei', 'in the depths of Old Prague',
+                  'in Upper Taipei',
                   'at the World Capital', 'inside a world engine',
-                  'at the Vladivostok Starharbor', 'in a dark alley',
                   'from a secret base', 'in a secret lair', 'on Isla Nublar',
-                  'near London\'s Fall', 'somewhere on the Shadow Wastes',
-                  'somewhere on the Dreadplains', 'in the Sierra Razortower',
+                  'on the Shadow Wastes', 'on the Dreadplains',
                   'at a Budapest hotel', 'in the mind of the Prime Autarch',
                   'at Jackpoint Six-Four', 'at the Darknet Exchange',
-                  'against the Fourteenth Sons', 'at a rogue data haven',
+                  'at a rogue data haven',
                   'aboard a floating libertarian island',
-                  'at a Congolese server megafarm', 'at Darkside Junction',
-                  'on the Himmelsschmiede', 'aboard the Zurich-Orbital',
+                  'at a Congolese server megafarm',
                   'in the Neutral Zone', 'in the Armistice Zone',
                   'in the Protected Zone', 'in the Forbidden Zone',
                   'in the Watcher\'s Domain', 'in the Sixth Fury',
@@ -540,17 +535,16 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'at Express Port 142', 'at Express Port 81',
                   'at Express Port 9', 'at Local Port 13', 'at Local Port 55',
                   'at Local Port 223', 'on the Supranet', 'on the Subnet',
-                  'in the Googleverse', 'in Chiba City', 'in the Matrix',
-                  'at Villa Straylight', 'aboard Freeside',
-                  'at the Terminus Ceasefire Plaza',
-                  'atop the Stadtkrone Tower', 'in the Tyrell Building',
+                  'in the Googleverse', 'in the Matrix',
                   'in NeurOceania', 'in central ExoPakistan',
                   'in Third Zealand', 'in ReSpain',
                   'in the Twelfth French Republic', 'in Omni-Iceland',
                   'in Mega-Outer Mongolia', 'between the Twin Void Terrors',
                   'close to Holding Sector MV-7', 'on the North Ridge',
                   'at Echo Station 3T8', 'at an Automated Factory',
-                  'in the Netsphere'
+                  'in the Netsphere', 'at a Tibanna gas colony',
+                  'on Level 1313', 'at a rebel base', 'at an Imperial outpost',
+                  'aboard a blockade runner'
                ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -560,7 +554,10 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
 var sentences = {
                  innocent: [
                    'released', 'reatomized', 'mind-revived', 'de-marooned',
-                   'de-exiled', 'returned to the Prime Dimension'
+                   'de-exiled', 'returned to the Prime Dimension',
+                   'released from custody',
+                   'released from the Exile Orbital Station',
+                   'released from Lunar Supermax Prison', 'released from the Siberian Multinational Penitentiary'
                  ],
                  guilty: [
                    'indicted', 'detained', 'captured', 'mind-severed',
@@ -576,6 +573,12 @@ var sentences = {
                    'assigned a bounty of 100 million credits',
                    'assigned a bounty of 1 billion credits',
                    'assigned a bounty of 100 billion credits',
+                   'assigned a bounty of 100 billion credits',
+                   'placed on the FBI Most Wanted list',
+                   'placed on the MegaCity Police Most Wanted list',
+                   'placed on the Pandimensional Force Most Wanted list',
+                   'designated a inter-system fugitive',
+                   'designated an interdimensional fugitive',
                    'exiled from the Prime Dimension',
                    'exiled from the Core Worlds',
                    'exiled from the Offworld Colonies',
@@ -592,7 +595,8 @@ var verdicts = {
                  ],
                  guilty: [
                    'for', 'on suspicion of', 'after committing',
-                   'after allegedly committing'
+                   'after allegedly committing', 'after being convicted of',
+                   'after being found guilty of'
                  ]
                };
 
@@ -806,13 +810,13 @@ var finalStatement;
 
 function chooseStatement(){
 
-    if ( random([0,1,2,3]) === 0 ){
+    if ( random([0,1,2,3,4,5]) === 0 ){
 
       buildDecreeStatement();
       finalStatement = decreeStatement;
 
     }
-    else if ( random([0,1]) === 0 ){
+    else if ( random([0,1,2]) === 0 ){
 
       buildCaptureStatement();
       finalStatement = captureStatement;
