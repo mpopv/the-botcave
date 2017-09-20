@@ -155,7 +155,7 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
               'panther', 'cryonic', 'vat-grown', 'glitch', 'karma',
               'Mercerist', 'aurora', 'shield', 'carapace', 'philotic',
               'psychic', 'ansible', 'Imperial', 'Rebel', 'Resistance',
-              'automated'
+              'automated', 'bioengineered', 'biomechanical'
             ];
 
 // Job suffixes
@@ -186,7 +186,7 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'skater', 'boarder', 'skiier', 'diver', 'naut',
               'physicist', 'titan', 'bruiser', 'raider', 'daemon', 'demon',
               'theologist', 'cowboy', 'paladin', 'warlock', 'shaman',
-              'Mercerist', 'wyrm', 'djinn', 'sphere', 'walker',
+              'wyrm', 'djinn', 'sphere', 'walker',
               'exterminator'
             ];
 
@@ -226,7 +226,8 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
                 'demon', 'daemon', 'denizen', 'kourier', 'gargoyle',
                 'mercenary', 'basilisk', 'cowboy', 'paladin', 'warlock',
                 'shaman', 'wyrm', 'djinn', 'medium', 'siphon', 'archer',
-                'exterminator'
+                'exterminator', 'Mercerist', 'walker/roller tank',
+                'spider tank', 'combat robot', 'combat vehicle', 'psymech'
               ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -557,7 +558,8 @@ var sentences = {
                    'de-exiled', 'returned to the Prime Dimension',
                    'released from custody',
                    'released from the Exile Orbital Station',
-                   'released from Lunar Supermax Prison', 'released from the Siberian Multinational Penitentiary'
+                   'released from Lunar Supermax Prison',
+                   'released from the Siberian Multinational Penitentiary'
                  ],
                  guilty: [
                    'indicted', 'detained', 'captured', 'mind-severed',
@@ -574,10 +576,10 @@ var sentences = {
                    'assigned a bounty of 1 billion credits',
                    'assigned a bounty of 100 billion credits',
                    'assigned a bounty of 100 billion credits',
-                   'placed on the FBI Most Wanted list',
+                   'placed on the GFBI Most Wanted list',
                    'placed on the MegaCity Police Most Wanted list',
-                   'placed on the Pandimensional Force Most Wanted list',
-                   'designated a inter-system fugitive',
+                   'placed on the Pandimensional Police Most Wanted list',
+                   'designated an inter-system fugitive',
                    'designated an interdimensional fugitive',
                    'exiled from the Prime Dimension',
                    'exiled from the Core Worlds',
@@ -585,7 +587,16 @@ var sentences = {
                    'sent to the spice mines of Kessel',
                    'marooned on a prison colony',
                    'marooned in the Outer Reaches',
-                   'marooned in a parallel dimension'
+                   'marooned in a parallel dimension',
+                   'sentenced to 10 rotations of asteroid mining',
+                   'sentenced to 10 rotations of core metal mining',
+                   'sentenced to death on 12 systems',
+                   'dispatched by a Blade Runner',
+                   'dispatched by Section 9',
+                   'taken into custody',
+                   'transported to the Exile Orbital Station',
+                   'transported to Lunar Supermax Prison',
+                   'transported to the Siberian Multinational Penitentiary'
                  ]
                };
 
@@ -670,19 +681,16 @@ var decreeActions     = [
                           'has been legalized', 'has been re-legalized',
                           'is now mandatory',
                           'has been decriminalized to a citation',
-                          'has been declared a health risk',
-                          'has been declared an act of terrorism',
                           'has been declared an act of treason'
                         ];
 
 var decreeModifiers   = [
-                          'for medical purposes', 'in all sectors',
+                          'in all sectors',
                           'without a prescription', 'across the Core Worlds',
                           'across the Offworld Colonies',
-                          'across the Prime Dimension', 'while intoxicated',
+                          'across the Prime Dimension',
                           'while driving or operating machinery',
                           'while piloting hovercraft or spacecraft',
-                          'for all noncitizens',
                           'while traveling across dimensions',
                           'while on a tourist visa',
                           'while under the age of 18',
@@ -693,11 +701,24 @@ var decreeModifiers   = [
 var decreeAuthorities = [
                           'by the authority of the Prime Autarch',
                           'by order of the World Capital Senate',
-                          'by decree of the MegaCity Supreme Court',
+                          'by order of the MegaCity Supreme Court',
                           'by agreement of a coalition of Sector Councils',
-                          'according to the terms of a new interdimensional armistice accord',
+                          'according to the terms of an interdimensional armistice accord',
+                          'according to the terms of an interplanetary armistice accord',
+                          'according to the terms of an inter-system armistice accord',
                           'by order of the MegaCity legislature',
-                          'by order of the MegaCity police code'
+                          'by order of the MegaCity police code',
+                          'by order of the Department of Global Justice',
+                          'by order of the Department of Homeworld Security',
+                          'by order of the Department of Global Defense',
+                          'by order of the Department of Near Earth Transportation',
+                          'by order of the Department of Space Commerce',
+                          'by order of the Department of Global Energy',
+                          'by order of the Department of States',
+                          'by order of the GFBI', 'by order of the GCIA',
+                          'by order of the GNSA', 'by order of the GATF',
+                          'by order of Section 9',
+                          'by order of the Pandimensional Police'
                         ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -755,7 +776,7 @@ function chooseTerms(){
   decreeModifier = random(decreeModifiers);
   decreeAuthority = random(decreeAuthorities);
 
-  judgement = (random([0,1,2]) === 0) ? 'innocent' : 'guilty';
+  judgement = (random([0,1,2,3,5]) === 0) ? 'innocent' : 'guilty';
   fate = random(sentences[judgement]) + ' ' + random(verdicts[judgement]);
 
 
