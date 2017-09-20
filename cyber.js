@@ -771,7 +771,7 @@ function buildWarningStatement(){
 
     chooseTerms();
 
-    warningStatement = nineTenths(warning + ': ') + 'A ' + group + ' of ' + threeQuarter(state + ' ') + title + ' ' + crimeAction + ' ' + threeQuarter(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + threeQuarter(' ' + location) + '.';
+    warningStatement = warning + ': A ' + group + ' of ' + threeQuarter(state + ' ') + title + ' ' + crimeAction + ' ' + threeQuarter(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + threeQuarter(' ' + location) + '.';
 
     count = warningStatement.length;
 
@@ -787,7 +787,7 @@ function buildCaptureStatement(){
                     singTitle.capitalize() :
                     state.capitalize() + ' ' + singTitle;
 
-    captureStatement = threeQuarter(warning + ': ') + fullTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + threeQuarter(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + threeQuarter(' ' + location) + '.';
+    captureStatement = fullTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + threeQuarter(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + threeQuarter(' ' + location) + '.';
 
     count = captureStatement.length;
 
@@ -799,7 +799,7 @@ function buildDecreeStatement(){
 
     chooseTerms();
 
-    decreeStatement = warning + ': ' + random(crimePrefixes).capitalize() + checkSing(random(genericCrimes)) + ' ' + decreeAction + ' ' + twoThird(random([ decreeModifier, decreeModifier, location ]) + ' ') + decreeAuthority + '.';
+    decreeStatement = random(crimePrefixes).capitalize() + checkSing(random(genericCrimes)) + ' ' + decreeAction + ' ' + twoThird(random([ decreeModifier, decreeModifier, location ]) + ' ') + decreeAuthority + '.';
 
     count = decreeStatement.length;
 
