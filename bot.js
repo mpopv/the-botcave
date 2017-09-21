@@ -24,12 +24,6 @@
 
 var Twit = require('twit');
 var TwitterBot = require('node-twitterbot').TwitterBot;
-var title = ''; var subtitle = ''; var styles = ''; var selectedStyle = '';
-var artcArray = [ ]; var nounArray = [ ]; var plurArray = [ ];
-var actnArray = [ ]; var verbArray = [ ]; var adjeArray = [ ];
-var maybArray = [ ]; var thngArray = [ ];
-var dice = [ 1, 2, 3 ]; var roll = '';
-
 
 var Bot = new TwitterBot({
   consumer_key:         process.env.SWTITLEBOT_CONSUMER_KEY,
@@ -37,6 +31,13 @@ var Bot = new TwitterBot({
   access_token:         process.env.SWTITLEBOT_ACCESS_TOKEN,
   access_token_secret:  process.env.SWTITLEBOT_ACCESS_TOKEN_SECRET
 });
+
+
+var title = ''; var subtitle = ''; var styles = ''; var selectedStyle = '';
+var artcArray = [ ]; var nounArray = [ ]; var plurArray = [ ];
+var actnArray = [ ]; var verbArray = [ ]; var adjeArray = [ ];
+var maybArray = [ ]; var thngArray = [ ];
+var dice = [ 1, 2, 3 ]; var roll = '';
 
 
 ///////////////// Word Array Bank //////////////////////////////////////////////
@@ -50,12 +51,12 @@ artcArray = [ 'The', 'A' ];
 // except Action of Proper.
 
 nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
-              'High Ground', 'Galaxy', 'Hutt', 'Franchise', 'Bantha Fodder',
+              'High Ground', 'Galaxy', 'Hutt', 'Bantha Fodder',
               'Trade Federation', 'Republic', 'Gungan', 'Alliance',
               'Confederacy', 'Vulcan', 'Fleet', 'Rebellion',
               'Lightsaber', 'Dark Jedi', 'Knight', 'Order', 'Prophecy',
-              'Chosen One', 'Resistance', 'Senate', 'Trade Negotiation',
-              'Plot Hole', 'Marketing Department', 'Star Forge',
+              'Chosen One', 'Resistance', 'Senate',
+              'Star Forge',  'Trade Negotiation',
               'Wampa', 'Bantha', 'Holiday Special', 'Battlestation',
               'Queen', 'Emperor', 'Chancellor', 'Asteroid Field',
               'Nerf Herder', 'Moof-Milker', 'Spy', 'Moisture Farm',
@@ -64,19 +65,20 @@ nounArray = [ 'Empire', 'Jedi', 'Menace', 'Sith', 'Force', 'Womp Rat',
               'Gundark', 'Rathtar', 'Traitor', 'Spirit', 'Master',
               'Apprentice', 'Commander', 'Smuggler', 'Threat', 'Droid',
               'Fuzzball', 'Ice Cream Maker', 'Furball', 'Twerp', 'Swindler',
-              'Sadly Inevitable Marvel Crossover', 'Melted Helmet',
-              'Spoiler Alert', 'Wild Bantha Chase', 'Walking Carpet' ];
+              'Melted Helmet', 'Wild Bantha Chase', 'Walking Carpet',
+              'Gonk Droid', 'Cantina Band', 'R2 Unit', 'BB Unit' ];
 
-// plurArray contains plural nonproper nouns that may randomly replace nounArray
+// plurArray contains plural nouns that may randomly replace nounArray
 // nouns at the end of The Adjective Noun (via dice roll) and the end of Action
 // of the Noun (via maybArray).
 
 plurArray = [ 'Clones', 'Stormtroopers', 'Gungans', 'Midichlorians',
-              'Rebels', 'Vulcans', 'Plot Holes', 'Prequels',
+              'Rebels', 'Vulcans', 'Troopers', 'Rebels',
+              'Starfighters', 'Jedi', 'Sith',
               'Trade Negotiations', 'Hutts', 'Droids', 'Sand People',
-              'Spaceballs', 'Whills', 'Worlds', 'Stars', 'Sand', 'CGI',
-              'Spoilers', 'Toy Sales', 'Senators', 'Scum', 'Ewoks',
-              'Poor Writing', 'Poor Acting' ];
+              'Whills', 'Worlds', 'Stars', 'Sand',
+              'Senators', 'Scum', 'Ewoks', 'Moisture Farmers',
+              'Protocol Droids', 'R2 Units', 'BB Units' ];
 
 // actnArray contains action, state, or status nouns that appear at the
 // beginning of Action of the Noun. They can be singular or plural.
@@ -97,23 +99,23 @@ actnArray = [ 'Hope', 'Return', 'Attack', 'Revenge', 'Fall', 'Twilight', 'Dawn',
               'Vindication', 'Deception', 'Trials', 'Emissary', 'Master',
               'Apprentice', 'Treason', 'Traitor', 'Cry', 'Call', 'Dance',
               'Remnant', 'Commander', 'Conviction', 'Ascension',
-              'Fist', 'Starfighters', 'Gambit', 'Profit Margin' ];
+              'Fist', 'Starfighters', 'Gambit', 'Blockade', 'War',
+              'Saber', 'Revelation' ];
 
 // verbArray contains verbs, verb phrases, and prepositional phrases that appear
 // at the end of The Noun Verbs. They must be singular.
 
 verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
               'Arrives', 'Ascends', 'Descends', 'Strikes', 'Crumbles',
-              'is Pretty Meh', 'Explodes', 'Underwhelms', 'Goes Public',
-              'Appears', 'Looms', 'Runs Way Over Budget', 'Drinks Blue Milk',
-              'Has Breakfast', 'Picks Up Some Power Converters', 'Reappears',
-              'Bullseyes Womp Rats', 'Disappears', 'is Sold to Disney',
+              'Explodes', 'Appears', 'Looms', 'Drinks Blue Milk',
+              'Picks Up Some Power Converters', 'Reappears',
+              'Bullseyes Womp Rats', 'Disappears',
               'Implodes', 'Fails', 'Falls Silent', 'Begins', 'Ends', 'Escapes',
               'Has a Bad Feeling About This', 'Without End',
               'Has a Really Bad Feeling About This', 'Laughs It Up',
               'is NOT a COMMITTEE', 'is Your Father',
               'Will Be With You, Always', 'Goes Into Exile',
-              'Gets Proton Torpedoed' ];
+              'Becomes One With the Force' ];
 
 // adjeArray contains adjectives that come before nouns in The Adjective Noun.
 // They must be compatible with 'A' (rather than 'An').
@@ -121,7 +123,7 @@ verbArray = [ 'Strikes Back', 'Awakens', 'Returns', 'Attacks', 'Falls',
 adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Galactic', 'Hidden', 'Secret', 'Sentient', 'Shadowy',
               'Long-Lost', 'Terrible', 'Glorious', 'War-Torn', 'First',
-              'Dangerous', 'Cryptic', 'Awesome', 'Lightspeed', 'Ultimate',
+              'Dangerous', 'Cryptic', 'Lightspeed', 'Ultimate',
               'Grand', 'Ludicrous', 'Chosen', 'Second', 'Primordial',
               'Lost', 'Missing', 'Fatal', 'Deadly', 'Captive', 'Ravaged',
               'Scruffy-Looking', 'Failing', 'Coarse', 'Desolate', 'Criminal',
@@ -129,11 +131,12 @@ adjeArray = [ 'New', 'Phantom', 'Dark', 'Fallen', 'Final', 'Rising', 'Risen',
               'Peaceful', 'Galactic', 'Bothan', 'Jedi', 'Sith', 'Vile',
               'Gleaming', 'Fading', 'Burning', 'Hyperspace', 'Coarse',
               'Crazy', 'Malfunctioning', 'Slimy', 'Double-Crossing', 'No-Good',
-              'Stuck-Up', 'Half-Witted' ];
+              'Stuck-Up', 'Half-Witted', 'Sinister', 'Primal' ];
 
 // maybArray gives Action of the Noun a 1/3 chance of ending in a plural noun.
 
-maybArray = [ chooseRandom(nounArray), chooseRandom(nounArray),
+maybArray = [ chooseRandom(nounArray),
+              chooseRandom(nounArray),
               chooseRandom(plurArray) ];
 
 

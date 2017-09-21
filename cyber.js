@@ -705,7 +705,7 @@ var decreeAuthorities = [
                           'by agreement of a coalition of Sector Councils',
                           'according to the terms of an interdimensional armistice accord',
                           'according to the terms of an interplanetary armistice accord',
-                          'according to the terms of an inter-systems armistice accord',
+                          'according to the terms of an intersystems armistice accord',
                           'by order of the MegaCity legislature',
                           'by order of the MegaCity police code',
                           'by order of the Department of Global Justice',
