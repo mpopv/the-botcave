@@ -602,10 +602,10 @@ var sentences = {
 
 var verdicts = {
                  innocent: [
-                   'after being acquitted of', 'after being exonerated for'
+                   'after being acquitted of'
                  ],
                  guilty: [
-                   'for', 'on suspicion of', 'after committing',
+                   'on suspicion of', 'after committing',
                    'after allegedly committing', 'after being convicted of',
                    'after being found guilty of'
                  ]
@@ -705,7 +705,7 @@ var decreeAuthorities = [
                           'by agreement of a coalition of Sector Councils',
                           'according to the terms of an interdimensional armistice accord',
                           'according to the terms of an interplanetary armistice accord',
-                          'according to the terms of an inter-system armistice accord',
+                          'according to the terms of an inter-systems armistice accord',
                           'by order of the MegaCity legislature',
                           'by order of the MegaCity police code',
                           'by order of the Department of Global Justice',
