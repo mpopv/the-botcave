@@ -1,5 +1,5 @@
 {
-  "name": "swtitlebot",
+  "name": "the-botcave",
   "version": "1.0.0",
   "description": "Star Wars Titlebot for Twitter",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mpopv/Star-Wars-Titlebot.git"
+    "url": "git+https://github.com/mpopv/the-botcave.git"
   },
   "author": "Matt Popovich",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mpopv/Star-Wars-Titlebot/issues"
+    "url": "https://github.com/mpopv/the-botcave/issues"
   },
-  "homepage": "https://github.com/mpopv/Star-Wars-Titlebot#readme",
+  "homepage": "https://github.com/mpopv/the-botcave#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
