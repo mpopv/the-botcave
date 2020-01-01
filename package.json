@@ -22,7 +22,7 @@
     "express": "^4.13.3",
     "kerberos": "0.0.17",
     "method-override": "^2.3.5",
-    "mongoose": "^4.2.9",
+    "mongoose": "^5.8.3",
     "node-twitterbot": "^0.2.2",
     "twit": "^2.1.1"
   }
