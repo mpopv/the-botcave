@@ -125,7 +125,7 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'astro', 'titano', 'astral', 'crypto', 'crypto-', 'wiki',
               'razor', 'ice', 'magma', 'lava', 'glitch', 'karma',
               'aero', 'dyno', 'mirror', 'bug', 'cell', 'thorn', 'mine',
-              'automa'
+              'automa', 'drone', 'tank', 'hover', 'beam', 'hacker-', 'sym'
             ];
 
 // Job prefixes that can be adjectives modifying a title
@@ -155,7 +155,11 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
               'panther', 'cryonic', 'vat-grown', 'glitch', 'karma',
               'Mercerist', 'aurora', 'shield', 'carapace', 'philotic',
               'psychic', 'ansible', 'Imperial', 'Rebel', 'Resistance',
-              'automated', 'bioengineered', 'biomechanical'
+              'automated', 'bioengineered', 'biomechanical', 'offworld',
+              'cortical', 'satellite', 'airship', 'aeronautic', 'hovercraft',
+              'hovercar', 'hoverdrone', 'drone', 'hovertank', 'ultimatum',
+              'protomolecule', 'tight beam', 'beam', 'comms', 'radio',
+              'autonomous'
             ];
 
 // Job suffixes
@@ -186,8 +190,9 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'skater', 'boarder', 'skiier', 'diver', 'naut',
               'physicist', 'titan', 'bruiser', 'raider', 'daemon', 'demon',
               'theologist', 'cowboy', 'paladin', 'warlock', 'shaman',
-              'wyrm', 'djinn', 'sphere', 'walker',
-              'exterminator'
+              'wyrm', ['djinn', 'djinni'], 'sphere', 'walker',
+              'exterminator', 'skipper', 'tracer', 'worlder', 'seeker',
+              'dragon', 'shark', 'cruiser', 'splitter'
             ];
 
 // Job titles that can be independent w/ adjective modifier
@@ -227,7 +232,9 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
                 'mercenary', 'basilisk', 'cowboy', 'paladin', 'warlock',
                 'shaman', 'wyrm', 'djinn', 'medium', 'siphon', 'archer',
                 'exterminator', 'Mercerist', 'walker/roller tank',
-                'spider tank', 'combat robot', 'combat vehicle', 'psymech'
+                'spider tank', 'combat robot', 'combat vehicle', 'psymech',
+                'offworlder', 'colonist', 'envoy', 'hitman', 'exobotanist',
+                'exobiologist', 'exoarchaeologist'
               ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -283,7 +290,9 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'disc ', 'disk ', 'sleep ', 'mind ', 'galvanic ',
                        'consciousness ', 'subconscious ', 'acoustic ',
                        'pre', 'post-', 'uber', 'molecular ', 'aero',
-                       'dyno', 'philotic ', 'psychic '
+                       'dyno', 'philotic ', 'psychic ', 'offworld ', 
+                       'offplanet ', 'lunar ', 'radio ', 'comms ', 
+                       'tight beam ', 'protomolecule '
                      ];
 
 // Standard crimes to be modified by prefixes
@@ -419,7 +428,9 @@ var dangerGroups  = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                       'tank division', 'militia faction', 'political party',
                       'religious sect', 'sectarian faction', 'tribe',
                       'resistance group', 'secret order', 'pair',
-                      'dark order'
+                      'dark order', 'ship', 'transport', 'frigate', 
+                      'blockade runner', 'resistance movement', 
+                      'guerilla faction', 'fleet'
                     ];
 
 var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
@@ -557,9 +568,11 @@ var sentences = {
                    'released', 'reatomized', 'mind-revived', 'de-marooned',
                    'de-exiled', 'returned to the Prime Dimension',
                    'released from custody',
-                   'released from the Exile Orbital Station',
-                   'released from Lunar Supermax Prison',
-                   'released from the Siberian Multinational Penitentiary'
+                   'released from an orbital prison',
+                   'released from a lunar prison',
+                   'released from a prison colony',
+                   'released from a prison world',
+                   'released from an asteroid prison'
                  ],
                  guilty: [
                    'indicted', 'detained', 'captured', 'mind-severed',
@@ -576,10 +589,7 @@ var sentences = {
                    'assigned a bounty of 1 billion credits',
                    'assigned a bounty of 100 billion credits',
                    'assigned a bounty of 100 billion credits',
-                   'placed on the GFBI Most Wanted list',
-                   'placed on the MegaCity Police Most Wanted list',
-                   'placed on the Pandimensional Police Most Wanted list',
-                   'designated an inter-system fugitive',
+                   'designated an inter-systems fugitive',
                    'designated an interdimensional fugitive',
                    'exiled from the Prime Dimension',
                    'exiled from the Core Worlds',
@@ -587,16 +597,12 @@ var sentences = {
                    'sent to the spice mines of Kessel',
                    'marooned on a prison colony',
                    'marooned in the Outer Reaches',
+                   'marooned in the Chaos Dimension',
                    'marooned in a parallel dimension',
                    'sentenced to 10 rotations of asteroid mining',
-                   'sentenced to 10 rotations of core metal mining',
                    'sentenced to death on 12 systems',
-                   'dispatched by a Blade Runner',
-                   'dispatched by Section 9',
-                   'taken into custody',
-                   'transported to the Exile Orbital Station',
-                   'transported to Lunar Supermax Prison',
-                   'transported to the Siberian Multinational Penitentiary'
+                   'dispatched',
+                   'taken into custody'
                  ]
                };
 
@@ -641,7 +647,8 @@ var firstNames = [ 'Pauley', 'Hideo', 'Riviera', 'Henry', 'Linda', 'Molly',
                    'Venus', 'Mars', 'Jupiter', 'Saturn', 'Neptune',
                    'Pluto', 'Juno', 'Minerva', 'Janus', 'Vesta', 'Vishnu',
                    'Tidus', 'Yuna', 'Auron', 'Wakka', 'Lulu', 'Rikku',
-                   'Seymour'
+                   'Seymour', 'Takeshi', 'Quellcrist', 'Laurens',
+                   'Kristen', 'Elias', 'Carnage', 'Oumou', 'Reileen'
                  ];
 
 var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
@@ -667,7 +674,8 @@ var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
                    'Ballard', 'West', 'Soren', 'Locke', 'Hobbes', 'Hamann',
                    'Flores', 'Ibanez', 'Levy', 'Jenkins', 'Barcalow',
                    'Rasczak', 'Vrataski', 'Farell', 'Brigham', 'Kimmel',
-                   'Skinner', 'Takeda'
+                   'Skinner', 'Takeda', 'Kovacs', 'Falconer', 'Bancroft',
+                   'Ortega', 'Ryker'
                  ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -701,24 +709,11 @@ var decreeModifiers   = [
 var decreeAuthorities = [
                           'by the authority of the Prime Autarch',
                           'by order of the World Capital Senate',
-                          'by order of the MegaCity Supreme Court',
+                          'by order of the Six Supreme Courts',
                           'by agreement of a coalition of Sector Councils',
                           'according to the terms of an interdimensional armistice accord',
                           'according to the terms of an interplanetary armistice accord',
-                          'according to the terms of an intersystems armistice accord',
-                          'by order of the MegaCity legislature',
-                          'by order of the MegaCity police code',
-                          'by order of the Department of Global Justice',
-                          'by order of the Department of Homeworld Security',
-                          'by order of the Department of Global Defense',
-                          'by order of the Department of Near Earth Transportation',
-                          'by order of the Department of Space Commerce',
-                          'by order of the Department of Global Energy',
-                          'by order of the Department of States',
-                          'by order of the GFBI', 'by order of the GCIA',
-                          'by order of the GNSA', 'by order of the GATF',
-                          'by order of Section 9',
-                          'by order of the Pandimensional Police'
+                          'according to the terms of an intersystems armistice accord'
                         ];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -831,13 +826,13 @@ var finalStatement;
 
 function chooseStatement(){
 
-    if ( random([0,1,2,3,4,5]) === 0 ){
+    if ( random([0,1,2,3,4,5,6,7]) === 0 ){
 
       buildDecreeStatement();
       finalStatement = decreeStatement;
 
     }
-    else if ( random([0,1,2]) === 0 ){
+    else if ( random([0,1,2,3,4]) === 0 ){
 
       buildCaptureStatement();
       finalStatement = captureStatement;
