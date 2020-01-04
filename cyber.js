@@ -2,10 +2,10 @@
  // MegaCity Police bot
  // @megacitypolice on Twitter
 
- var Twit = require('twit');
- var TwitterBot = require('node-twitterbot').TwitterBot;
+ let Twit = require('twit');
+ let TwitterBot = require('node-twitterbot').TwitterBot;
 
- var Bot = new TwitterBot({
+ let Bot = new TwitterBot({
    consumer_key:         process.env.CYBERBOT_CONSUMER_KEY,
    consumer_secret:      process.env.CYBERBOT_CONSUMER_SECRET,
    access_token:         process.env.CYBERBOT_ACCESS_TOKEN,
@@ -105,7 +105,7 @@ String.prototype.capitalize = function() {
 
 
 // Job Prefixes that can be attached as a compound word
-var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
+let jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
               'solo', 'med', 'data', 'cyber', 'arch', 'under', 'sewer', 'hack',
               'deep', 'nano', 'street', 'ex-', 'gene', 'wire', 'web', 'dark',
               'mech', 'armor', 'gun', 'waste', 'tank', 'neo', 'war',
@@ -129,7 +129,7 @@ var jobPreN = [ 'net', 'neuro', 'techno', 'psyko', 'anarcho', 'hover', 'bio',
             ];
 
 // Job prefixes that can be adjectives modifying a title
-var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
+let jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
               'hacker', 'dread', 'digital', 'street', 'sector', 'contract',
               'nano', 'gene', 'hack', 'virtual', 'net', 'internet', 'dark',
               'void', 'rogue', 'special', 'mech', 'armored', 'weapon',
@@ -139,7 +139,7 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
               'crystal', 'stealth', 'electronic', 'rust', 'cable',
               'contraband', 'sprawl', 'planetary', 'Spyre', 'radar',
               'nuclear', 'hydrogen', 'gravity', 'ansible', 'drone', 'blaster',
-              'shield', 'plasma', 'sentient', 'varelse', 'tachyon',
+              'shield', 'plasma', 'sentient', 'letelse', 'tachyon',
               'Tellurian', 'Terran', 'cybernetic', 'cyberspace', 'artificial',
               'shadow', 'chromatic', 'toxic', 'keyboard', 'plastic', 'mecha',
               '\'net', 'script', 'JavaScript', 'node', 'spice', 'soma',
@@ -163,7 +163,7 @@ var jobPreS = [ 'corporate', 'data', 'cyborg', 'virtual', 'carbon', 'silicon',
             ];
 
 // Job suffixes
-var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
+let jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
               'anarchist', 'hacker', 'junkie', 'courier', 'merc', 'panzer',
               'boy', 'girl', 'surfer', 'cyborg', 'fixer', 'nomad',
               'punk', 'cultist', 'slinger', 'doctor', [ 'thief', 'thieves' ],
@@ -196,7 +196,7 @@ var jobSuff = [ 'mancer', 'runner', 'techie', 'tech', 'terrorist', 'separatist',
             ];
 
 // Job titles that can be independent w/ adjective modifier
-var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
+let jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
                 'junkie', 'courier', 'agent', 'nomad', 'prince',
                 [ 'princess', 'princesses' ], [ 'ronin', 'ronin' ],
                 [ 'samurai', 'samurai' ], 'cultist', 'warrior',
@@ -242,7 +242,7 @@ var jobTtlS = [ 'enforcer', 'scientist', 'psyker', 'anarch', 'fixer', 'hacker',
 ////////////////////////////////////////////////////////////////////////////////
 
 // Additional crime prefixes
-var crimeUberPrefs = [ 'illegal', 'illicit', 'serial', 'first-degree',
+let crimeUberPrefs = [ 'illegal', 'illicit', 'serial', 'first-degree',
                        'second-degree', 'third-degree', 'aggravated',
                        'spontaneous', 'reckless', 'malicious', 'felony',
                        'misdemeanor', 'grand',
@@ -250,7 +250,7 @@ var crimeUberPrefs = [ 'illegal', 'illicit', 'serial', 'first-degree',
                      ];
 
 // Standard cyberpunk crime prefixes
-var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
+let crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'anarcho', 'hover', 'bio', 'carbon', 'silicon ',
                        'data', 'cyber', 'nano', 'street ', 'gene ', 'wire',
                        'web ', 'dark ', 'mech', 'neo', 'war', 'echo',
@@ -292,11 +292,14 @@ var crimePrefixes  = [ 'net', 'neuro', 'techno', 'psyko',
                        'pre', 'post-', 'uber', 'molecular ', 'aero',
                        'dyno', 'philotic ', 'psychic ', 'offworld ', 
                        'offplanet ', 'lunar ', 'radio ', 'comms ', 
-                       'tight beam ', 'protomolecule '
+                       'tight beam ', 'protomolecule ', 'corporate ',
+                       'megacorporate ', 'ice ', 'neon ', 'lunar ',
+                       'isometric ', 'isomorphic ', 'philotic ',
+                       'biotic ', 'bionic '
                      ];
 
 // Standard crimes to be modified by prefixes
-var genericCrimes   = [ [ 'perjury', 'perjurer' ],
+let genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'arson', 'arsonist' ],
                         [ 'corruption', 'corruptor' ],
                         [ 'larceny', 'larcenist' ],
@@ -399,7 +402,14 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
                         [ 'manipulation', 'manipulator' ],
                         [ 'surfing', 'surfer' ],
                         [ 'spearphishing', 'spearphisher' ],
-                        [ 'keylogging', 'keylogger' ]
+                        [ 'keylogging', 'keylogger' ],
+                        [ 'hull breaching', 'hull breacher' ],
+                        [ 'airspace breaching', 'airspace breacher' ],
+                        [ 'running', 'runner' ],
+                        [ 'scavenging', 'scavenger '],
+                        [ 'scrapping', 'scrapper' ],
+                        [ 'jacking', 'jacker' ],
+                        [ 'feeding', 'feeder' ]
                       ];
 
 
@@ -407,7 +417,7 @@ var genericCrimes   = [ [ 'perjury', 'perjurer' ],
 ///////////////// Groups ///////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-var dangerStates = [ 'mutant', 'bloodthirsty', 'pandimensional', 'solar',
+let dangerStates = [ 'mutant', 'bloodthirsty', 'pandimensional', 'solar',
                      'homicidal', 'dimensional', 'stim-addled', 'lunar',
                      'plague-infested', 'gene-enhanced', 'elemental',
                      'zombified', 'cybernetic-enhanced', 'superpowered',
@@ -416,7 +426,7 @@ var dangerStates = [ 'mutant', 'bloodthirsty', 'pandimensional', 'solar',
                      'Plutonian'
                    ];
 
-var dangerGroups  = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
+let dangerGroups  = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                       'battlegroup', 'division', 'faction',
                       'freighter', 'mining vessel', 'hovertransport',
                       'battlegang', 'war party', 'group', 'band',
@@ -433,7 +443,7 @@ var dangerGroups  = [ 'gang', 'pack', 'band', 'caravan', 'cargo ship',
                       'guerilla faction', 'fleet'
                     ];
 
-var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
+let crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
                      'is reportedly committing', 'has committed',
                      'is rumored to be committing', 'was sighted committing',
                      'was spotted committing',
@@ -443,11 +453,11 @@ var crimeActions = [ 'is committing acts of', 'has been spotted engaging in',
                      'is suspected of committing'
                   ];
 
-var warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking',
+let warnings = [ 'alert', 'warning', 'caution', 'be advised', 'breaking',
                  'advisory', 'report', 'update'
                ];
 
-var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
+let locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'in Sector 6477', 'in Null Sector', 'in Sector 2436',
                   'in Sector 3478', 'in Sector 701', 'in Sector 972',
                   'in Echo Sector', 'in Sector 6903', 'in Sector 9834',
@@ -550,6 +560,7 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
                   'in the Googleverse', 'in the Matrix',
                   'in NeurOceania', 'in central ExoPakistan',
                   'in Third Zealand', 'in ReSpain',
+                  'in New Angeles', 'in Night City',
                   'in the Twelfth French Republic', 'in Omni-Iceland',
                   'in Mega-Outer Mongolia', 'between the Twin Void Terrors',
                   'close to Holding Sector MV-7', 'on the North Ridge',
@@ -563,7 +574,7 @@ var locations = [ 'in Sector 0.3', 'in Sector 8756-Delta', 'in Sector 9450',
 ///////////////// Names ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-var sentences = {
+let sentences = {
                  innocent: [
                    'released', 'reatomized', 'mind-revived', 'de-marooned',
                    'de-exiled', 'returned to the Prime Dimension',
@@ -606,7 +617,7 @@ var sentences = {
                  ]
                };
 
-var verdicts = {
+let verdicts = {
                  innocent: [
                    'after being acquitted of'
                  ],
@@ -621,7 +632,7 @@ var verdicts = {
 ///////////////// Names ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-var firstNames = [ 'Pauley', 'Hideo', 'Riviera', 'Henry', 'Linda', 'Molly',
+let firstNames = [ 'Pauley', 'Hideo', 'Riviera', 'Henry', 'Linda', 'Molly',
                    'Willis', 'Marcus', 'Sally', 'Johnny', 'Julius', 'Iran',
                    'Dixie', 'McCoy', 'Rick', 'Phil', 'Pris', 'John', 'Roy',
                    'Rachael', 'Antonio', 'Sydney', 'Eldon', 'Sarah', 'Iris',
@@ -648,10 +659,12 @@ var firstNames = [ 'Pauley', 'Hideo', 'Riviera', 'Henry', 'Linda', 'Molly',
                    'Pluto', 'Juno', 'Minerva', 'Janus', 'Vesta', 'Vishnu',
                    'Tidus', 'Yuna', 'Auron', 'Wakka', 'Lulu', 'Rikku',
                    'Seymour', 'Takeshi', 'Quellcrist', 'Laurens',
-                   'Kristen', 'Elias', 'Carnage', 'Oumou', 'Reileen'
+                   'Kristen', 'Elias', 'Carnage', 'Oumou', 'Reileen',
+                   'Adonis', 'Eve', 'Steiger', 'Rex', 'Alix', 'Gillian',
+                   'Floyd'
                  ];
 
-var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
+let lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
                    'Comstock', 'Altamira', 'Turing', 'MacArthur', 'Einstein',
                    'Halaby', 'Kepler', 'Loeb', 'Föhr', 'Cantrell', 'Rife',
                    'Asherah', 'Enzo', 'Tessier-Ashpool', 'Maelcum', 'Batty',
@@ -675,14 +688,15 @@ var lastNames  = [ 'Shaftoe', 'Waterhouse', 'von Hacklheber', 'Bischoff',
                    'Flores', 'Ibanez', 'Levy', 'Jenkins', 'Barcalow',
                    'Rasczak', 'Vrataski', 'Farell', 'Brigham', 'Kimmel',
                    'Skinner', 'Takeda', 'Kovacs', 'Falconer', 'Bancroft',
-                   'Ortega', 'Ryker'
+                   'Ortega', 'Ryker', '2X3A7C', '2X3ZB9CY', '3GI2RC',
+                   '7Y3T9D', '5VA3TC', '49A57D', 'XM4DR9', 'T4LB07', 'Jinteki'
                  ];
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////// Decree ///////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-var decreeActions     = [
+let decreeActions     = [
                           'is now illegal', 'has been decreed a crime',
                           'has been outlawed', 'has been prohibited',
                           'has been forbidden', 'has been re-outlawed',
@@ -692,7 +706,7 @@ var decreeActions     = [
                           'has been declared an act of treason'
                         ];
 
-var decreeModifiers   = [
+let decreeModifiers   = [
                           'in all sectors',
                           'without a prescription', 'across the Core Worlds',
                           'across the Offworld Colonies',
@@ -706,7 +720,7 @@ var decreeModifiers   = [
                           'without a license', 'without a permit'
                         ];
 
-var decreeAuthorities = [
+let decreeAuthorities = [
                           'by the authority of the Prime Autarch',
                           'by order of the World Capital Senate',
                           'by order of the Six Supreme Courts',
@@ -720,28 +734,29 @@ var decreeAuthorities = [
 ////////////// Tweet Creation //////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-var compoundTitle;
-var adjectiveTitle;
-var whichTitle;
-var title;
-var singTitle;
+let compoundTitle;
+let adjectiveTitle;
+let whichTitle;
+let title;
+let singTitle;
 
-var uberPref;
-var state;
-var group;
-var crimeAction;
-var warning;
-var location;
+let uberPref;
+let state;
+let group;
+let crimeAction;
+let warning;
+let location;
 
-var judgement;
-var fate;
+let judgement;
+let fate;
 
-var firstName;
-var lastName;
+let firstName;
+let lastName;
+let fullName;
 
-var decreeAction;
-var decreeModifier;
-var decreeAuthority;
+let decreeAction;
+let decreeModifier;
+let decreeAuthority;
 
 function chooseTerms(){
 
@@ -761,11 +776,16 @@ function chooseTerms(){
   state = random(dangerStates);
   group = random(dangerGroups);
   crimeAction = random(crimeActions);
-  warning = random(warnings).toUpperCase();
+  warning = (random([0,1,2]) === 0) 
+    ? random(warnings).capitalize() 
+    : random(warnings).toUpperCase();
   location = random(locations);
 
   firstName = random(firstNames);
   lastName = random(lastNames);
+  fullName = (random([0,1,2,3]) === 0) 
+    ? firstName + ' "' + getSing(jobTtlS).capitalize() + '" ' + lastName 
+    : firstName + ' ' + lastName ;
 
   decreeAction = random(decreeActions);
   decreeModifier = random(decreeModifiers);
@@ -777,10 +797,10 @@ function chooseTerms(){
 
 }
 
-var count = 141;
-var warningStatement = '';
-var captureStatement = '';
-var decreeStatement = '';
+let count = 141;
+let warningStatement = '';
+let captureStatement = '';
+let decreeStatement = '';
 
 function buildWarningStatement(){
   while ( count > 140 ){
@@ -799,11 +819,11 @@ function buildCaptureStatement(){
 
     chooseTerms();
 
-    var fullTitle = (random([0,1]) === 0) ?
+    let fullTitle = (random([0,1]) === 0) ?
                     singTitle.capitalize() :
                     state.capitalize() + ' ' + singTitle;
 
-    captureStatement = fullTitle + ' ' + firstName + ' ' + lastName + ' has been ' + fate + ' ' + threeQuarter(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + threeQuarter(' ' + location) + '.';
+    captureStatement = fullTitle + ' ' + fullName + ' has been ' + fate + ' ' + threeQuarter(uberPref) + random(crimePrefixes) + checkSing(random(genericCrimes)) + threeQuarter(' ' + location) + '.';
 
     count = captureStatement.length;
 
@@ -822,7 +842,7 @@ function buildDecreeStatement(){
   }
 }
 
-var finalStatement;
+let finalStatement;
 
 function chooseStatement(){
 
