@@ -112,7 +112,10 @@ const generateCyberText = () => {
     while (count > 280) {
       chooseTerms();
 
+      const emoji = random([``, ``, `🚨 `]);
+
       warningStatement =
+        emoji +
         warning +
         ": A " +
         group +
@@ -162,7 +165,10 @@ const generateCyberText = () => {
     while (count > 280) {
       chooseTerms();
 
+      const emoji = random([``, `ℹ `]);
+
       decreeStatement =
+        emoji +
         (oneIn(2) ? warning + ": " : "") +
         capitalize(random(crimePrefixes)) +
         checkSing(random(genericCrimes)) +
@@ -190,9 +196,15 @@ const generateCyberText = () => {
         ? `${fullName}, ${fullTitle}`
         : `${capitalize(fullTitle)} ${fullName}`;
 
-      wantedStatement = `WANTED:
+      // prettier-ignore
+      wantedStatement = oneIn(2)
+        ? `${random([``, ``, `🚨 `])}WANTED:
 ${finalName}
 For the crime of ${fullCrime}
+Last ${random(["seen", "sighted", "spotted"])} ${location}
+REWARD: ${bounty}`
+        : `${random([``, `🚨 `])}WANTED for ${fullCrime.toUpperCase()}: 
+${finalName}
 Last ${random(["seen", "sighted", "spotted"])} ${location}
 REWARD: ${bounty}`;
 
@@ -201,13 +213,13 @@ REWARD: ${bounty}`;
   };
 
   const chooseStatement = () => {
-    if (oneIn(4) === 0) {
+    if (oneIn(4)) {
       buildWantedStatement();
       finalStatement = wantedStatement;
-    } else if (oneIn(5) === 0) {
+    } else if (oneIn(5)) {
       buildDecreeStatement();
       finalStatement = decreeStatement;
-    } else if (oneIn(4) === 0) {
+    } else if (oneIn(4)) {
       buildCaptureStatement();
       finalStatement = captureStatement;
     } else {
