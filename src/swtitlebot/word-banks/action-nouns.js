@@ -13,7 +13,6 @@ module.exports = [
   "Republic",
   "Fear",
   "Revelation",
-  "Coarseness",
   "Prophecy",
   "Savior",
   "Seige",
@@ -93,6 +92,5 @@ module.exports = [
   "Gambit",
   "Blockade",
   "War",
-  "Saber",
   "Revelation"
 ];

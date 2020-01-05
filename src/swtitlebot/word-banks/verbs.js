@@ -15,10 +15,8 @@ module.exports = [
   "Explodes",
   "Appears",
   "Looms",
-  "Drinks Blue Milk",
   "Picks Up Some Power Converters",
   "Reappears",
-  "Bullseyes Womp Rats",
   "Disappears",
   "Implodes",
   "Fails",
@@ -28,11 +26,6 @@ module.exports = [
   "Escapes",
   "Has a Bad Feeling About This",
   "Without End",
-  "Has a Really Bad Feeling About This",
-  "Laughs It Up",
-  "is NOT a COMMITTEE",
-  "is Your Father",
-  "Will Be With You, Always",
   "Goes Into Exile",
   "Becomes One With the Force"
 ];

@@ -48,7 +48,7 @@ module.exports = [
   "Wookiee",
   "Scavenger",
   "Stormtrooper",
-  "Clone Trooper",
+  "Trooper",
   "Kessel Run",
   "Gundark",
   "Rathtar",
@@ -60,16 +60,5 @@ module.exports = [
   "Smuggler",
   "Threat",
   "Droid",
-  "Fuzzball",
-  "Ice Cream Maker",
-  "Furball",
-  "Twerp",
-  "Swindler",
-  "Melted Helmet",
-  "Wild Bantha Chase",
-  "Walking Carpet",
-  "Gonk Droid",
-  "Cantina Band",
-  "R2 Unit",
-  "BB Unit"
+  "Swindler"
 ];
