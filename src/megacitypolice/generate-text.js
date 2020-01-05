@@ -209,16 +209,20 @@ const generateCyberText = () => {
       ]);
 
       // prettier-ignore
-      wantedStatement = oneIn(2)
-        ? `${random([``, ``, `🚨 `])}WANTED:
+      const format1 = 
+`${random([``, ``, `🚨 `])}WANTED:
 ${finalName}
 For the crime of ${maybeUpper(fullCrime)}
 Last ${random(["seen", "sighted", "spotted"])} ${location}
-REWARD: ${bounty}`
-        : `${random([``, `🚨 `])}WANTED for ${fullCrime.toUpperCase()}: 
+REWARD: ${bounty}`;
+      // prettier-ignore
+      const format2 = 
+`${random([``, `🚨 `])}WANTED for ${fullCrime.toUpperCase()}: 
 ${finalName}
 Last ${random(["seen", "sighted", "spotted"])} ${location}
 REWARD${rewardType}: ${bounty}`;
+
+      wantedStatement = oneIn(2) ? format1 : format2;
 
       count = wantedStatement.length;
     }
