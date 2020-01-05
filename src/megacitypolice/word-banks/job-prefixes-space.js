@@ -177,5 +177,12 @@ module.exports = [
   "proton",
   "tachyon",
   "electronic",
-  "analog"
+  "analog",
+  "knight",
+  "lancer",
+  "energy",
+  "power",
+  "sigil",
+  "heretic",
+  "traitor"
 ];

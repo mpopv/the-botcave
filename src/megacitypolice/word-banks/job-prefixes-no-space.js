@@ -152,5 +152,12 @@ module.exports = [
   "macro",
   "ecto",
   "exo",
-  "hypo"
+  "hypo",
+  "knight-",
+  "lancer",
+  "star-",
+  "space-",
+  "mech-",
+  "power",
+  "inquisitor-"
 ];
