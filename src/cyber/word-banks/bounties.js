@@ -21,5 +21,6 @@ module.exports = [
   `500 million credits`,
   `1.5 billion credits`,
   `2.5 billion credits`,
-  `transport to the Offworld Colonies`
+  `transport to the Offworld Colonies`,
+  `Federal citizenship`
 ];
