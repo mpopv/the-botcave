@@ -1,6 +1,7 @@
 const generateCyberText = () => {
   const {
     oneIn,
+    maybeUpper,
     capitalize,
     random,
     checkSing,
@@ -120,14 +121,15 @@ const generateCyberText = () => {
         ": A " +
         group +
         " of " +
-        threeQuarter(state + " ") +
-        title +
+        maybeUpper(threeQuarter(state + " ") + title) +
         " " +
         crimeAction +
         " " +
-        threeQuarter(uberPref) +
-        random(crimePrefixes) +
-        checkSing(random(genericCrimes)) +
+        maybeUpper(
+          threeQuarter(uberPref) +
+            random(crimePrefixes) +
+            checkSing(random(genericCrimes))
+        ) +
         threeQuarter(" " + location) +
         ".";
 
@@ -147,13 +149,15 @@ const generateCyberText = () => {
         (oneIn(2) ? warning + ": " : "") +
         fullTitle +
         " " +
-        fullName +
+        maybeUpper(fullName) +
         " has been " +
         fate +
         " " +
-        threeQuarter(uberPref) +
-        random(crimePrefixes) +
-        checkSing(random(genericCrimes)) +
+        maybeUpper(
+          threeQuarter(uberPref) +
+            random(crimePrefixes) +
+            checkSing(random(genericCrimes))
+        ) +
         threeQuarter(" " + location) +
         ".";
 
@@ -170,10 +174,11 @@ const generateCyberText = () => {
       decreeStatement =
         emoji +
         (oneIn(2) ? warning + ": " : "") +
-        capitalize(random(crimePrefixes)) +
-        checkSing(random(genericCrimes)) +
+        maybeUpper(
+          capitalize(random(crimePrefixes)) + checkSing(random(genericCrimes))
+        ) +
         " " +
-        decreeAction +
+        maybeUpper(decreeAction) +
         " " +
         twoThird(random([decreeModifier, decreeModifier, location]) + " ") +
         decreeAuthority +
@@ -193,20 +198,27 @@ const generateCyberText = () => {
         random(crimePrefixes) +
         checkSing(random(genericCrimes));
       let finalName = oneIn(2)
-        ? `${fullName}, ${fullTitle}`
-        : `${capitalize(fullTitle)} ${fullName}`;
+        ? `${maybeUpper(fullName)}, ${fullTitle}`
+        : `${capitalize(fullTitle)} ${maybeUpper(fullName)}`;
+      let rewardType = random([
+        ``,
+        ``,
+        ` for information leading to an arrest`,
+        ` for successful capture`,
+        ` for capture dead or alive`
+      ]);
 
       // prettier-ignore
       wantedStatement = oneIn(2)
         ? `${random([``, ``, `🚨 `])}WANTED:
 ${finalName}
-For the crime of ${fullCrime}
+For the crime of ${maybeUpper(fullCrime)}
 Last ${random(["seen", "sighted", "spotted"])} ${location}
 REWARD: ${bounty}`
         : `${random([``, `🚨 `])}WANTED for ${fullCrime.toUpperCase()}: 
 ${finalName}
 Last ${random(["seen", "sighted", "spotted"])} ${location}
-REWARD: ${bounty}`;
+REWARD${rewardType}: ${bounty}`;
 
       count = wantedStatement.length;
     }

@@ -4,6 +4,9 @@ const oneIn = n => Math.random() < 1 / n;
 // Returns passed string with first char capitalized
 const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
 
+// 1 in 2 chance of uppercasing the passed string
+const maybeUpper = str => (oneIn(2) ? str : str.toUpperCase());
+
 // Returns random item from passed array
 const random = arr => arr[Math.floor(Math.random() * arr.length)];
 
@@ -25,6 +28,7 @@ const twoThird = arg => (Math.random() >= 0.33 ? arg : "");
 module.exports = {
   oneIn,
   capitalize,
+  maybeUpper,
   random,
   checkSing,
   checkPlur,
