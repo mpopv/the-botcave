@@ -1,5 +1,6 @@
 const generateCyberText = () => {
   const {
+    oneIn,
     capitalize,
     random,
     checkSing,
@@ -84,10 +85,9 @@ const generateCyberText = () => {
     state = random(dangerStates);
     group = random(dangerGroups);
     crimeAction = random(crimeActions);
-    warning =
-      random([0, 1]) === 0
-        ? capitalize(random(warnings))
-        : random(warnings).toUpperCase();
+    warning = oneIn(2)
+      ? capitalize(random(warnings))
+      : random(warnings).toUpperCase();
     location = random(locations);
     bounty = random(bounties);
 
@@ -96,16 +96,15 @@ const generateCyberText = () => {
     nickname = capitalize(
       random([getSing(jobTtlS), getSing(jobSuff), getPlur(genericCrimes)])
     );
-    fullName =
-      random([0, 1, 2, 3]) === 0
-        ? `${firstName} "${nickname}" ${lastName}`
-        : `${firstName} ${lastName}`;
+    fullName = oneIn(4)
+      ? `${firstName} "${nickname}" ${lastName}`
+      : `${firstName} ${lastName}`;
 
     decreeAction = random(decreeActions);
     decreeModifier = random(decreeModifiers);
     decreeAuthority = random(decreeAuthorities);
 
-    judgement = random([0, 1, 2, 3, 5]) === 0 ? "innocent" : "guilty";
+    judgement = oneIn(5) ? "innocent" : "guilty";
     fate = random(sentences[judgement]) + " " + random(verdicts[judgement]);
   };
 
@@ -137,13 +136,12 @@ const generateCyberText = () => {
     while (count > 280) {
       chooseTerms();
 
-      let fullTitle =
-        random([0, 1]) === 0
-          ? capitalize(singTitle)
-          : capitalize(state) + " " + singTitle;
+      let fullTitle = oneIn(2)
+        ? capitalize(singTitle)
+        : capitalize(state) + " " + singTitle;
 
       captureStatement =
-        (random([0, 1]) === 0 ? warning + ": " : "") +
+        (oneIn(2) ? warning + ": " : "") +
         fullTitle +
         " " +
         fullName +
@@ -165,7 +163,7 @@ const generateCyberText = () => {
       chooseTerms();
 
       decreeStatement =
-        (random([0, 1]) === 0 ? warning + ": " : "") +
+        (oneIn(2) ? warning + ": " : "") +
         capitalize(random(crimePrefixes)) +
         checkSing(random(genericCrimes)) +
         " " +
@@ -183,16 +181,14 @@ const generateCyberText = () => {
     while (count > 280) {
       chooseTerms();
 
-      let fullTitle =
-        random([0, 1]) === 0 ? singTitle : state + " " + singTitle;
+      let fullTitle = oneIn(2) ? singTitle : state + " " + singTitle;
       let fullCrime =
         threeQuarter(uberPref) +
         random(crimePrefixes) +
         checkSing(random(genericCrimes));
-      let finalName =
-        random([0, 1]) === 0
-          ? `${fullName}, ${fullTitle}`
-          : `${capitalize(fullTitle)} ${fullName}`;
+      let finalName = oneIn(2)
+        ? `${fullName}, ${fullTitle}`
+        : `${capitalize(fullTitle)} ${fullName}`;
 
       wantedStatement = `WANTED:
 ${finalName}
@@ -205,13 +201,13 @@ REWARD: ${bounty}`;
   };
 
   const chooseStatement = () => {
-    if (random([0, 1, 2, 3]) === 0) {
+    if (oneIn(4) === 0) {
       buildWantedStatement();
       finalStatement = wantedStatement;
-    } else if (random([0, 1, 2, 3, 4]) === 0) {
+    } else if (oneIn(5) === 0) {
       buildDecreeStatement();
       finalStatement = decreeStatement;
-    } else if (random([0, 1, 2, 3]) === 0) {
+    } else if (oneIn(4) === 0) {
       buildCaptureStatement();
       finalStatement = captureStatement;
     } else {
