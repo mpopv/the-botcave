@@ -2,7 +2,7 @@
 // @megacitypolice on Twitter
 
 const { TwitterBot } = require("node-twitterbot");
-const generateCyberText = require("./src/cyber/generate-text");
+const generateCyberText = require("./src/megacitypolice/generate-text");
 
 const Bot = new TwitterBot({
   consumer_key: process.env.CYBERBOT_CONSUMER_KEY,

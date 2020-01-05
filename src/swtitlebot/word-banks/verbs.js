@@ -1,0 +1,38 @@
+// verbArray contains verbs, verb phrases, and prepositional phrases that appear
+// at the end of The Noun Verbs. They must be singular.
+
+module.exports = [
+  "Strikes Back",
+  "Awakens",
+  "Returns",
+  "Attacks",
+  "Falls",
+  "Arrives",
+  "Ascends",
+  "Descends",
+  "Strikes",
+  "Crumbles",
+  "Explodes",
+  "Appears",
+  "Looms",
+  "Drinks Blue Milk",
+  "Picks Up Some Power Converters",
+  "Reappears",
+  "Bullseyes Womp Rats",
+  "Disappears",
+  "Implodes",
+  "Fails",
+  "Falls Silent",
+  "Begins",
+  "Ends",
+  "Escapes",
+  "Has a Bad Feeling About This",
+  "Without End",
+  "Has a Really Bad Feeling About This",
+  "Laughs It Up",
+  "is NOT a COMMITTEE",
+  "is Your Father",
+  "Will Be With You, Always",
+  "Goes Into Exile",
+  "Becomes One With the Force"
+];

@@ -4,7 +4,8 @@
   "description": "Star Wars Titlebot for Twitter",
   "main": "app.js",
   "scripts": {
-    "test-cyber": "node ./src/cyber/test.js"
+    "test-cyber": "node ./src/megacitypolice/test.js",
+    "test-starwars": "node ./src/swtitlebot/test.js"
   },
   "repository": {
     "type": "git",
