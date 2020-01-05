@@ -26,5 +26,8 @@ module.exports = [
   ...Array(2).fill(`Passage to the Offworld Colonies`),
   `Eligibility for transport to the Offworld Colonies`,
   `Elgibility for passage to the Offworld Colonies`,
-  ...Array(4).fill(`Federal citizenship`)
+  ...Array(4).fill(`Federal citizenship`),
+  `12.4kg refined beskar`,
+  `12.4kg refined vibranium`,
+  `12.4kg refined adamantium`
 ];
