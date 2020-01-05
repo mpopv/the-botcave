@@ -223,7 +223,7 @@ REWARD: ${bounty}`;
 }
 
 function chooseStatement() {
-  if (random([0, 1, 2, 3]) === 0) {
+  if (random([0, 1, 2, 3, 4]) === 0) {
     buildWantedStatement();
     finalStatement = wantedStatement;
   } else if (random([0, 1, 2, 3, 4]) === 0) {

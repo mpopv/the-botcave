@@ -178,5 +178,15 @@ module.exports = [
   ["hitman", "hitmen"],
   "exobotanist",
   "exobiologist",
-  "exoarchaeologist"
+  "exoarchaeologist",
+  "surgeon",
+  "doctor",
+  "researcher",
+  "scientist",
+  "crony",
+  "lord",
+  "combatant",
+  "programmer",
+  "infiltrator",
+  "impersonator"
 ];

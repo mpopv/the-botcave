@@ -126,7 +126,9 @@ const genericCrimes = [
   ["scavenging", "scavenger "],
   ["scrapping", "scrapper"],
   ["jacking", "jacker"],
-  ["feeding", "feeder"]
+  ["feeding", "feeder"],
+  ["infiltration", "infiltrator"],
+  ["impersonation", "impersonator"]
 ];
 
 module.exports = { genericCrimes, crimeActions };

@@ -171,5 +171,11 @@ module.exports = [
   "beam",
   "comms",
   "radio",
-  "autonomous"
+  "autonomous",
+  "kinetic",
+  "beam",
+  "proton",
+  "tachyon",
+  "electronic",
+  "analog"
 ];

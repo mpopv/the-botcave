@@ -159,5 +159,9 @@ module.exports = [
   "dragon",
   "shark",
   "cruiser",
-  "splitter"
+  "splitter",
+  "scrounger",
+  "swimmer",
+  "surgeon",
+  "doctor"
 ];
