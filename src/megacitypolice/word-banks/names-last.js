@@ -131,5 +131,6 @@ module.exports = [
   `49A57D`,
   `XM4DR9`,
   `T4LB07`,
-  `Jinteki`
+  `Jinteki`,
+  `[REDACTED]`
 ];

@@ -1,4 +1,5 @@
 module.exports = [
+  `[REDACTED]`,
   "in Sector 0.3",
   "in Sector 8756-Delta",
   "in Sector 9450",
