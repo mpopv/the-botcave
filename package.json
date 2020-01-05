@@ -4,8 +4,7 @@
   "description": "Star Wars Titlebot for Twitter",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bot.js"
+    "test-cyber": "node ./src/cyber/test.js"
   },
   "repository": {
     "type": "git",
