@@ -30,10 +30,12 @@ const decreeModifiers = [
 
 const decreeAuthorities = [
   "by the authority of the Prime Autarch",
+  "by the authority of the Subprime Autarchs",
   "by order of the senate",
-  "by order of the high council",
+  "by order of the High Council",
   "by order of the courts",
   "by order of the secret police",
+  "by agreement of a coalition of planetary councils",
   "by agreement of a coalition of sector councils",
   "according to the terms of an interdimensional armistice accord",
   "according to the terms of an intersystems armistice accord"

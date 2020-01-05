@@ -205,6 +205,7 @@ const generateCyberText = () => {
         ``,
         ` for information leading to an arrest`,
         ` for successful capture`,
+        ` for successful termination`,
         ` for capture dead or alive`
       ]);
 
@@ -219,7 +220,8 @@ REWARD: ${bounty}`;
       const format2 = 
 `${random([``, `🚨 `])}WANTED for ${fullCrime.toUpperCase()}: 
 ${finalName}
-Last ${random(["seen", "sighted", "spotted"])} ${location}
+Last ${random(["seen", "sighted", "spotted"])} ${location}${oneIn(3) ? `
+Considered ARMED and DANGEROUS`: ''}
 REWARD${rewardType}: ${bounty}`;
 
       wantedStatement = oneIn(2) ? format1 : format2;
