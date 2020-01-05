@@ -142,5 +142,15 @@ module.exports = [
   "hover",
   "beam",
   "hacker-",
-  "sym"
+  "sym",
+  "iso",
+  "morph",
+  "super",
+  "hyper",
+  "ultra",
+  "tetra",
+  "macro",
+  "ecto",
+  "exo",
+  "hypo"
 ];
