@@ -27,6 +27,7 @@ const makeType3 = () => {
   const companySlugShort = company.split(' ')[0].replace(/[\W_]+/g,"").toLowerCase();
   return `Flesh and bone is so 2300s.
 Upgrade to gleaming megasteel with a ${company} cybernetic augmentation.
+Trade in your old limb for a 20% discount!
 Visit supranet://augmentation//${companySlugShort}.commerce to learn more.`;
 };
 
@@ -34,8 +35,9 @@ Visit supranet://augmentation//${companySlugShort}.commerce to learn more.`;
 const makeType4 = () => {
   const company = makeCompany();
   const companyShort = company.split(' ')[0];
-  return `The new 2422 ${companyShort} ${random(['hover', 'space', 'star', 'cloud', 'mecha'])}${random(['flyer', 'car', 'craft'])} is OUT NOW. 
-Visit your local dealership to test fly one TODAY!
+  return `The new 2422 ${companyShort} ${random(['hover', 'space', 'star', 'cloud', 'mecha'])}${random(['flyer', 'car', 'craft'])} is out NOW
+with zero down, zero-percent financing for 12 months!
+Hurry - visit your local dealership to test fly one today.
 ${company} - Luxury. Comfort. Speed.`;
 };
 
@@ -63,6 +65,12 @@ const makeType7 = () => {
 Make payments now at supranet://${random([companySlugShort])}.commerce to avoid having your ${random(['spare organs', 'cybernetic parts'])} repossessed by our enforcer-surgeons.`;
 };
 
+// prettier-ignore
+const makeType8 = () => `Are YOU doing YOUR part?
+Join the Federal Mobile Infantry TODAY.
+Service guarantees citizenship!
+Would you like to know more? Visit supranet://recruitment//mobileinfantry.fed now!`;
+
 const generateCyberAd = () => {
   const adContent = random([
     makeType1,
@@ -71,7 +79,8 @@ const generateCyberAd = () => {
     makeType4,
     makeType5,
     makeType6,
-    makeType7
+    makeType7,
+    makeType8
   ])();
   const finalAd = `--ADVERTISEMENT---------
 ${adContent}
