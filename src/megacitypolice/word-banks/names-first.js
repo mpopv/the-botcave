@@ -166,5 +166,6 @@ module.exports = [
   `Alix`,
   `Gillian`,
   `Floyd`,
-  `[REDACTED]`
+  `[REDACTED]`,
+  `Da5id`
 ];

@@ -1,41 +1,41 @@
+const {
+  oneIn,
+  maybeUpper,
+  capitalize,
+  random,
+  checkSing,
+  checkPlur,
+  getSing,
+  getPlur,
+  threeQuarter,
+  twoThird
+} = require("../utils");
+const banks = `./word-banks`;
+
+const warnings = require(`${banks}/warnings`);
+const bounties = require(`${banks}/bounties`);
+
+const jobPreN = require(`${banks}/job-prefixes-no-space`);
+const jobPreS = require(`${banks}/job-prefixes-space`);
+const jobSuff = require(`${banks}/job-suffixes`);
+const jobTtlS = require(`${banks}/job-titles-space`);
+
+const { crimeUberPrefs, crimePrefixes } = require(`${banks}/crime-prefixes`);
+const { crimeActions, genericCrimes } = require(`${banks}/crimes`);
+
+const firstNames = require(`${banks}/names-first`);
+const lastNames = require(`${banks}/names-last`);
+
+const locations = require(`${banks}/locations`);
+const {
+  decreeActions,
+  decreeModifiers,
+  decreeAuthorities
+} = require(`${banks}/decrees`);
+const { dangerStates, dangerGroups } = require(`${banks}/groups`);
+const { sentences, verdicts } = require(`${banks}/prosecutions`);
+
 const generateCyberText = () => {
-  const {
-    oneIn,
-    maybeUpper,
-    capitalize,
-    random,
-    checkSing,
-    checkPlur,
-    getSing,
-    getPlur,
-    threeQuarter,
-    twoThird
-  } = require("../utils");
-  const banks = `./word-banks`;
-
-  const warnings = require(`${banks}/warnings`);
-  const bounties = require(`${banks}/bounties`);
-
-  const jobPreN = require(`${banks}/job-prefixes-no-space`);
-  const jobPreS = require(`${banks}/job-prefixes-space`);
-  const jobSuff = require(`${banks}/job-suffixes`);
-  const jobTtlS = require(`${banks}/job-titles-space`);
-
-  const { crimeUberPrefs, crimePrefixes } = require(`${banks}/crime-prefixes`);
-  const { crimeActions, genericCrimes } = require(`${banks}/crimes`);
-
-  const firstNames = require(`${banks}/names-first`);
-  const lastNames = require(`${banks}/names-last`);
-
-  const locations = require(`${banks}/locations`);
-  const {
-    decreeActions,
-    decreeModifiers,
-    decreeAuthorities
-  } = require(`${banks}/decrees`);
-  const { dangerStates, dangerGroups } = require(`${banks}/groups`);
-  const { sentences, verdicts } = require(`${banks}/prosecutions`);
-
   let compoundTitle;
   let adjectiveTitle;
   let whichTitle;

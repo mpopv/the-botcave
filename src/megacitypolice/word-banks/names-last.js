@@ -1,7 +1,10 @@
 module.exports = [
+  `Weyland`,
+  `Yutani`,
+  `Weyland-Yutani`,
   `Shaftoe`,
   `Waterhouse`,
-  `von Hacklheber`,
+  `Von Hacklheber`,
   `Bischoff`,
   `Comstock`,
   `Altamira`,
@@ -58,7 +61,6 @@ module.exports = [
   `Tenma`,
   `Stirling`,
   `Estevez`,
-  `'); DROP TABLE users;--`,
   `Skywalker`,
   `Starkiller`,
   `Solo`,
@@ -131,6 +133,5 @@ module.exports = [
   `49A57D`,
   `XM4DR9`,
   `T4LB07`,
-  `Jinteki`,
-  `[REDACTED]`
+  `Jinteki`
 ];
