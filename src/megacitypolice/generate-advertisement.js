@@ -83,8 +83,7 @@ const generateCyberAd = () => {
     makeType8
   ])();
   const finalAd = `--ADVERTISEMENT---------
-${adContent}
--------------------------`;
+${adContent}`;
 
   console.log(finalAd);
   console.log(finalAd.length);
