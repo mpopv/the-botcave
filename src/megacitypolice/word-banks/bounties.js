@@ -1,5 +1,5 @@
 module.exports = [
-  `[REDACTED]`,
+  `[REDACTED] credits`,
   `10,000 credits`,
   `25,000 credits`,
   `30,000 credits`,
