@@ -133,7 +133,10 @@ const genericCrimes = [
   ["feeding", "feeder"],
   ["infiltration", "infiltrator"],
   ["impersonation", "impersonator"],
-  [`[REDACTED]`, `[REDACTED]`]
+  [`[REDACTED]`, `[REDACTED]`],
+  [`podcasting`, `podcaster`],
+  [`shitposting`, `shitposter`],
+  [`tweeting`, `tweeter`]
 ];
 
 module.exports = { genericCrimes, crimeActions };
