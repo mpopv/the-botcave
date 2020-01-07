@@ -68,12 +68,12 @@ const companySuffixes = [
 const companyTypes = [
   `Group`,
   `Group`,
-  `Group, Ltd.`,
+  `Group, Ltd`,
   `Company`,
   `MegaCorp`,
   `Megacorporation`,
   `Corporation`,
-  `Corporation, Ltd.`,
+  `Corporation, Ltd`,
   `Conglomerate`,
   `Partners`,
   `Partners`
