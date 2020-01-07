@@ -38,7 +38,16 @@ const conditions = [
   "treat symptoms of transdimensional attack",
   "prevent acute radiation syndrome",
   "eliminate the need to sleep",
-  "treat the symptoms associated with permanent immersion in virtual reality"
+  "treat the symptoms associated with permanent immersion in virtual reality",
+  "scramble neural scanners",
+  "prevent accurate retinal scans",
+  "prevent unexpected local gravity distortion",
+  "prevent unexpected local time distortion",
+  "prevent unexpected transdimensional phasing",
+  "control symptoms of exposure to the vaccuum of space",
+  "control side effects associated with unexpected local gravity distortion",
+  "control side effects associated with unexpected local time distortion",
+  "control side effects associated with unexpected transdimensional phasing"
 ];
 
 const sideEffectsNormal = [
