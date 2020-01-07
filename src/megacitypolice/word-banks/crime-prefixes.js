@@ -226,7 +226,9 @@ const crimePrefixes = [
   "isomorphic ",
   "philotic ",
   "biotic ",
-  "bionic "
+  "bionic ",
+  "floppy disc ",
+  "disc "
 ];
 
 module.exports = { crimeUberPrefs, crimePrefixes };
