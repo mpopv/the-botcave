@@ -89,12 +89,12 @@ Would you like to know more? Visit supranet://recruitment//mobileinfantry.fed no
 
 const generateCyberAd = () => {
   const adContent = random([
-    ...Array(5).fill(makeAdPharma),
-    ...Array(2).fill(makeAdReverseMortgage),
-    ...Array(2).fill(makeAdDebtCollector),
-    makeAdOffworldColonies,
-    makeAdZombie,
-    makeAdCyberLimb,
+    ...Array(10).fill(makeAdPharma),
+    ...Array(4).fill(makeAdReverseMortgage),
+    ...Array(4).fill(makeAdDebtCollector),
+    ...Array(2).fill(makeAdOffworldColonies),
+    ...Array(2).fill(makeAdZombie),
+    ...Array(2).fill(makeAdCyberLimb),
     makeAdFlyingCar,
     makeAdStarshipTroopers
   ])();
