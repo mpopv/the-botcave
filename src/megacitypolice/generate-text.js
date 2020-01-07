@@ -110,23 +110,26 @@ const generateCyberText = () => {
   };
 
   const buildMostWantedStatement = () => {
-    const makeNickName = () =>
-      capitalize(
-        random([getSing(jobTtlS), getSing(jobSuff), getPlur(genericCrimes)])
-      );
-    // prettier-ignore
-    const makeName = () =>
-      `${random(firstNames)}${oneIn(4) ? ` "${makeNickName()}"` : ""} ${random(lastNames)}`;
-    const makeCrime = () =>
-      random(crimePrefixes) + checkSing(random(genericCrimes));
-    const list = `MCPD MOST WANTED:
-5. ${makeName()}, for ${makeCrime()}
-4. ${makeName()}, for ${makeCrime()}
-3. ${makeName()}, for ${makeCrime()}
-2. ${makeName()}, for ${makeCrime()}
-1. ${makeName()}, for ${makeCrime()}
-Report any sightings to your local MCPD station.`;
-    count = list.length;
+    let list;
+    while (count > 280) {
+      const makeNickName = () =>
+        capitalize(
+          random([getSing(jobTtlS), getSing(jobSuff), getPlur(genericCrimes)])
+        );
+      // prettier-ignore
+      const makeName = () =>
+        `${random(firstNames)}${oneIn(4) ? ` "${makeNickName()}"` : ""} ${random(lastNames)}`;
+      const makeCrime = () =>
+        random(crimePrefixes) + checkSing(random(genericCrimes));
+      list = `MCPD MOST WANTED:
+  5. ${makeName()}, for ${makeCrime()}
+  4. ${makeName()}, for ${makeCrime()}
+  3. ${makeName()}, for ${makeCrime()}
+  2. ${makeName()}, for ${makeCrime()}
+  1. ${makeName()}, for ${makeCrime()}
+  Report any sightings to your local MCPD station.`;
+      count = list.length;
+    }
     return list;
   };
 
