@@ -43,8 +43,9 @@ Visit supranet://augmentation//${companySlugShort}.commerce to learn more.`;
 // prettier-ignore
 const makeAdFlyingCar = () => {
   const company = makeCompany();
+  const vehicle = `${random(['hover', 'space', 'star', 'cloud', 'mecha'])}${random(['flyer', 'car', 'craft'])}`;
   const companyShort = company.split(' ')[0];
-  return `The new 2422 ${companyShort} ${random(['hover', 'space', 'star', 'cloud', 'mecha'])}${random(['flyer', 'car', 'craft'])} is out NOW.
+  return `The new 2422 ${companyShort} ${vehicle} is out NOW.
 Zero down, zero-percent financing for 12 months.
 Hurry - visit your local dealership to test fly one today.
 ${company} - Luxury. Comfort. Speed.`;
