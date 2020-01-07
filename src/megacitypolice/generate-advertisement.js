@@ -77,7 +77,7 @@ Visit supranet://${random([companySlugShort])}.commerce to learn how.`;
 const makeAdDebtCollector = () => {
   const company = makeCompany();
   const companySlugShort = company.split(' ')[0].replace(/[\W_]+/g,"").toLowerCase();
-  return `${random(['WARNING', 'ALERT', 'ATTENTION'])}: ${random(['Retinal scanners', 'Scanners', 'Chip readers'])} detect you're in default on a loan from ${company}.
+  return `${random(['WARNING', 'ALERT', 'ATTENTION'])}: ${random(['Retinal scanners', 'Personal data algorithms', 'Cybernetic implant scanners', 'Enforcement satellites'])} detect you're in default on a loan from ${company}.
 Make payments now at supranet://${random([companySlugShort])}.commerce to avoid having your ${random(['spare organs', 'cybernetic parts'])} repossessed by our enforcer-surgeons.`;
 };
 
