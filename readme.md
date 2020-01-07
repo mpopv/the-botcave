@@ -6,7 +6,7 @@ My Medium writeup on how to build bots like these: [Build a Twitter Bot in Half 
 
 ## MegaCity Police
 
-A Twitter bot that tweets randomly generated cyberpunk / science fiction technobabble crime alerts once per hour.
+A Twitter bot that tweets randomly generated cyberpunk / science fiction technobabble crime alerts, prosecutions, new laws, wanted posters, most wanted lists, and advertisements once per hour.
 
 * Bot handle: [@MegaCityPolice](https://twitter.com/MegaCityPolice)
 * Bot source code: [cyber.js](https://github.com/mpopv/the-botcave/blob/master/cyber.js)
