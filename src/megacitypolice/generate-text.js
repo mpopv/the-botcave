@@ -96,7 +96,7 @@ const generateCyberText = () => {
     lastName = random(lastNames);
     nickname = capitalize(
       random([getSing(jobTtlS), getSing(jobSuff), getPlur(genericCrimes)])
-    );
+    ).replace(/\s/g, "");
     fullName = oneIn(4)
       ? `${firstName} "${nickname}" ${lastName}`
       : `${firstName} ${lastName}`;
