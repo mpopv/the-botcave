@@ -75,7 +75,43 @@ const sideEffectsNormal = [
   "loss of appetite",
   "difficulty swallowing",
   "yellow-red irises",
-  "whitening of the hair"
+  "whitening of the hair",
+  "tinnitus",
+  "prickling sensations on the skin",
+  "hearing a low humming sound",
+  "ear vibration",
+  "increased fingernail and hair growing speed",
+  "lengthening of canine teeth",
+  "tooth tenderness",
+  "toothache",
+  "mild backache",
+  "throbbing of hands or feet",
+  "uncontrollable twitching",
+  "sudden sleepiness",
+  "nosebleed",
+  "coughing",
+  "agitation around cats",
+  "cravings for fish",
+  "anxiety",
+  "mood swings",
+  "irritability",
+  "confusion",
+  "difficulty concentrating",
+  "feeling disconnected or numb",
+  "elevated blood pressure",
+  "racing heartbeat",
+  "being startled easily",
+  "edginess",
+  "agitation",
+  "muscle tension",
+  "problems with memory",
+  "low hard drive space",
+  "reduced CPU power",
+  "visual snow",
+  "hardware compatibility issues",
+  "interface port compatibility issues",
+  "elevated fear of transdimensional attacks",
+  "elevated fear of psionic attacks"
 ];
 
 const sideEffectsWild = [
@@ -96,7 +132,10 @@ const sideEffectsWild = [
   "extreme leg lengthening",
   "taking on a wolf-like appearance",
   "sudden lycanthropy during full moons",
-  "the emergence of tentacles from the torso"
+  "the emergence of tentacles from the torso",
+  "the ability to bend space and time at will",
+  "local gravity distortion",
+  "spontaneous time reversal"
 ];
 
 const prefixes = [
