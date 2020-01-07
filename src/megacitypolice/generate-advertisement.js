@@ -1,4 +1,13 @@
-const { random, oneIn } = require("../utils");
+const { random, oneIn, capitalize } = require("../utils");
+const {
+  types,
+  qualifiers,
+  sideEffectsNormal,
+  sideEffectsWild,
+  frequencies,
+  conditions,
+  prefixes
+} = require("./word-banks/drugs");
 const {
   offworldFirstSentenceParts,
   offworldSecondSentences,
@@ -12,17 +21,17 @@ const lastNames = require("./word-banks/names-last");
 const makeCompany = () => `${random(lastNames)}${oneIn(3) ? ` & ${random(lastNames)}` : ""} ${random(companySuffixes)}${oneIn(2) ? ` ${random(companyTypes)}` : ""}`;
 
 // prettier-ignore
-const makeType1 = () => `${random(offworldFirstSentenceParts)} in the Offworld Colonies!
+const makeAdOffworldColonies = () => `${random(offworldFirstSentenceParts)} in the Offworld Colonies!
 ${random(offworldSecondSentences)}
 Visit supranet://offworld//fleet.fed ${random(offworldCallsToAction)}`;
 
 // prettier-ignore
-const makeType2 = () => `A MESSAGE FROM THE FEDERAL PANDEMIC CONTROL SERVICE
+const makeAdZombie = () => `A MESSAGE FROM THE FEDERAL PANDEMIC CONTROL SERVICE
 ${random(zombieSentences)}
 Do your part for Z Virus containment. Report signs of sudden aggression to a Pandemic Control Center.`;
 
 // prettier-ignore
-const makeType3 = () => {
+const makeAdCyberLimb = () => {
   const company = makeCompany();
   const companySlugShort = company.split(' ')[0].replace(/[\W_]+/g,"").toLowerCase();
   return `Flesh and bone is so 2300s.
@@ -32,7 +41,7 @@ Visit supranet://augmentation//${companySlugShort}.commerce to learn more.`;
 };
 
 // prettier-ignore
-const makeType4 = () => {
+const makeAdFlyingCar = () => {
   const company = makeCompany();
   const companyShort = company.split(' ')[0];
   return `The new 2422 ${companyShort} ${random(['hover', 'space', 'star', 'cloud', 'mecha'])}${random(['flyer', 'car', 'craft'])} is out NOW.
@@ -42,14 +51,21 @@ ${company} - Luxury. Comfort. Speed.`;
 };
 
 // prettier-ignore
-const makeType5 = () => {
-  return `Quentazam. The first FPCS-approved once-daily pill to reduce the risk of Z Virus infection.
-Ask your medtech if Quentazam is right for you.
-SIDE EFFECTS INCLUDE NAUSEA, STOMACH BLEEDING, AND TOTAL ORGAN FAILURE. `;
+const makeAdPharma = () => {
+  const part = () => random(prefixes);
+  const maybePart = () => oneIn(2) ? random(prefixes) : '';
+  const drugName = 
+    capitalize(
+      `${part()}${part()}${maybePart()}${maybePart()}`
+    );
+  const maybeCapitalize = str => oneIn(2) ? capitalize(str) : str;
+  return `${drugName}. ${random(qualifiers)} ${random(frequencies)} ${random(types)} to ${random(conditions)}.
+Ask your medtech if ${drugName} is right for you.
+${maybeCapitalize(`Side effects include ${random(sideEffectsNormal)}, ${random(sideEffectsNormal)}, and ${random(sideEffectsWild)}`)}.`;
 };
 
 // prettier-ignore
-const makeType6 = () => {
+const makeAdReverseMortgage = () => {
   const company = makeCompany();
   const companySlugShort = company.split(' ')[0].replace(/[\W_]+/g,"").toLowerCase();
   return `Want to get to the Offworld Colonies FAST?
@@ -58,7 +74,7 @@ Visit supranet://${random([companySlugShort])}.commerce to learn how.`;
 };
 
 // prettier-ignore
-const makeType7 = () => {
+const makeAdDebtCollector = () => {
   const company = makeCompany();
   const companySlugShort = company.split(' ')[0].replace(/[\W_]+/g,"").toLowerCase();
   return `${random(['WARNING', 'ALERT', 'ATTENTION'])}: ${random(['Retinal scanners', 'Scanners', 'Chip readers'])} detect you're in default on a loan from ${company}.
@@ -66,21 +82,24 @@ Make payments now at supranet://${random([companySlugShort])}.commerce to avoid 
 };
 
 // prettier-ignore
-const makeType8 = () => `Are YOU doing YOUR part?
+const makeAdStarshipTroopers = () => `Are YOU doing YOUR part?
 Join the Federal Mobile Infantry TODAY.
 Service guarantees citizenship!
 Would you like to know more? Visit supranet://recruitment//mobileinfantry.fed now!`;
 
 const generateCyberAd = () => {
   const adContent = random([
-    makeType1,
-    makeType2,
-    makeType3,
-    makeType4,
-    makeType5,
-    makeType6,
-    makeType7,
-    makeType8
+    makeAdOffworldColonies,
+    makeAdZombie,
+    makeAdCyberLimb,
+    makeAdFlyingCar,
+    makeAdPharma,
+    makeAdPharma,
+    makeAdReverseMortgage,
+    makeAdReverseMortgage,
+    makeAdDebtCollector,
+    makeAdDebtCollector,
+    makeAdStarshipTroopers
   ])();
   const finalAd = `--ADVERTISEMENT---------
 ${adContent}`;

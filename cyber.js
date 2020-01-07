@@ -13,7 +13,7 @@ const Bot = new TwitterBot({
   access_token_secret: process.env.CYBERBOT_ACCESS_TOKEN_SECRET
 });
 
-const generateText = oneIn(10) ? generateCyberAd : generateCyberText;
+const generateText = oneIn(5) ? generateCyberAd : generateCyberText;
 const cyberText = generateText();
 
 Bot.tweet(cyberText);
