@@ -89,18 +89,24 @@ Service guarantees citizenship!
 Would you like to know more? Visit supranet://recruitment//mobileinfantry.fed now!`;
 
 const generateCyberAd = () => {
-  const adContent = random([
-    ...Array(10).fill(makeAdPharma),
-    ...Array(4).fill(makeAdReverseMortgage),
-    ...Array(4).fill(makeAdDebtCollector),
-    ...Array(2).fill(makeAdOffworldColonies),
-    ...Array(2).fill(makeAdZombie),
-    ...Array(2).fill(makeAdCyberLimb),
-    makeAdFlyingCar,
-    makeAdStarshipTroopers
-  ])();
-  const finalAd = `--ADVERTISEMENT---------
+  let finalAd;
+  let count = 281;
+
+  while (count > 280) {
+    const adContent = random([
+      ...Array(10).fill(makeAdPharma),
+      ...Array(4).fill(makeAdReverseMortgage),
+      ...Array(4).fill(makeAdDebtCollector),
+      ...Array(2).fill(makeAdOffworldColonies),
+      ...Array(2).fill(makeAdZombie),
+      ...Array(2).fill(makeAdCyberLimb),
+      makeAdFlyingCar,
+      makeAdStarshipTroopers
+    ])();
+    finalAd = `--ADVERTISEMENT---------
 ${adContent}`;
+    count = finalAd.length;
+  }
 
   console.log(finalAd);
   console.log(finalAd.length);
