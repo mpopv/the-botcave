@@ -255,14 +255,14 @@ REWARD${rewardType}: ${bounty}`;
   };
 
   const chooseStatement = () => {
-    if (oneIn(10)) {
+    if (oneIn(12)) {
       finalStatement = buildMostWantedStatement();
-    } else if (oneIn(4)) {
-      buildWantedStatement();
-      finalStatement = wantedStatement;
-    } else if (oneIn(5)) {
+    } else if (oneIn(8)) {
       buildDecreeStatement();
       finalStatement = decreeStatement;
+    } else if (oneIn(5)) {
+      buildWantedStatement();
+      finalStatement = wantedStatement;
     } else if (oneIn(4)) {
       buildCaptureStatement();
       finalStatement = captureStatement;

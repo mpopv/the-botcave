@@ -94,7 +94,7 @@ const generateCyberAd = () => {
 
   while (count > 280) {
     const adContent = random([
-      ...Array(10).fill(makeAdPharma),
+      ...Array(5).fill(makeAdPharma),
       ...Array(4).fill(makeAdReverseMortgage),
       ...Array(4).fill(makeAdDebtCollector),
       ...Array(2).fill(makeAdOffworldColonies),
