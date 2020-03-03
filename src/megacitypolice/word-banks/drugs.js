@@ -137,6 +137,8 @@ const sideEffectsWild = [
   "sudden extra limbs",
   "ability to move objects by thinking",
   "ability to hear the thoughts of others",
+  "ability to project lightning from fingertips",
+  "destructive beams of energy emanating from the eyes",
   "new or worsening mutant powers",
   "extreme leg lengthening",
   "taking on a wolf-like appearance",
@@ -144,7 +146,13 @@ const sideEffectsWild = [
   "the emergence of tentacles from the torso",
   "the ability to bend space and time at will",
   "local gravity distortion",
-  "spontaneous time reversal"
+  "spontaneous time reversal",
+  "gradual transformation into an alien lobster",
+  "infestation by an incorporeal malevolent entity",
+  "a pair of large red horns growing from the forehead",
+  "emergence of bat wings from the shoulder blades",
+  "the ability to breathe fire",
+  "the ability to turn objects to ice by touching them"
 ];
 
 const prefixes = [
