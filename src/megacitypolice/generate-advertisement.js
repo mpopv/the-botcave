@@ -98,7 +98,7 @@ const generateCyberAd = () => {
       ...Array(4).fill(makeAdReverseMortgage),
       ...Array(4).fill(makeAdDebtCollector),
       ...Array(2).fill(makeAdOffworldColonies),
-      ...Array(2).fill(makeAdZombie),
+      // ...Array(2).fill(makeAdZombie),
       ...Array(2).fill(makeAdCyberLimb),
       makeAdFlyingCar,
       makeAdStarshipTroopers
