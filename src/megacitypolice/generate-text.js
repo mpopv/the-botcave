@@ -86,9 +86,7 @@ const generateCyberText = () => {
     state = random(dangerStates);
     group = random(dangerGroups);
     crimeAction = random(crimeActions);
-    warning = oneIn(2)
-      ? capitalize(random(warnings))
-      : random(warnings).toUpperCase();
+    warning = capitalize(random(warnings));
     location = random(locations);
     bounty = random(bounties);
 

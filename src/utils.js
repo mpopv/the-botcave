@@ -5,7 +5,7 @@ const oneIn = n => Math.random() < 1 / n;
 const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
 
 // 1 in 2 chance of uppercasing the passed string
-const maybeUpper = str => (oneIn(2) ? str : str.toUpperCase());
+const maybeUpper = str => (oneIn(12) ? str.toUpperCase() : str);
 
 // Returns random item from passed array
 const random = arr => arr[Math.floor(Math.random() * arr.length)];
