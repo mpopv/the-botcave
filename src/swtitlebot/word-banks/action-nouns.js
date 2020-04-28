@@ -7,6 +7,7 @@ module.exports = [
   "Attack",
   "Revenge",
   "Fall",
+  "Rise",
   "Twilight",
   "Dawn",
   "Empire",
@@ -92,5 +93,5 @@ module.exports = [
   "Gambit",
   "Blockade",
   "War",
-  "Revelation"
+  "Revelation",
 ];
