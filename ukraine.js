@@ -37,7 +37,7 @@ const rwClient = client.readWrite;
 
   // Get latest map + description
   const page = await context.newPage();
-  await retry(() => await page.goto(url), 1000, 10);
+  await retry(() => page.goto(url), 1000, 10);
   await page.waitForLoadState('networkidle');
   const lastMapDescription = await page.locator('.filehistory > tbody > tr:nth-child(2) td:nth-child(6)').innerText();
   console.log(lastMapDescription);
