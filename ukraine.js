@@ -35,7 +35,9 @@ const rwClient = client.readWrite;
   await account.goto(accountUrl);
   await account.waitForLoadState('networkidle');
   const tweetTextEl = await account.locator('[data-testid="tweet"] >> nth=0').innerText();
+  console.log(tweetTextEl);
   const tweetTextArr = tweetTextEl.split(`\n`);
+  console.log(tweetTextArr);
   const tweetText = tweetTextArr[tweetTextArr.length -1];
   console.log(tweetText);
 
