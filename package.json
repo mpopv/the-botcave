@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/mpopv/the-botcave#readme",
   "dependencies": {
-    "node-twitterbot": "^0.2.2"
+    "node-fetch": "^2.6.7",
+    "node-twitterbot": "^0.2.2",
+    "playwright-chromium": "^1.19.2",
+    "twitter-api-v2": "^1.11.0"
   }
 }
