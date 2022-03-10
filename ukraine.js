@@ -10,6 +10,10 @@ const accountUrl = `https://twitter.com/ukrainemapbot`;
 const mapUrl = `https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/2022_Russian_invasion_of_Ukraine.svg/2199px-2022_Russian_invasion_of_Ukraine.svg.png`;
 const chromeUAString = `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36`;
 
+const truncate = (str, n) => {
+  return (str.length > n) ? str.substr(0, n - 1) : str;
+};
+
 const retry = async (fn, retryDelay = 100, numRetries = 3) => {
     for (let i = 0; i < numRetries; i++) {
       try {
@@ -63,7 +67,7 @@ const rwClient = client.readWrite;
         const buffer = await response.buffer();
         const mediaId = await rwClient.v1.uploadMedia(buffer, { mimeType: 'image/png' });
         console.log(typeof mediaId);
-        await rwClient.v2.tweet(lastMapDescription, { media: { media_ids: [mediaId] } });
+        await rwClient.v2.tweet(truncate(lastMapDescription, 280), { media: { media_ids: [mediaId] } });
     }
   }
 })();
