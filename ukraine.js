@@ -50,7 +50,7 @@ const rwClient = client.readWrite;
   console.log(tweetTextEl);
   const tweetTextArr = tweetTextEl.split(`\n`);
   console.log(tweetTextArr);
-  const tweetText = tweetTextArr[tweetTextArr.length -1];
+  const tweetText = tweetTextArr[4];
   console.log(tweetText);
 
   // Close browser
