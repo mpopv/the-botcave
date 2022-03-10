@@ -70,9 +70,10 @@ const rwClient = client.readWrite;
   await browser.close();
 
   const cleanMapDescription = cleanString(lastMapDescription);
+  const cleanTweetText = cleanString(tweetText);
 
   // Tweet new map if there's a new map description
-  if (tweetText !== cleanMapDescription) {
+  if (cleanTweetText !== cleanMapDescription) {
     const response = await fetch(mapUrl);
     if (response.ok) {
         const buffer = await response.buffer();
