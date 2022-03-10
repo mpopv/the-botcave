@@ -14,6 +14,15 @@ const truncate = (str, n) => {
   return (str.length > n) ? str.substr(0, n - 1) : str;
 };
 
+const cleanString = (str) => {
+  // Twitter removes the leading http(s):// from links in the tweet text; we need to remove these as well or
+  // the bot thinks the last tweeted text doesn't match the last edit description, even if it's the same edit
+  const strMinusHttp = str.replace(/http:\/\//g, '');
+  const strMinusHttps = strMinusHttp.replace(/https:\/\//g, '');
+  const strTruncated = truncate(strMinusHttps, 280);
+  return strTruncated;
+};
+
 const retry = async (fn, retryDelay = 100, numRetries = 3) => {
     for (let i = 0; i < numRetries; i++) {
       try {
@@ -60,14 +69,16 @@ const rwClient = client.readWrite;
   // Close browser
   await browser.close();
 
+  const cleanMapDescription = cleanString(lastMapDescription);
+
   // Tweet new map if there's a new map description
-  if (tweetText !== truncate(lastMapDescription, 280)) {
+  if (tweetText !== cleanMapDescription) {
     const response = await fetch(mapUrl);
     if (response.ok) {
         const buffer = await response.buffer();
         const mediaId = await rwClient.v1.uploadMedia(buffer, { mimeType: 'image/png' });
         console.log(typeof mediaId);
-        await rwClient.v2.tweet(truncate(lastMapDescription, 280), { media: { media_ids: [mediaId] } });
+        await rwClient.v2.tweet(cleanMapDescription, { media: { media_ids: [mediaId] } });
     }
   }
 })();
