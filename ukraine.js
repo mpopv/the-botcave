@@ -61,7 +61,7 @@ const rwClient = client.readWrite;
   await browser.close();
 
   // Tweet new map if there's a new map description
-  if (tweetText !== lastMapDescription) {
+  if (tweetText !== truncate(lastMapDescription, 280)) {
     const response = await fetch(mapUrl);
     if (response.ok) {
         const buffer = await response.buffer();
