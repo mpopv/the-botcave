@@ -77,7 +77,7 @@ const rwClient = client.readWrite;
   // Close browser
   await browser.close();
 
-  const cleanMapDescription = cleanString(latestTime + '2022 ' + lastMapDescription);
+  const cleanMapDescription = cleanString(latestTime + ' ' + lastMapDescription);
 
   // Tweet new map if there's a new map description
   if (tweetTextTimeHasNoYear || latestTimeMinusYear !== tweetTextTimeMinusYear) {
