@@ -52,7 +52,11 @@ const rwClient = client.readWrite;
   const page = await context.newPage();
   await retry(() => page.goto(url), 1000, 10);
   await page.waitForLoadState('networkidle');
+  const latestTime = await page.locator('.filehistory-selected').innerText();
+  const latestTimeMinusYear = latestTime.split('2022')[0];
   const lastMapDescription = await page.locator('.filehistory > tbody > tr:nth-child(2) td:nth-child(6)').innerText();
+  console.log(latestTime);
+  console.log(latestTimeMinusYear);
   console.log(lastMapDescription);
 
   // Get latest tweet
@@ -65,15 +69,18 @@ const rwClient = client.readWrite;
   console.log(tweetTextArr);
   const tweetText = tweetTextArr[4];
   console.log(tweetText);
+  const tweetTextTimeHasNoYear = tweetText.split('2022').length === 0;
+  const tweetTextTimeMinusYear = tweetText.split('2022')[0];
+  console.log(tweetTextTimeHasNoYear);
+  console.log(tweetTextTimeMinusYear);
 
   // Close browser
   await browser.close();
 
-  const cleanMapDescription = cleanString(lastMapDescription);
-  const cleanTweetText = cleanString(tweetText);
+  const cleanMapDescription = cleanString(latestTime + '2022 ' + lastMapDescription);
 
   // Tweet new map if there's a new map description
-  if (cleanTweetText !== cleanMapDescription) {
+  if (tweetTextTimeHasNoYear || latestTimeMinusYear !== tweetTextTimeMinusYear) {
     const response = await fetch(mapUrl);
     if (response.ok) {
         const buffer = await response.buffer();
