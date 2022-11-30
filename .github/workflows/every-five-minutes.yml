@@ -1,8 +1,8 @@
-name: Once a Minute Cron Workflow
+name: Every Five Minutes Cron Workflow
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
 jobs:
   ukraine:
     runs-on: ubuntu-latest
