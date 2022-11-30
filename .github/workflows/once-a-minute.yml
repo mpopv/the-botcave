@@ -1,0 +1,11 @@
+name: Once a Minute Cron Workflow
+
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+jobs:
+  ukraine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ukraine War Wiki Map Bot Job
+        run: node ./ukraine.js
