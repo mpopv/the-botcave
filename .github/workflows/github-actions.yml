@@ -1,14 +1,14 @@
-# name: Every Five Minutes Cron Workflow
+name: Every Minute Cron Workflow
 
-# on:
-#   schedule:
-#     - cron: "*/5 * * * *"
-# jobs:
-#   ukraine:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Ukraine War Wiki Map Bot Job
-#         run: node ./ukraine.js
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+jobs:
+  ukraine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ukraine War Wiki Map Bot Job
+        run: node ./ukraine.js
 
 name: Once an Hour Cron Workflow
 
@@ -21,8 +21,8 @@ jobs:
     steps:
       - name: Star Wars Titlebot Job
         run: node ./bot.js
-  # cyber:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Megacity Police Job
-  #       run: node ./cyber.js
+  cyber:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Megacity Police Job
+        run: node ./cyber.js
