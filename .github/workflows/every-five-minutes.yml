@@ -1,11 +1,11 @@
-name: Every Five Minutes Cron Workflow
+# name: Every Five Minutes Cron Workflow
 
-on:
-  schedule:
-    - cron: "*/5 * * * *"
-jobs:
-  ukraine:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Ukraine War Wiki Map Bot Job
-        run: node ./ukraine.js
+# on:
+#   schedule:
+#     - cron: "*/5 * * * *"
+# jobs:
+#   ukraine:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Ukraine War Wiki Map Bot Job
+#         run: node ./ukraine.js

@@ -1,16 +1,16 @@
-name: Once an Hour Cron Workflow
+# name: Once an Hour Cron Workflow
 
-on:
-  schedule:
-    - cron: "0 */1 * * *"
-jobs:
-  bot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Star Wars Titlebot Job
-        run: node ./bot.js
-  cyber:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Megacity Police Job
-        run: node ./cyber.js
+# on:
+#   schedule:
+#     - cron: "0 */1 * * *"
+# jobs:
+#   bot:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Star Wars Titlebot Job
+#         run: node ./bot.js
+#   cyber:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Megacity Police Job
+#         run: node ./cyber.js
